@@ -31,6 +31,14 @@ export default function ContactPageView() {
               {content.actions.linkedinProfile}
             </a>
             <a
+              href={content.profile.whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="w-fit text-slate-200 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+            >
+              {content.profile.whatsappDisplay}
+            </a>
+            <a
               href={content.profile.githubUrl}
               target="_blank"
               rel="noreferrer"
