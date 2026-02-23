@@ -1,11 +1,56 @@
 @import "tailwindcss";
 
 :root {
+  --bg: #f8fafc;
+  --fg: #0f172a;
+  --muted: #475569;
+  --border: #cbd5e1;
+  --card: #ffffff;
+  --accent: #0369a1;
+  --accent-hover: #075985;
+  --accent-soft: #0ea5e9;
+  --app-bg: radial-gradient(circle at top, #f8fafc 0%, #e2e8f0 55%, #f8fafc 100%);
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #020617;
+  --fg: #e2e8f0;
+  --muted: #94a3b8;
+  --border: #1e293b;
+  --card: #0f172a;
+  --accent: #38bdf8;
+  --accent-hover: #7dd3fc;
+  --accent-soft: #bae6fd;
+  --app-bg: radial-gradient(circle at top, #0f172a 0%, #020617 55%, #020617 100%);
   color-scheme: dark;
 }
 
 @theme inline {
   --font-sans: var(--font-inter);
+
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-accent: var(--accent);
+
+  --color-slate-950: var(--bg);
+  --color-slate-900: var(--card);
+  --color-slate-800: var(--border);
+  --color-slate-700: var(--border);
+  --color-slate-600: var(--border);
+  --color-slate-500: var(--muted);
+  --color-slate-400: var(--muted);
+  --color-slate-300: var(--muted);
+  --color-slate-200: var(--fg);
+  --color-slate-100: var(--fg);
+  --color-white: var(--fg);
+
+  --color-sky-500: var(--accent);
+  --color-sky-400: var(--accent-hover);
+  --color-sky-300: var(--accent-soft);
 }
 
 * {
@@ -17,8 +62,14 @@ body {
   min-height: 100%;
 }
 
+html {
+  background-color: var(--bg);
+}
+
 body {
   margin: 0;
+  background-color: transparent;
+  color: var(--fg);
 }
 
 a {
