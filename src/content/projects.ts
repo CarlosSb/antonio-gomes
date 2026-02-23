@@ -81,41 +81,57 @@ Designed with strong SEO, performance optimization, and editorial autonomy in mi
   },
   {
     slug: "digital-net-telecom",
-    title: "Digital Net Telecom",
-    liveUrl: "https://digital-net-telecom.vercel.app/",
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    summary: {
-      pt: "Landing page comercial com apresentação clara de planos e serviços.",
-      en: "Commercial landing page with clear presentation of plans and services.",
-    },
+    title: "Digital.Net Telecom – Multi-City ISP Platform",
+    shortDescription:
+      "Fullstack ISP operations platform with multi-city architecture, admin panel and tested APIs.",
     description: {
-      pt: "Estrutura pensada para conversão com comunicação direta, seções estratégicas e visual profissional.",
-      en: "Conversion-oriented structure with direct communication, strategic sections, and professional visuals.",
+      pt: `Plataforma fullstack para operação de provedor de internet,
+com arquitetura multi-cidade, landing pages otimizadas,
+painel administrativo completo e APIs validadas.
+Inclui suíte de testes automatizados e integração com IA.`,
+      en: `Fullstack ISP operations platform designed with multi-city architecture,
+optimized landing pages, complete admin panel and validated APIs.
+Includes automated testing suite and AI integration.`,
     },
-    challenge: {
-      pt: "Evidenciar diferenciais de forma rápida para novos visitantes.",
-      en: "Highlight service differentiators quickly for new visitors.",
-    },
-    solution: {
-      pt: "Fluxo visual com foco em oferta, benefícios e contato imediato.",
-      en: "Visual flow focused on offers, benefits, and immediate contact paths.",
-    },
-    results: {
-      pt: "Experiência objetiva para usuários em busca de planos e informações técnicas.",
-      en: "Objective experience for users looking for plans and technical information.",
-    },
-    highlights: {
-      pt: [
-        "Seções desenhadas para reduzir fricção.",
-        "Leitura rápida em mobile e desktop.",
-        "Código modular para iteração contínua.",
-      ],
-      en: [
-        "Sections designed to reduce friction.",
-        "Fast reading flow on mobile and desktop.",
-        "Modular codebase for continuous iteration.",
-      ],
-    },
+    stack: [
+      "Next.js 15",
+      "React",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "NextAuth",
+      "Zod",
+      "React Query",
+      "Jest",
+      "Playwright",
+      "OpenAI SDK",
+    ],
+    architecture: [
+      "App Router modular structure",
+      "BFF API layer",
+      "Domain-oriented component organization",
+      "Multi-city logical isolation",
+      "Validated REST endpoints",
+    ],
+    highlights: [
+      "Automated unit and e2e testing",
+      "Multi-module admin dashboard",
+      "Landing page optimization for conversion",
+      "API validation with Zod",
+      "AI integration for enhanced functionality",
+    ],
+    impact: [
+      "Centralized ISP operational management",
+      "Improved consistency across city-level content",
+      "Structured lead management workflow",
+    ],
+    links: [
+      {
+        label: "Live",
+        href: "https://digital-net-telecom.vercel.app/",
+      },
+    ],
+    seoTitle: "Digital.Net Telecom | Antonio Gomes",
   },
   {
     slug: "provedor-connect",
