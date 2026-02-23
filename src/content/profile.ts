@@ -125,6 +125,8 @@ export type LocalizedProfileContent = {
     email: string;
     githubUrl: string;
     linkedinUrl: string;
+    whatsappUrl: string;
+    whatsappDisplay: string;
     summary: string;
   };
   navigation: NavigationContent;
@@ -153,6 +155,8 @@ const sharedProfile = {
   email: "antoniocarlossbcdd@gmail.com",
   githubUrl: "https://github.com/carlossb",
   linkedinUrl: "https://www.linkedin.com/in/antonio-carlos-martins/",
+  whatsappUrl: "https://wa.me/5588992017400",
+  whatsappDisplay: "+55 88 99201-7400",
 };
 
 const sharedSkills = {
