@@ -16,6 +16,11 @@ export function getAllProjects(): Project[] {
 }
 
 export function getFeaturedProjects(limit = 3): Project[] {
+  const featuredProjects = projects.filter((project) => project.featured);
+  if (featuredProjects.length > 0) {
+    return featuredProjects.slice(0, limit);
+  }
+
   return projects.slice(0, limit);
 }
 
@@ -24,15 +29,38 @@ export function getProjectBySlug(slug: string): Project | undefined {
 }
 
 export function localizeText(
-  value: Record<Locale, string>,
+  value: string | Record<Locale, string> | undefined,
   locale: Locale,
 ): string {
-  return value[locale] ?? value[defaultLocale];
+  if (!value) {
+    return "";
+  }
+
+  if (typeof value === "string") {
+    return value.trim();
+  }
+
+  return (value[locale] ?? value[defaultLocale] ?? "").trim();
 }
 
 export function localizeList(
-  value: Record<Locale, string[]>,
+  value: string[] | Record<Locale, string[]> | undefined,
   locale: Locale,
 ): string[] {
-  return value[locale] ?? value[defaultLocale];
+  if (!value) {
+    return [];
+  }
+
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  return value[locale] ?? value[defaultLocale] ?? [];
+}
+
+export function getProjectSummary(project: Project, locale: Locale): string {
+  return localizeText(
+    project.shortDescription ?? project.summary ?? project.description,
+    locale,
+  );
 }

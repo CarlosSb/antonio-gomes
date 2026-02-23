@@ -53,7 +53,12 @@ type HomePageContent = {
 type ProjectsPageContent = {
   title: string;
   description: string;
+  overviewLabel: string;
+  architectureLabel: string;
+  technicalDecisionsLabel: string;
+  impactLabel: string;
   stackLabel: string;
+  linksLabel: string;
   highlightsLabel: string;
   challengeLabel: string;
   solutionLabel: string;
@@ -251,7 +256,12 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       title: "Projetos",
       description:
         "Cases com foco em UI moderna, performance e experiência final do usuário.",
+      overviewLabel: "Visão geral",
+      architectureLabel: "Arquitetura",
+      technicalDecisionsLabel: "Decisões técnicas",
+      impactLabel: "Impacto",
       stackLabel: "Stack",
+      linksLabel: "Links",
       highlightsLabel: "Destaques",
       challengeLabel: "Desafio",
       solutionLabel: "Solução",
@@ -394,7 +404,12 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       title: "Projects",
       description:
         "Case studies focused on modern UI, performance, and user experience quality.",
+      overviewLabel: "Overview",
+      architectureLabel: "Architecture",
+      technicalDecisionsLabel: "Technical Decisions",
+      impactLabel: "Impact",
       stackLabel: "Stack",
+      linksLabel: "Links",
       highlightsLabel: "Highlights",
       challengeLabel: "Challenge",
       solutionLabel: "Solution",
