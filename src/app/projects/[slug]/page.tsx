@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import ProjectDetailsPageView from "@/components/pages/ProjectDetailsPageView";
 import ProjectNotFoundView from "@/components/pages/ProjectNotFoundView";
 import { defaultLocale, profileContent } from "@/content/profile";
-import { getAllProjects, getProjectBySlug, localizeText } from "@/lib/content";
+import { getAllProjects, getProjectBySlug, getProjectSummary } from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 
 type ProjectDetailPageProps = {
@@ -30,8 +30,8 @@ export async function generateMetadata({
   }
 
   return createMetadata({
-    title: `${project.title} | ${content.seo.siteName}`,
-    description: localizeText(project.summary, defaultLocale),
+    title: project.seoTitle ?? `${project.title} | ${content.seo.siteName}`,
+    description: getProjectSummary(project, defaultLocale),
     pathname: `/projects/${project.slug}`,
   });
 }
