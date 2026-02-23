@@ -286,40 +286,53 @@ lead capture system and authenticated admin panel.`,
   },
   {
     slug: "tia-emilia",
-    title: "Tia Emilia",
-    liveUrl: "https://tia-emilia-next.vercel.app/",
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    summary: {
-      pt: "Website com foco em presença digital clara, amigável e leve.",
-      en: "Website focused on clear, friendly, and lightweight digital presence.",
-    },
+    title: "Tia Emília – Digital Product E-commerce with AI & PIX",
+    shortDescription:
+      "Fullstack digital product platform with PIX checkout, webhook processing and AI-assisted content.",
     description: {
-      pt: "Projeto orientado a simplicidade visual com navegação intuitiva e estrutura pronta para evolução de conteúdo.",
-      en: "Project designed around visual simplicity, intuitive navigation, and content-ready growth structure.",
+      pt: `Plataforma fullstack para venda de produtos digitais educativos,
+com checkout via PIX (Mercado Pago), webhook assíncrono,
+entrega automatizada por e-mail e CMS de blog com apoio de IA.`,
+      en: `Fullstack digital product platform featuring PIX checkout (Mercado Pago),
+asynchronous webhook processing, automated email delivery
+and AI-assisted blog content management.`,
     },
-    challenge: {
-      pt: "Apresentar marca e serviços de forma acolhedora e objetiva.",
-      en: "Present brand and services in a welcoming yet objective way.",
-    },
-    solution: {
-      pt: "Composição de seções com hierarquia clara e foco na experiência do visitante.",
-      en: "Section composition with clear hierarchy and visitor-focused experience.",
-    },
-    results: {
-      pt: "Entrega estável com bom tempo de carregamento e manutenção simples.",
-      en: "Stable delivery with strong loading performance and simple maintenance.",
-    },
-    highlights: {
-      pt: [
-        "Fluxo de navegação sem ruído visual.",
-        "Estrutura de código limpa.",
-        "Base preparada para case study futuro.",
-      ],
-      en: [
-        "Navigation flow with low visual noise.",
-        "Clean code structure.",
-        "Foundation ready for a future full case study.",
-      ],
-    },
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "PostgreSQL (Neon)",
+      "Drizzle ORM",
+      "Mercado Pago",
+      "Resend",
+      "Vercel Blob",
+      "OpenAI API",
+    ],
+    architecture: [
+      "App Router fullstack architecture",
+      "Server Actions + API Routes",
+      "Asynchronous webhook processing",
+      "Unified booking domain model",
+      "External payment gateway integration",
+    ],
+    highlights: [
+      "PIX QR code dynamic generation",
+      "Idempotent webhook reconciliation",
+      "Booking overlap conflict resolution",
+      "AI-assisted editorial workflow",
+      "Transactional email delivery",
+    ],
+    impact: [
+      "Automated digital product delivery",
+      "Reduced manual payment verification",
+      "Unified booking and event management",
+    ],
+    links: [
+      {
+        label: "Live",
+        href: "https://tia-emilia-next.vercel.app/",
+      },
+    ],
+    seoTitle: "Tia Emília | Antonio Gomes",
   },
 ];
