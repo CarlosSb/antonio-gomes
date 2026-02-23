@@ -55,10 +55,12 @@ type ProjectsPageContent = {
   description: string;
   overviewLabel: string;
   architectureLabel: string;
+  engineeringHighlightsLabel: string;
   technicalDecisionsLabel: string;
   impactLabel: string;
   stackLabel: string;
   linksLabel: string;
+  liveLinkLabel: string;
   highlightsLabel: string;
   challengeLabel: string;
   solutionLabel: string;
@@ -258,10 +260,12 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         "Cases com foco em UI moderna, performance e experiência final do usuário.",
       overviewLabel: "Visão geral",
       architectureLabel: "Arquitetura",
+      engineeringHighlightsLabel: "Destaques de Engenharia",
       technicalDecisionsLabel: "Decisões técnicas",
       impactLabel: "Impacto",
       stackLabel: "Stack",
       linksLabel: "Links",
+      liveLinkLabel: "Link ao vivo",
       highlightsLabel: "Destaques",
       challengeLabel: "Desafio",
       solutionLabel: "Solução",
@@ -406,10 +410,12 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         "Case studies focused on modern UI, performance, and user experience quality.",
       overviewLabel: "Overview",
       architectureLabel: "Architecture",
+      engineeringHighlightsLabel: "Engineering Highlights",
       technicalDecisionsLabel: "Technical Decisions",
       impactLabel: "Impact",
       stackLabel: "Stack",
       linksLabel: "Links",
+      liveLinkLabel: "Live Link",
       highlightsLabel: "Highlights",
       challengeLabel: "Challenge",
       solutionLabel: "Solution",
