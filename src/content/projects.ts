@@ -156,42 +156,55 @@ Designed with strong SEO, performance optimization, and editorial autonomy in mi
     },
   },
   {
-    slug: "otica-plus-app",
-    title: "Otica Plus App",
-    liveUrl: "https://otica-plus-app.vercel.app/",
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    summary: {
-      pt: "Aplicação web com abordagem moderna para vitrine e presença digital.",
-      en: "Modern web app approach for storefront and digital presence.",
-    },
+    slug: "otica-plus",
+    title: "ÓticaPlus – SaaS Multi-Tenant for Optical Stores",
+    shortDescription:
+      "Fullstack multi-tenant SaaS for CRM, financial management, billing and AI-powered OCR.",
     description: {
-      pt: "Case com atenção em apresentação visual, organização de conteúdo e experiência fluida.",
-      en: "Case focused on visual presentation, content organization, and smooth interaction.",
+      pt: `Sistema SaaS multi-tenant para gestão completa de óticas.
+Inclui CRM, controle de pedidos, módulo financeiro com crediário,
+billing por plano, portal de laboratório e OCR com IA.`,
+      en: `Multi-tenant SaaS platform for optical store management.
+Includes CRM, order workflow, financial module with installments,
+subscription billing, lab portal and AI-powered OCR.`,
     },
-    challenge: {
-      pt: "Equilibrar estética e performance em uma interface visualmente rica.",
-      en: "Balance aesthetics and performance in a visually rich interface.",
-    },
-    solution: {
-      pt: "Uso de componentes leves e estrutura orientada a carregamento eficiente.",
-      en: "Lightweight components and structure optimized for efficient loading.",
-    },
-    results: {
-      pt: "Entrega de navegação consistente com boa percepção de velocidade.",
-      en: "Delivered consistent navigation with strong speed perception.",
-    },
-    highlights: {
-      pt: [
-        "Design limpo e funcional.",
-        "Estrutura escalável para futuras features.",
-        "Componentização para manutenção simplificada.",
-      ],
-      en: [
-        "Clean and functional design.",
-        "Scalable structure for future features.",
-        "Componentized code for easier maintenance.",
-      ],
-    },
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "NextAuth",
+      "Zustand",
+      "Supabase",
+    ],
+    architecture: [
+      "Modular monolith",
+      "Multi-tenant RBAC system",
+      "JWT-based authentication",
+      "Async job processing",
+      "OCR AI integration",
+    ],
+    highlights: [
+      "472 TypeScript files",
+      "118 API routes",
+      "36 Prisma models",
+      "Multi-context user roles",
+      "Integrated commercial + financial workflow",
+    ],
+    impact: [
+      "Centralized operational workflow for optical stores",
+      "Reduced manual data entry with OCR",
+      "Structured billing and subscription management",
+    ],
+    links: [
+      {
+        label: "Live",
+        href: "https://otica-plus-app.vercel.app/",
+      },
+    ],
+    featured: true,
+    seoTitle: "ÓticaPlus | Antonio Gomes",
   },
   {
     slug: "gordo-construcoes",
