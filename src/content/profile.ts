@@ -91,6 +91,11 @@ type SkillCategory = {
   items: string[];
 };
 
+export type StudyAreaItem = {
+  title: string;
+  description: string;
+};
+
 type SeoContent = {
   siteName: string;
   defaultTitle: string;
@@ -124,9 +129,11 @@ export type LocalizedProfileContent = {
   sections: {
     experience: string;
     skills: string;
+    studyAreas: string;
   };
   experience: ExperienceItem[];
   skills: SkillCategory[];
+  studyAreas: StudyAreaItem[];
   seo: SeoContent;
   footer: FooterContent;
 };
@@ -145,6 +152,43 @@ const sharedSkills = {
   cloud: ["AWS (Lambda, API Gateway)", "Git"],
   databases: ["PostgreSQL", "MySQL", "MongoDB"],
   architecture: ["DDD", "Hexagonal Architecture"],
+};
+
+export const studyAreas: Record<Locale, StudyAreaItem[]> = {
+  pt: [
+    {
+      title: "Python",
+      description:
+        "Estudo aplicado ao backend, automações e fundamentos para IA e segurança.",
+    },
+    {
+      title: "Security",
+      description:
+        "Fundamentos de segurança em aplicações web, autenticação, boas práticas e OWASP.",
+    },
+    {
+      title: "Inteligência Artificial",
+      description:
+        "Exploração de fundamentos de IA, LLMs e integração de IA em aplicações web.",
+    },
+  ],
+  en: [
+    {
+      title: "Python",
+      description:
+        "Applied studies focused on backend development, automation, and foundations for AI and security.",
+    },
+    {
+      title: "Security",
+      description:
+        "Web application security fundamentals, authentication strategies, best practices and OWASP.",
+    },
+    {
+      title: "Artificial Intelligence",
+      description:
+        "Exploring AI fundamentals, LLMs and AI integration into web applications.",
+    },
+  ],
 };
 
 export const profileContent: Record<Locale, LocalizedProfileContent> = {
@@ -237,6 +281,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     sections: {
       experience: "Experiência",
       skills: "Skills",
+      studyAreas: "Áreas de Estudo",
     },
     experience: [
       {
@@ -268,6 +313,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       { category: "Databases", items: sharedSkills.databases },
       { category: "Architecture", items: sharedSkills.architecture },
     ],
+    studyAreas: studyAreas.pt,
     seo: {
       siteName: "Antonio Gomes | Portfólio",
       defaultTitle: "Antonio Gomes | Desenvolvedor Fullstack",
@@ -374,6 +420,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     sections: {
       experience: "Experience",
       skills: "Skills",
+      studyAreas: "Currently Exploring",
     },
     experience: [
       {
@@ -405,6 +452,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       { category: "Databases", items: sharedSkills.databases },
       { category: "Architecture", items: sharedSkills.architecture },
     ],
+    studyAreas: studyAreas.en,
     seo: {
       siteName: "Antonio Gomes | Portfolio",
       defaultTitle: "Antonio Gomes | Full-Stack Developer",
