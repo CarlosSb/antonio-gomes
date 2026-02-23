@@ -32,6 +32,9 @@ type AccessibilityContent = {
   github: string;
   linkedin: string;
   languageToggle: string;
+  themeToggle: string;
+  switchToDarkTheme: string;
+  switchToLightTheme: string;
   mainNavigation: string;
   mobileNavigation: string;
 };
@@ -227,6 +230,9 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       github: "Abrir perfil do GitHub",
       linkedin: "Abrir perfil do LinkedIn",
       languageToggle: "Alternar idioma",
+      themeToggle: "Alternar tema",
+      switchToDarkTheme: "Ativar tema escuro",
+      switchToLightTheme: "Ativar tema claro",
       mainNavigation: "Navegação principal",
       mobileNavigation: "Navegação mobile",
     },
@@ -367,6 +373,9 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       github: "Open GitHub profile",
       linkedin: "Open LinkedIn profile",
       languageToggle: "Toggle language",
+      themeToggle: "Toggle theme",
+      switchToDarkTheme: "Switch to dark theme",
+      switchToLightTheme: "Switch to light theme",
       mainNavigation: "Main navigation",
       mobileNavigation: "Mobile navigation",
     },
