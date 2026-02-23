@@ -1,59 +1,83 @@
 import type { Locale } from "@/content/profile";
 
-type LocalizedText = Record<Locale, string>;
-type LocalizedList = Record<Locale, string[]>;
+type LocalizedText = string | Record<Locale, string>;
+type LocalizedList = string[] | Record<Locale, string[]>;
+
+export type ProjectLink = {
+  label: string;
+  href: string;
+};
 
 export type Project = {
   slug: string;
   title: string;
-  liveUrl: string;
+  shortDescription?: LocalizedText;
+  liveUrl?: string;
   stack: string[];
-  summary: LocalizedText;
-  description: LocalizedText;
-  challenge: LocalizedText;
-  solution: LocalizedText;
-  results: LocalizedText;
-  highlights: LocalizedList;
+  summary?: LocalizedText;
+  description?: LocalizedText;
+  challenge?: LocalizedText;
+  solution?: LocalizedText;
+  results?: LocalizedText;
+  highlights?: LocalizedList;
+  architecture?: LocalizedList;
+  technicalDecisions?: LocalizedList;
+  impact?: LocalizedList;
+  links?: ProjectLink[];
+  featured?: boolean;
+  seoTitle?: string;
 };
 
 export const projects: Project[] = [
   {
     slug: "ong-tudo-por-amor",
     title: "ONG Tudo por Amor",
-    liveUrl: "https://nextjs-ong-tudo-por-amor.vercel.app/",
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    summary: {
-      pt: "Site institucional com foco em clareza, captação e navegação acessível.",
-      en: "Institutional website focused on clarity, donations, and accessible navigation.",
+    shortDescription: {
+      pt: "Plataforma institucional com CMS headless focada em fluxos de adoção e transparência financeira.",
+      en: "Headless CMS institutional platform focused on adoption workflows and financial transparency.",
     },
     description: {
-      pt: "Projeto focado em apresentar a atuação da ONG com conteúdo direto, layout limpo e estrutura pronta para evolução contínua.",
-      en: "Project focused on showcasing NGO initiatives with direct content, clean layout, and a structure ready for ongoing evolution.",
+      pt: `Plataforma institucional desenvolvida com Next.js 16 (App Router) integrada ao Sanity CMS.
+O projeto atende três jornadas principais: adoção de animais, transparência financeira e comunicação institucional.
+Implementado com foco em SEO, performance e autonomia editorial.`,
+      en: `Institutional platform built with Next.js 16 (App Router) integrated with Sanity CMS.
+The system supports three main journeys: animal adoption, financial transparency, and institutional communication.
+Designed with strong SEO, performance optimization, and editorial autonomy in mind.`,
     },
-    challenge: {
-      pt: "Transformar informações institucionais em uma experiência simples e confiável.",
-      en: "Turn institutional information into a simple and trustworthy experience.",
-    },
-    solution: {
-      pt: "Organização por seções objetivas com chamadas para ação claras e hierarquia visual consistente.",
-      en: "Structured objective sections with clear calls to action and consistent visual hierarchy.",
-    },
-    results: {
-      pt: "Base sólida para presença digital com performance e boa leitura em dispositivos móveis.",
-      en: "Strong digital presence foundation with performance and good readability on mobile devices.",
-    },
-    highlights: {
-      pt: [
-        "Interface orientada a conteúdo e confiança.",
-        "Performance otimizada com renderização rápida.",
-        "Arquitetura fácil de manter e evoluir.",
-      ],
-      en: [
-        "Content-first interface built for trust.",
-        "Performance-optimized for fast rendering.",
-        "Architecture designed for maintainability.",
-      ],
-    },
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Sanity CMS",
+      "Tailwind CSS",
+      "Vercel",
+    ],
+    highlights: [
+      "Headless CMS architecture",
+      "Server Components + ISR",
+      "On-demand revalidation via webhook",
+      "Dynamic sitemap generation",
+      "SEO with structured data (JSON-LD)",
+    ],
+    architecture: [
+      "Next.js App Router with Server Components",
+      "Sanity Content Lake integration",
+      "Webhook-based cache invalidation",
+      "Dynamic routes for adoption, news and reports",
+    ],
+    impact: [
+      "Enabled editorial autonomy for NGO staff",
+      "Improved transparency with structured financial reports",
+      "Optimized content delivery using ISR",
+    ],
+    links: [
+      {
+        label: "Live",
+        href: "https://nextjs-ong-tudo-por-amor.vercel.app/",
+      },
+    ],
+    featured: true,
+    seoTitle: "ONG Tudo por Amor | Antonio Gomes",
   },
   {
     slug: "digital-net-telecom",
