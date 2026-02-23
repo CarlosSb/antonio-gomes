@@ -5,6 +5,7 @@ import ProjectCard from "@/components/ProjectCard";
 import Section from "@/components/Section";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
+import StudyAreas from "@/components/StudyAreas";
 import type { Project } from "@/content/projects";
 import { useLocalizedContent } from "@/lib/language";
 
@@ -33,6 +34,7 @@ export default function HomePageView({ featuredProjects }: HomePageViewProps) {
 
       <Experience />
       <Skills />
+      <StudyAreas />
     </main>
   );
 }
