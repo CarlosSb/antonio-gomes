@@ -16,8 +16,8 @@ export default function ProjectDetailsPageView({ project }: ProjectDetailsPageVi
 
   const overview = localizeText(project.description, locale);
   const architecture = localizeList(project.architecture, locale);
-  const technicalDecisions = localizeList(
-    project.technicalDecisions ?? project.highlights,
+  const engineeringHighlights = localizeList(
+    project.highlights ?? project.technicalDecisions,
     locale,
   );
   const impact = localizeList(project.impact, locale);
@@ -27,6 +27,8 @@ export default function ProjectDetailsPageView({ project }: ProjectDetailsPageVi
     : project.liveUrl
       ? [{ label: content.actions.liveDemo, href: project.liveUrl }]
       : [];
+  const linksSectionTitle =
+    links.length === 1 ? content.projectsPage.liveLinkLabel : content.projectsPage.linksLabel;
 
   return (
     <main className="mx-auto w-full max-w-4xl space-y-8 px-4 py-10 sm:px-6 sm:py-12">
@@ -71,14 +73,14 @@ export default function ProjectDetailsPageView({ project }: ProjectDetailsPageVi
         </Section>
       ) : null}
 
-      {technicalDecisions.length > 0 ? (
+      {engineeringHighlights.length > 0 ? (
         <Section
-          id="project-technical-decisions"
-          title={content.projectsPage.technicalDecisionsLabel}
+          id="project-engineering-highlights"
+          title={content.projectsPage.engineeringHighlightsLabel}
         >
           <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
-            {technicalDecisions.map((decision) => (
-              <li key={decision}>{decision}</li>
+            {engineeringHighlights.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
             ))}
           </ul>
         </Section>
@@ -110,7 +112,7 @@ export default function ProjectDetailsPageView({ project }: ProjectDetailsPageVi
       ) : null}
 
       {links.length > 0 ? (
-        <Section id="project-links" title={content.projectsPage.linksLabel}>
+        <Section id="project-links" title={linksSectionTitle}>
           <div className="flex flex-wrap gap-3">
             {links.map((projectLink) => (
               <a
