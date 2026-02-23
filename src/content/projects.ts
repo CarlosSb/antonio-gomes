@@ -208,41 +208,52 @@ subscription billing, lab portal and AI-powered OCR.`,
   },
   {
     slug: "gordo-construcoes",
-    title: "Gordo Construcoes",
-    liveUrl: "https://gordo-construcoes.vercel.app/",
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    summary: {
-      pt: "Site institucional para serviços com foco em confiança e conversão.",
-      en: "Institutional service website focused on trust and conversion.",
-    },
+    title: "Gordo Construções – Fullstack Real Estate Platform",
+    shortDescription:
+      "Fullstack real estate platform with public catalog, lead capture and authenticated admin panel.",
     description: {
-      pt: "Projeto pensado para apresentação de serviços, diferenciais e canais de contato em fluxo simples.",
-      en: "Built to present services, differentiators, and contact channels in a simple flow.",
+      pt: `Plataforma imobiliária fullstack desenvolvida com Next.js 16.
+Inclui site institucional, catálogo público com filtros,
+SEO dinâmico por imóvel, captação de leads e painel administrativo autenticado.`,
+      en: `Fullstack real estate platform built with Next.js 16.
+Includes public catalog with filtering, dynamic SEO,
+lead capture system and authenticated admin panel.`,
     },
-    challenge: {
-      pt: "Gerar percepção de credibilidade desde o primeiro contato.",
-      en: "Build strong credibility perception from first contact.",
-    },
-    solution: {
-      pt: "Estrutura orientada a prova social, clareza de serviço e facilidade de contato.",
-      en: "Structure oriented to social proof, service clarity, and easy contact options.",
-    },
-    results: {
-      pt: "Navegação simples e objetiva para captação de oportunidades.",
-      en: "Simple and objective navigation built for opportunity capture.",
-    },
-    highlights: {
-      pt: [
-        "Comunicação direta e profissional.",
-        "Boa leitura em telas pequenas.",
-        "SEO base preparado para expansão.",
-      ],
-      en: [
-        "Direct and professional communication.",
-        "Strong readability on small screens.",
-        "SEO baseline prepared for expansion.",
-      ],
-    },
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "NextAuth",
+      "Vercel Blob",
+    ],
+    architecture: [
+      "App Router fullstack architecture",
+      "JWT-based authentication",
+      "RBAC via middleware",
+      "Relational domain modeling with Prisma",
+      "Cloud file storage integration",
+    ],
+    highlights: [
+      "CRUD with ownership validation",
+      "Conditional validation in lead API",
+      "Activity logging for audit trail",
+      "Dynamic metadata per property",
+      "ISR for performance optimization",
+    ],
+    impact: [
+      "Centralized real estate operations",
+      "Structured lead capture workflow",
+      "Improved SEO and property discoverability",
+    ],
+    links: [
+      {
+        label: "Live",
+        href: "https://gordo-construcoes.vercel.app/",
+      },
+    ],
+    seoTitle: "Gordo Construções | Antonio Gomes",
   },
   {
     slug: "tia-emilia",
