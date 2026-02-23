@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LanguageToggle from "@/components/LanguageToggle";
+import ThemeToggle from "@/components/ThemeToggle";
 import { useLocalizedContent } from "@/lib/language";
 
 const iconClassName = "h-5 w-5";
@@ -83,6 +84,7 @@ export default function Header() {
           >
             <LinkedInIcon />
           </a>
+          <ThemeToggle />
           <LanguageToggle />
         </div>
       </div>
