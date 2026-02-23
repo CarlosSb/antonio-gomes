@@ -135,41 +135,54 @@ Includes automated testing suite and AI integration.`,
   },
   {
     slug: "provedor-connect",
-    title: "Provedor Connect",
-    liveUrl: "https://provedor-connect-sand.vercel.app/",
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    summary: {
-      pt: "Portal institucional com foco em clareza de serviços e credibilidade.",
-      en: "Institutional portal focused on service clarity and credibility.",
-    },
+    title: "Provedor Connect – ISP Platform with SGP Integration",
+    shortDescription:
+      "Fullstack ISP platform with self-service portal, admin dashboard and decoupled SGP drivers.",
     description: {
-      pt: "Projeto desenvolvido para comunicar soluções de conectividade com organização visual e linguagem direta.",
-      en: "Built to communicate connectivity solutions with strong visual organization and direct language.",
+      pt: `Plataforma fullstack para provedor de internet regional,
+incluindo landing pages comerciais, área do cliente com autoatendimento,
+painel administrativo e integração desacoplada com múltiplos sistemas SGP.`,
+      en: `Fullstack ISP platform for regional internet providers,
+including commercial landing pages, customer self-service portal,
+admin dashboard and decoupled SGP integrations.`,
     },
-    challenge: {
-      pt: "Comunicar proposta técnica sem tornar a navegação complexa.",
-      en: "Communicate technical offerings without making navigation complex.",
-    },
-    solution: {
-      pt: "Arquitetura de informação enxuta com blocos objetivos e CTA em pontos estratégicos.",
-      en: "Lean information architecture with objective blocks and strategic CTA placement.",
-    },
-    results: {
-      pt: "Página consistente para apresentação de marca e aquisição de novos contatos.",
-      en: "Consistent page for brand presentation and new lead acquisition.",
-    },
-    highlights: {
-      pt: [
-        "Layout limpo com foco comercial.",
-        "Componentes reutilizáveis para escalar páginas.",
-        "Boas práticas de SEO técnico on-page.",
-      ],
-      en: [
-        "Clean layout with commercial focus.",
-        "Reusable components to scale pages.",
-        "Good on-page technical SEO practices.",
-      ],
-    },
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "React Hook Form",
+      "Zod",
+      "JWT (jose)",
+      "bcryptjs",
+    ],
+    architecture: [
+      "App Router fullstack architecture",
+      "Server Actions + API Routes",
+      "Domain-based modular structure",
+      "Decoupled SGP driver layer",
+      "JWT HttpOnly authentication",
+    ],
+    highlights: [
+      "Multi-provider SGP integration",
+      "Self-service customer portal",
+      "Dynamic content management",
+      "Secure admin authentication",
+      "Mock driver for development fallback",
+    ],
+    impact: [
+      "Unified digital operations for ISP",
+      "Reduced support demand via self-service",
+      "Lower coupling with external systems",
+    ],
+    links: [
+      {
+        label: "Live",
+        href: "https://provedor-connect-sand.vercel.app/",
+      },
+    ],
+    seoTitle: "Provedor Connect | Antonio Gomes",
   },
   {
     slug: "otica-plus",
