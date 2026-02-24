@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { defaultLocale, profileContent } from "@/content/profile";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -71,6 +72,7 @@ export default function RootLayout({
           style={{ backgroundImage: "var(--app-bg)" }}
         >
           {children}
+          <Analytics />
         </div>
       </body>
     </html>
