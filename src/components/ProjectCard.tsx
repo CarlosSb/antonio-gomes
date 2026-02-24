@@ -68,6 +68,17 @@ export default function ProjectCard({ project, content, locale, showDetails = tr
         <p className="min-h-[4.5rem] line-clamp-3 text-sm leading-relaxed text-slate-300">{summary}</p>
       </div>
 
+      <ul className="relative mb-5 flex flex-wrap gap-2">
+        {project.stack.map((tech) => (
+          <li
+            key={tech}
+            className="rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300"
+          >
+            {tech}
+          </li>
+        ))}
+      </ul>
+
       <div className="relative mt-auto flex flex-wrap gap-3">
         {liveLink ? (
           <a
