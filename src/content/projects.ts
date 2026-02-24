@@ -66,19 +66,36 @@ I standardized metadata, sitemap, and structured data to improve indexing consis
       "Tailwind CSS",
       "Vercel",
     ],
-    highlights: [
-      "Headless CMS architecture",
-      "Server Components + ISR",
-      "On-demand revalidation via webhook",
-      "Dynamic sitemap generation",
-      "SEO with structured data (JSON-LD)",
-    ],
-    architecture: [
-      "Next.js App Router with Server Components",
-      "Sanity Content Lake integration",
-      "Webhook-based cache invalidation",
-      "Dynamic routes for adoption, news and reports",
-    ],
+    highlights: {
+      pt: [
+        "Arquitetura com CMS headless",
+        "Server Components + ISR",
+        "Revalidação sob demanda via webhook",
+        "Geração dinâmica de sitemap",
+        "SEO com dados estruturados (JSON-LD)",
+      ],
+      en: [
+        "Headless CMS architecture",
+        "Server Components + ISR",
+        "On-demand revalidation via webhook",
+        "Dynamic sitemap generation",
+        "SEO with structured data (JSON-LD)",
+      ],
+    },
+    architecture: {
+      pt: [
+        "Next.js App Router com Server Components",
+        "Integração com Sanity Content Lake",
+        "Invalidação de cache baseada em webhook",
+        "Rotas dinâmicas para adoção, notícias e relatórios",
+      ],
+      en: [
+        "Next.js App Router with Server Components",
+        "Sanity Content Lake integration",
+        "Webhook-based cache invalidation",
+        "Dynamic routes for adoption, news and reports",
+      ],
+    },
     technicalDecisions: {
       pt: [
         "Escolhi CMS headless em vez de conteúdo hardcoded no código para dar autonomia editorial sem depender de deploy.",
@@ -91,11 +108,18 @@ I standardized metadata, sitemap, and structured data to improve indexing consis
         "I chose centralized SEO (JSON-LD + dynamic sitemap) instead of manual per-page setup to reduce indexing inconsistency.",
       ],
     },
-    impact: [
-      "Enabled editorial autonomy for NGO staff",
-      "Improved transparency with structured financial reports",
-      "Optimized content delivery using ISR",
-    ],
+    impact: {
+      pt: [
+        "Autonomia editorial para equipe da ONG",
+        "Maior transparência com relatórios financeiros estruturados",
+        "Entrega de conteúdo otimizada com ISR",
+      ],
+      en: [
+        "Enabled editorial autonomy for NGO staff",
+        "Improved transparency with structured financial reports",
+        "Optimized content delivery using ISR",
+      ],
+    },
     results: {
       pt: [
         "Antes: atualização de conteúdo dependia de suporte técnico -> Depois: equipe da ONG com autonomia editorial no CMS.",
@@ -120,8 +144,10 @@ I standardized metadata, sitemap, and structured data to improve indexing consis
   {
     slug: "digital-net-telecom",
     title: "Digital.Net Telecom – Multi-City ISP Platform",
-    shortDescription:
-      "Fullstack ISP operations platform with multi-city architecture, admin panel and tested APIs.",
+    shortDescription: {
+      pt: "Plataforma fullstack para operação de ISP com arquitetura multi-cidade, painel admin e APIs testadas.",
+      en: "Fullstack ISP operations platform with multi-city architecture, admin panel and tested APIs.",
+    },
     description: {
       pt: `Plataforma fullstack para operação de provedor de internet,
 com arquitetura multi-cidade, landing pages otimizadas,
@@ -158,13 +184,22 @@ I optimized landing pages for conversion and operational consistency across city
       "Playwright",
       "OpenAI SDK",
     ],
-    architecture: [
-      "App Router modular structure",
-      "BFF API layer",
-      "Domain-oriented component organization",
-      "Multi-city logical isolation",
-      "Validated REST endpoints",
-    ],
+    architecture: {
+      pt: [
+        "Estrutura modular com App Router",
+        "Camada de API no padrão BFF",
+        "Organização de componentes orientada a domínio",
+        "Isolamento lógico multi-cidade",
+        "Endpoints REST validados",
+      ],
+      en: [
+        "App Router modular structure",
+        "BFF API layer",
+        "Domain-oriented component organization",
+        "Multi-city logical isolation",
+        "Validated REST endpoints",
+      ],
+    },
     technicalDecisions: {
       pt: [
         "Escolhi estrutura orientada a domínio em vez de organização por tipo de arquivo para reduzir acoplamento entre módulos.",
@@ -177,18 +212,34 @@ I optimized landing pages for conversion and operational consistency across city
         "I chose automated unit + e2e suites instead of repeated manual validation to reduce regression in critical flows.",
       ],
     },
-    highlights: [
-      "Automated unit and e2e testing",
-      "Multi-module admin dashboard",
-      "Landing page optimization for conversion",
-      "API validation with Zod",
-      "AI integration for enhanced functionality",
-    ],
-    impact: [
-      "Centralized ISP operational management",
-      "Improved consistency across city-level content",
-      "Structured lead management workflow",
-    ],
+    highlights: {
+      pt: [
+        "Testes automatizados unitários e e2e",
+        "Dashboard administrativo multi-módulo",
+        "Otimização de landing pages para conversão",
+        "Validação de API com Zod",
+        "Integração com IA para recursos avançados",
+      ],
+      en: [
+        "Automated unit and e2e testing",
+        "Multi-module admin dashboard",
+        "Landing page optimization for conversion",
+        "API validation with Zod",
+        "AI integration for enhanced functionality",
+      ],
+    },
+    impact: {
+      pt: [
+        "Gestão operacional de ISP centralizada",
+        "Maior consistência entre conteúdos por cidade",
+        "Fluxo estruturado de gestão de leads",
+      ],
+      en: [
+        "Centralized ISP operational management",
+        "Improved consistency across city-level content",
+        "Structured lead management workflow",
+      ],
+    },
     results: {
       pt: [
         "Antes: operação distribuída em fluxos desconectados -> Depois: gestão centralizada em uma única plataforma.",
@@ -212,8 +263,10 @@ I optimized landing pages for conversion and operational consistency across city
   {
     slug: "provedor-connect",
     title: "Provedor Connect – ISP Platform with SGP Integration",
-    shortDescription:
-      "Fullstack ISP platform with self-service portal, admin dashboard and decoupled SGP drivers.",
+    shortDescription: {
+      pt: "Plataforma fullstack para ISP com portal de autoatendimento, dashboard admin e drivers SGP desacoplados.",
+      en: "Fullstack ISP platform with self-service portal, admin dashboard and decoupled SGP drivers.",
+    },
     description: {
       pt: `Plataforma fullstack para provedor de internet regional,
 incluindo landing pages comerciais, área do cliente com autoatendimento,
@@ -247,13 +300,22 @@ This allowed integration with multiple SGP providers without rewriting the appli
       "JWT (jose)",
       "bcryptjs",
     ],
-    architecture: [
-      "App Router fullstack architecture",
-      "Server Actions + API Routes",
-      "Domain-based modular structure",
-      "Decoupled SGP driver layer",
-      "JWT HttpOnly authentication",
-    ],
+    architecture: {
+      pt: [
+        "Arquitetura fullstack com App Router",
+        "Server Actions + API Routes",
+        "Estrutura modular baseada em domínio",
+        "Camada de drivers SGP desacoplada",
+        "Autenticação JWT HttpOnly",
+      ],
+      en: [
+        "App Router fullstack architecture",
+        "Server Actions + API Routes",
+        "Domain-based modular structure",
+        "Decoupled SGP driver layer",
+        "JWT HttpOnly authentication",
+      ],
+    },
     technicalDecisions: {
       pt: [
         "Escolhi camada de drivers SGP em vez de integração direta por fornecedor para reduzir acoplamento externo.",
@@ -266,18 +328,34 @@ This allowed integration with multiple SGP providers without rewriting the appli
         "I chose mock-driver fallback instead of blocking local environments without SGP access to speed up development and testing.",
       ],
     },
-    highlights: [
-      "Multi-provider SGP integration",
-      "Self-service customer portal",
-      "Dynamic content management",
-      "Secure admin authentication",
-      "Mock driver for development fallback",
-    ],
-    impact: [
-      "Unified digital operations for ISP",
-      "Reduced support demand via self-service",
-      "Lower coupling with external systems",
-    ],
+    highlights: {
+      pt: [
+        "Integração SGP com múltiplos provedores",
+        "Portal de autoatendimento para cliente",
+        "Gestão dinâmica de conteúdo",
+        "Autenticação administrativa segura",
+        "Driver mock para fallback em desenvolvimento",
+      ],
+      en: [
+        "Multi-provider SGP integration",
+        "Self-service customer portal",
+        "Dynamic content management",
+        "Secure admin authentication",
+        "Mock driver for development fallback",
+      ],
+    },
+    impact: {
+      pt: [
+        "Operação digital do ISP unificada",
+        "Redução de demanda de suporte via autoatendimento",
+        "Menor acoplamento com sistemas externos",
+      ],
+      en: [
+        "Unified digital operations for ISP",
+        "Reduced support demand via self-service",
+        "Lower coupling with external systems",
+      ],
+    },
     results: {
       pt: [
         "Antes: aquisição, autoatendimento e backoffice em sistemas separados -> Depois: operação unificada em uma única aplicação.",
@@ -301,8 +379,10 @@ This allowed integration with multiple SGP providers without rewriting the appli
   {
     slug: "otica-plus",
     title: "ÓticaPlus – SaaS Multi-Tenant for Optical Stores",
-    shortDescription:
-      "Fullstack multi-tenant SaaS for CRM, financial management, billing and AI-powered OCR.",
+    shortDescription: {
+      pt: "SaaS fullstack multi-tenant para CRM, gestão financeira, billing e OCR com IA.",
+      en: "Fullstack multi-tenant SaaS for CRM, financial management, billing and AI-powered OCR.",
+    },
     description: {
       pt: `Sistema SaaS multi-tenant para gestão completa de óticas.
 Inclui CRM, controle de pedidos, módulo financeiro com crediário,
@@ -335,13 +415,22 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
       "Zustand",
       "Supabase",
     ],
-    architecture: [
-      "Modular monolith",
-      "Multi-tenant RBAC system",
-      "JWT-based authentication",
-      "Async job processing",
-      "OCR AI integration",
-    ],
+    architecture: {
+      pt: [
+        "Monólito modular",
+        "Sistema RBAC multi-tenant",
+        "Autenticação baseada em JWT",
+        "Processamento assíncrono de jobs",
+        "Integração de OCR com IA",
+      ],
+      en: [
+        "Modular monolith",
+        "Multi-tenant RBAC system",
+        "JWT-based authentication",
+        "Async job processing",
+        "OCR AI integration",
+      ],
+    },
     technicalDecisions: {
       pt: [
         "Escolhi monólito modular em vez de microservices para reduzir complexidade operacional no estágio inicial.",
@@ -354,18 +443,34 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
         "I chose asynchronous OCR jobs instead of synchronous request-time processing to protect main-flow responsiveness.",
       ],
     },
-    highlights: [
-      "472 TypeScript files",
-      "118 API routes",
-      "36 Prisma models",
-      "Multi-context user roles",
-      "Integrated commercial + financial workflow",
-    ],
-    impact: [
-      "Centralized operational workflow for optical stores",
-      "Reduced manual data entry with OCR",
-      "Structured billing and subscription management",
-    ],
+    highlights: {
+      pt: [
+        "472 arquivos TypeScript",
+        "118 rotas de API",
+        "36 modelos Prisma",
+        "Papéis de usuário multi-contexto",
+        "Fluxo comercial + financeiro integrado",
+      ],
+      en: [
+        "472 TypeScript files",
+        "118 API routes",
+        "36 Prisma models",
+        "Multi-context user roles",
+        "Integrated commercial + financial workflow",
+      ],
+    },
+    impact: {
+      pt: [
+        "Fluxo operacional de óticas centralizado",
+        "Redução de entrada manual de dados com OCR",
+        "Billing e gestão de assinaturas estruturados",
+      ],
+      en: [
+        "Centralized operational workflow for optical stores",
+        "Reduced manual data entry with OCR",
+        "Structured billing and subscription management",
+      ],
+    },
     results: {
       pt: [
         "Antes: comercial, financeiro e laboratório trabalhavam em fluxos paralelos -> Depois: operação unificada ponta a ponta.",
@@ -392,8 +497,10 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
   {
     slug: "gordo-construcoes",
     title: "Gordo Construções – Fullstack Real Estate Platform",
-    shortDescription:
-      "Fullstack real estate platform with public catalog, lead capture and authenticated admin panel.",
+    shortDescription: {
+      pt: "Plataforma imobiliária fullstack com catálogo público, captação de leads e painel admin autenticado.",
+      en: "Fullstack real estate platform with public catalog, lead capture and authenticated admin panel.",
+    },
     description: {
       pt: `Plataforma imobiliária fullstack desenvolvida com Next.js 16.
 Inclui site institucional, catálogo público com filtros,
@@ -425,13 +532,22 @@ I also integrated cloud media storage and performance-oriented ISR workflows.`,
       "NextAuth",
       "Vercel Blob",
     ],
-    architecture: [
-      "App Router fullstack architecture",
-      "JWT-based authentication",
-      "RBAC via middleware",
-      "Relational domain modeling with Prisma",
-      "Cloud file storage integration",
-    ],
+    architecture: {
+      pt: [
+        "Arquitetura fullstack com App Router",
+        "Autenticação baseada em JWT",
+        "RBAC via middleware",
+        "Modelagem relacional de domínio com Prisma",
+        "Integração com armazenamento de arquivos em nuvem",
+      ],
+      en: [
+        "App Router fullstack architecture",
+        "JWT-based authentication",
+        "RBAC via middleware",
+        "Relational domain modeling with Prisma",
+        "Cloud file storage integration",
+      ],
+    },
     technicalDecisions: {
       pt: [
         "Escolhi RBAC no middleware em vez de checagens somente na UI para garantir enforcement antes da renderização.",
@@ -444,18 +560,34 @@ I also integrated cloud media storage and performance-oriented ISR workflows.`,
         "I chose ISR on public pages instead of fully dynamic rendering to balance SEO, speed, and freshness.",
       ],
     },
-    highlights: [
-      "CRUD with ownership validation",
-      "Conditional validation in lead API",
-      "Activity logging for audit trail",
-      "Dynamic metadata per property",
-      "ISR for performance optimization",
-    ],
-    impact: [
-      "Centralized real estate operations",
-      "Structured lead capture workflow",
-      "Improved SEO and property discoverability",
-    ],
+    highlights: {
+      pt: [
+        "CRUD com validação de ownership",
+        "Validação condicional na API de leads",
+        "Log de atividade para trilha de auditoria",
+        "Metadata dinâmica por imóvel",
+        "ISR para otimização de performance",
+      ],
+      en: [
+        "CRUD with ownership validation",
+        "Conditional validation in lead API",
+        "Activity logging for audit trail",
+        "Dynamic metadata per property",
+        "ISR for performance optimization",
+      ],
+    },
+    impact: {
+      pt: [
+        "Operação imobiliária centralizada",
+        "Fluxo de captação de leads estruturado",
+        "SEO e discoverability de imóveis aprimorados",
+      ],
+      en: [
+        "Centralized real estate operations",
+        "Structured lead capture workflow",
+        "Improved SEO and property discoverability",
+      ],
+    },
     results: {
       pt: [
         "Antes: catálogo público e gestão interna sem sincronização confiável -> Depois: operação imobiliária centralizada.",
@@ -479,8 +611,10 @@ I also integrated cloud media storage and performance-oriented ISR workflows.`,
   {
     slug: "tia-emilia",
     title: "Tia Emília – Digital Product E-commerce with AI & PIX",
-    shortDescription:
-      "Fullstack digital product platform with PIX checkout, webhook processing and AI-assisted content.",
+    shortDescription: {
+      pt: "Plataforma fullstack de produtos digitais com checkout PIX, processamento de webhook e conteúdo assistido por IA.",
+      en: "Fullstack digital product platform with PIX checkout, webhook processing and AI-assisted content.",
+    },
     description: {
       pt: `Plataforma fullstack para venda de produtos digitais educativos,
 com checkout via PIX (Mercado Pago), webhook assíncrono,
@@ -514,13 +648,22 @@ I organized transactional flows to reduce manual intervention and increase opera
       "Vercel Blob",
       "OpenAI API",
     ],
-    architecture: [
-      "App Router fullstack architecture",
-      "Server Actions + API Routes",
-      "Asynchronous webhook processing",
-      "Unified booking domain model",
-      "External payment gateway integration",
-    ],
+    architecture: {
+      pt: [
+        "Arquitetura fullstack com App Router",
+        "Server Actions + API Routes",
+        "Processamento assíncrono de webhook",
+        "Modelo de domínio unificado de agendamento",
+        "Integração com gateway de pagamento externo",
+      ],
+      en: [
+        "App Router fullstack architecture",
+        "Server Actions + API Routes",
+        "Asynchronous webhook processing",
+        "Unified booking domain model",
+        "External payment gateway integration",
+      ],
+    },
     technicalDecisions: {
       pt: [
         "Escolhi webhook idempotente em vez de processamento cego de eventos para evitar duplicidade financeira.",
@@ -533,18 +676,34 @@ I organized transactional flows to reduce manual intervention and increase opera
         "I chose transactional email delivery instead of manual fulfillment to guarantee traceability and consistency.",
       ],
     },
-    highlights: [
-      "PIX QR code dynamic generation",
-      "Idempotent webhook reconciliation",
-      "Booking overlap conflict resolution",
-      "AI-assisted editorial workflow",
-      "Transactional email delivery",
-    ],
-    impact: [
-      "Automated digital product delivery",
-      "Reduced manual payment verification",
-      "Unified booking and event management",
-    ],
+    highlights: {
+      pt: [
+        "Geração dinâmica de QR Code PIX",
+        "Reconciliação idempotente de webhook",
+        "Resolução de conflito por sobreposição de agenda",
+        "Fluxo editorial assistido por IA",
+        "Entrega de e-mail transacional",
+      ],
+      en: [
+        "PIX QR code dynamic generation",
+        "Idempotent webhook reconciliation",
+        "Booking overlap conflict resolution",
+        "AI-assisted editorial workflow",
+        "Transactional email delivery",
+      ],
+    },
+    impact: {
+      pt: [
+        "Entrega automatizada de produtos digitais",
+        "Redução da verificação manual de pagamento",
+        "Gestão unificada de agenda e eventos",
+      ],
+      en: [
+        "Automated digital product delivery",
+        "Reduced manual payment verification",
+        "Unified booking and event management",
+      ],
+    },
     results: {
       pt: [
         "Antes: confirmação de pagamento e entrega eram manuais -> Depois: fluxo automatizado com webhook e envio transacional.",
