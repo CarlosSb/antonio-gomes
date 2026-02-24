@@ -137,13 +137,17 @@ I standardized metadata, sitemap, and structured data to improve indexing consis
         label: "Live",
         href: "https://nextjs-ong-tudo-por-amor.vercel.app/",
       },
+      {
+        label: "Repo",
+        href: "https://github.com/carlossb",
+      },
     ],
     featured: true,
     seoTitle: "ONG Tudo por Amor | Antonio Gomes",
   },
   {
     slug: "digital-net-telecom",
-    title: "Digital.Net Telecom – Multi-City ISP Platform",
+    title: "Digital.Net Telecom – Plataforma ISP Multi-Cidade",
     shortDescription: {
       pt: "Plataforma fullstack para operação de ISP com arquitetura multi-cidade, painel admin e APIs testadas.",
       en: "Fullstack ISP operations platform with multi-city architecture, admin panel and tested APIs.",
@@ -257,12 +261,16 @@ I optimized landing pages for conversion and operational consistency across city
         label: "Live",
         href: "https://digital-net-telecom.vercel.app/",
       },
+      {
+        label: "Repo",
+        href: "https://github.com/carlossb",
+      },
     ],
     seoTitle: "Digital.Net Telecom | Antonio Gomes",
   },
   {
     slug: "provedor-connect",
-    title: "Provedor Connect – ISP Platform with SGP Integration",
+    title: "Provedor Connect – Plataforma ISP com Integração SGP",
     shortDescription: {
       pt: "Plataforma fullstack para ISP com portal de autoatendimento, dashboard admin e drivers SGP desacoplados.",
       en: "Fullstack ISP platform with self-service portal, admin dashboard and decoupled SGP drivers.",
@@ -373,12 +381,16 @@ This allowed integration with multiple SGP providers without rewriting the appli
         label: "Live",
         href: "https://provedor-connect-sand.vercel.app/",
       },
+      {
+        label: "Repo",
+        href: "https://github.com/carlossb",
+      },
     ],
     seoTitle: "Provedor Connect | Antonio Gomes",
   },
   {
     slug: "otica-plus",
-    title: "ÓticaPlus – SaaS Multi-Tenant for Optical Stores",
+    title: "ÓticaPlus – SaaS Multi-Tenant para Óticas",
     shortDescription: {
       pt: "SaaS fullstack multi-tenant para CRM, gestão financeira, billing e OCR com IA.",
       en: "Fullstack multi-tenant SaaS for CRM, financial management, billing and AI-powered OCR.",
@@ -490,13 +502,17 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
         label: "Live",
         href: "https://otica-plus-app.vercel.app/",
       },
+      {
+        label: "Repo",
+        href: "https://github.com/carlossb",
+      },
     ],
     featured: true,
     seoTitle: "ÓticaPlus | Antonio Gomes",
   },
   {
     slug: "gordo-construcoes",
-    title: "Gordo Construções – Fullstack Real Estate Platform",
+    title: "Gordo Construções – Plataforma Imobiliária Fullstack",
     shortDescription: {
       pt: "Plataforma imobiliária fullstack com catálogo público, captação de leads e painel admin autenticado.",
       en: "Fullstack real estate platform with public catalog, lead capture and authenticated admin panel.",
@@ -605,12 +621,16 @@ I also integrated cloud media storage and performance-oriented ISR workflows.`,
         label: "Live",
         href: "https://gordo-construcoes.vercel.app/",
       },
+      {
+        label: "Repo",
+        href: "https://github.com/carlossb",
+      },
     ],
     seoTitle: "Gordo Construções | Antonio Gomes",
   },
   {
     slug: "tia-emilia",
-    title: "Tia Emília – Digital Product E-commerce with AI & PIX",
+    title: "Tia Emília – E-commerce de Produtos Digitais com IA e PIX",
     shortDescription: {
       pt: "Plataforma fullstack de produtos digitais com checkout PIX, processamento de webhook e conteúdo assistido por IA.",
       en: "Fullstack digital product platform with PIX checkout, webhook processing and AI-assisted content.",
@@ -720,6 +740,10 @@ I organized transactional flows to reduce manual intervention and increase opera
       {
         label: "Live",
         href: "https://tia-emilia-next.vercel.app/",
+      },
+      {
+        label: "Repo",
+        href: "https://github.com/carlossb",
       },
     ],
     seoTitle: "Tia Emília | Antonio Gomes",
