@@ -326,6 +326,64 @@ I optimized landing pages for conversion and operational consistency across city
         "Structured lead management workflow",
       ],
     },
+    gallery: [
+      {
+        src: "/cases/digital-net-telecom/overview.svg",
+        alt: {
+          pt: "Visão geral da plataforma Digital.Net Telecom",
+          en: "Digital.Net Telecom platform overview",
+        },
+        caption: {
+          pt: "Landing institucional com arquitetura multi-cidade e conteúdo operacional.",
+          en: "Institutional landing with multi-city architecture and operational content.",
+        },
+      },
+      {
+        src: "/cases/digital-net-telecom/flow.svg",
+        alt: {
+          pt: "Fluxo operacional e APIs da Digital.Net Telecom",
+          en: "Digital.Net Telecom operational flow and APIs",
+        },
+        caption: {
+          pt: "Fluxo de operação com validações formais e consistência entre módulos.",
+          en: "Operational flow with formal validation and consistent modules.",
+        },
+      },
+      {
+        src: "/cases/digital-net-telecom/admin.svg",
+        alt: {
+          pt: "Painel administrativo da Digital.Net Telecom",
+          en: "Digital.Net Telecom admin dashboard",
+        },
+        caption: {
+          pt: "Dashboard para gestão centralizada de operação e conteúdo.",
+          en: "Dashboard for centralized operations and content management.",
+        },
+      },
+    ],
+    metrics: [
+      {
+        label: { pt: "Lighthouse", en: "Lighthouse" },
+        value: {
+          pt: "Mobile: [preencher] | Desktop: [preencher]",
+          en: "Mobile: [fill] | Desktop: [fill]",
+        },
+      },
+      {
+        label: { pt: "Tempo de publicação", en: "Publishing time" },
+        value: {
+          pt: "Antes: [preencher] -> Depois: [preencher]",
+          en: "Before: [fill] -> After: [fill]",
+        },
+      },
+      {
+        label: { pt: "SEO / Google Search Console", en: "SEO / Google Search Console" },
+        value: {
+          pt: "Impressões: [preencher] | Cliques: [preencher] | CTR: [preencher]",
+          en: "Impressions: [fill] | Clicks: [fill] | CTR: [fill]",
+        },
+      },
+    ],
     results: {
       pt: [
         "Antes: operação distribuída em fluxos desconectados -> Depois: gestão centralizada em uma única plataforma.",
@@ -446,6 +504,64 @@ This allowed integration with multiple SGP providers without rewriting the appli
         "Lower coupling with external systems",
       ],
     },
+    gallery: [
+      {
+        src: "/cases/provedor-connect/overview.svg",
+        alt: {
+          pt: "Visão geral da plataforma Provedor Connect",
+          en: "Provedor Connect platform overview",
+        },
+        caption: {
+          pt: "Landing comercial e jornada de autoatendimento para clientes ISP.",
+          en: "Commercial landing and customer self-service journey for ISP.",
+        },
+      },
+      {
+        src: "/cases/provedor-connect/flow.svg",
+        alt: {
+          pt: "Fluxo de integração SGP na Provedor Connect",
+          en: "Provedor Connect SGP integration flow",
+        },
+        caption: {
+          pt: "Camada de drivers desacoplada para integração com múltiplos SGPs.",
+          en: "Decoupled driver layer for multi-SGP integration.",
+        },
+      },
+      {
+        src: "/cases/provedor-connect/admin.svg",
+        alt: {
+          pt: "Painel administrativo da Provedor Connect",
+          en: "Provedor Connect admin dashboard",
+        },
+        caption: {
+          pt: "Painel para operação e autenticação segura com contexto administrativo.",
+          en: "Dashboard for operations and secure admin authentication.",
+        },
+      },
+    ],
+    metrics: [
+      {
+        label: { pt: "Lighthouse", en: "Lighthouse" },
+        value: {
+          pt: "Mobile: [preencher] | Desktop: [preencher]",
+          en: "Mobile: [fill] | Desktop: [fill]",
+        },
+      },
+      {
+        label: { pt: "Tempo de publicação", en: "Publishing time" },
+        value: {
+          pt: "Antes: [preencher] -> Depois: [preencher]",
+          en: "Before: [fill] -> After: [fill]",
+        },
+      },
+      {
+        label: { pt: "SEO / Google Search Console", en: "SEO / Google Search Console" },
+        value: {
+          pt: "Impressões: [preencher] | Cliques: [preencher] | CTR: [preencher]",
+          en: "Impressions: [fill] | Clicks: [fill] | CTR: [fill]",
+        },
+      },
+    ],
     results: {
       pt: [
         "Antes: aquisição, autoatendimento e backoffice em sistemas separados -> Depois: operação unificada em uma única aplicação.",
@@ -565,6 +681,64 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
         "Structured billing and subscription management",
       ],
     },
+    gallery: [
+      {
+        src: "/cases/otica-plus/overview.svg",
+        alt: {
+          pt: "Visão geral do SaaS ÓticaPlus",
+          en: "ÓticaPlus SaaS overview",
+        },
+        caption: {
+          pt: "Visão do produto com módulos de CRM, financeiro e gestão operacional.",
+          en: "Product overview with CRM, financial, and operational modules.",
+        },
+      },
+      {
+        src: "/cases/otica-plus/flow.svg",
+        alt: {
+          pt: "Fluxo de pedidos e OCR no ÓticaPlus",
+          en: "ÓticaPlus order and OCR flow",
+        },
+        caption: {
+          pt: "Fluxo comercial e financeiro integrado com suporte a OCR.",
+          en: "Integrated commercial and financial flow with OCR support.",
+        },
+      },
+      {
+        src: "/cases/otica-plus/admin.svg",
+        alt: {
+          pt: "Painel administrativo do ÓticaPlus",
+          en: "ÓticaPlus admin dashboard",
+        },
+        caption: {
+          pt: "Gestão de contexto multi-tenant com papéis e permissões granulares.",
+          en: "Multi-tenant management with granular roles and permissions.",
+        },
+      },
+    ],
+    metrics: [
+      {
+        label: { pt: "Lighthouse", en: "Lighthouse" },
+        value: {
+          pt: "Mobile: [preencher] | Desktop: [preencher]",
+          en: "Mobile: [fill] | Desktop: [fill]",
+        },
+      },
+      {
+        label: { pt: "Tempo de publicação", en: "Publishing time" },
+        value: {
+          pt: "Antes: [preencher] -> Depois: [preencher]",
+          en: "Before: [fill] -> After: [fill]",
+        },
+      },
+      {
+        label: { pt: "SEO / Google Search Console", en: "SEO / Google Search Console" },
+        value: {
+          pt: "Impressões: [preencher] | Cliques: [preencher] | CTR: [preencher]",
+          en: "Impressions: [fill] | Clicks: [fill] | CTR: [fill]",
+        },
+      },
+    ],
     results: {
       pt: [
         "Antes: comercial, financeiro e laboratório trabalhavam em fluxos paralelos -> Depois: operação unificada ponta a ponta.",
@@ -686,6 +860,64 @@ I also integrated cloud media storage and performance-oriented ISR workflows.`,
         "Improved SEO and property discoverability",
       ],
     },
+    gallery: [
+      {
+        src: "/cases/gordo-construcoes/overview.svg",
+        alt: {
+          pt: "Visão geral da plataforma Gordo Construções",
+          en: "Gordo Construções platform overview",
+        },
+        caption: {
+          pt: "Catálogo imobiliário com navegação pública e busca orientada a conversão.",
+          en: "Real estate catalog with public navigation and conversion-oriented search.",
+        },
+      },
+      {
+        src: "/cases/gordo-construcoes/flow.svg",
+        alt: {
+          pt: "Fluxo de captação de leads na Gordo Construções",
+          en: "Gordo Construções lead capture flow",
+        },
+        caption: {
+          pt: "Fluxo de lead com validações condicionais e rastreabilidade.",
+          en: "Lead flow with conditional validation and traceability.",
+        },
+      },
+      {
+        src: "/cases/gordo-construcoes/admin.svg",
+        alt: {
+          pt: "Painel administrativo da Gordo Construções",
+          en: "Gordo Construções admin dashboard",
+        },
+        caption: {
+          pt: "Painel autenticado para CRUD com regras de ownership e auditoria.",
+          en: "Authenticated dashboard for CRUD with ownership and audit rules.",
+        },
+      },
+    ],
+    metrics: [
+      {
+        label: { pt: "Lighthouse", en: "Lighthouse" },
+        value: {
+          pt: "Mobile: [preencher] | Desktop: [preencher]",
+          en: "Mobile: [fill] | Desktop: [fill]",
+        },
+      },
+      {
+        label: { pt: "Tempo de publicação", en: "Publishing time" },
+        value: {
+          pt: "Antes: [preencher] -> Depois: [preencher]",
+          en: "Before: [fill] -> After: [fill]",
+        },
+      },
+      {
+        label: { pt: "SEO / Google Search Console", en: "SEO / Google Search Console" },
+        value: {
+          pt: "Impressões: [preencher] | Cliques: [preencher] | CTR: [preencher]",
+          en: "Impressions: [fill] | Clicks: [fill] | CTR: [fill]",
+        },
+      },
+    ],
     results: {
       pt: [
         "Antes: catálogo público e gestão interna sem sincronização confiável -> Depois: operação imobiliária centralizada.",
@@ -806,6 +1038,64 @@ I organized transactional flows to reduce manual intervention and increase opera
         "Unified booking and event management",
       ],
     },
+    gallery: [
+      {
+        src: "/cases/tia-emilia/overview.svg",
+        alt: {
+          pt: "Visão geral do e-commerce Tia Emília",
+          en: "Tia Emília e-commerce overview",
+        },
+        caption: {
+          pt: "Página de produtos digitais com foco em aquisição e checkout.",
+          en: "Digital products page focused on acquisition and checkout.",
+        },
+      },
+      {
+        src: "/cases/tia-emilia/flow.svg",
+        alt: {
+          pt: "Fluxo PIX e webhook da Tia Emília",
+          en: "Tia Emília PIX and webhook flow",
+        },
+        caption: {
+          pt: "Checkout PIX com reconciliação idempotente e processamento assíncrono.",
+          en: "PIX checkout with idempotent reconciliation and asynchronous processing.",
+        },
+      },
+      {
+        src: "/cases/tia-emilia/admin.svg",
+        alt: {
+          pt: "Painel de gestão da Tia Emília",
+          en: "Tia Emília management dashboard",
+        },
+        caption: {
+          pt: "Gestão de pedidos e entregas com rastreabilidade de eventos.",
+          en: "Order and fulfillment management with event traceability.",
+        },
+      },
+    ],
+    metrics: [
+      {
+        label: { pt: "Lighthouse", en: "Lighthouse" },
+        value: {
+          pt: "Mobile: [preencher] | Desktop: [preencher]",
+          en: "Mobile: [fill] | Desktop: [fill]",
+        },
+      },
+      {
+        label: { pt: "Tempo de publicação", en: "Publishing time" },
+        value: {
+          pt: "Antes: [preencher] -> Depois: [preencher]",
+          en: "Before: [fill] -> After: [fill]",
+        },
+      },
+      {
+        label: { pt: "SEO / Google Search Console", en: "SEO / Google Search Console" },
+        value: {
+          pt: "Impressões: [preencher] | Cliques: [preencher] | CTR: [preencher]",
+          en: "Impressions: [fill] | Clicks: [fill] | CTR: [fill]",
+        },
+      },
+    ],
     results: {
       pt: [
         "Antes: confirmação de pagamento e entrega eram manuais -> Depois: fluxo automatizado com webhook e envio transacional.",
