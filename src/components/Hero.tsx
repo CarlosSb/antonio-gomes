@@ -31,9 +31,11 @@ export default function Hero({ content, locale }: HeroProps) {
       <div className="relative mx-auto grid min-h-[88svh] w-full max-w-[1200px] grid-cols-1 items-center gap-8 px-4 py-8 sm:px-6 lg:grid-cols-12 lg:gap-6 lg:px-8">
         <div className="space-y-5 lg:col-span-7">
           <p className="text-xs font-medium tracking-wide text-slate-400">{content.hero.availability}</p>
-          <p className="inline-flex max-w-full rounded-full border border-slate-700/90 bg-slate-900/80 px-3 py-1 text-xs font-medium tracking-wide text-slate-300">
-            {content.hero.badge}
-          </p>
+          {content.hero.badge && (
+            <p className="inline-flex max-w-full rounded-full border border-slate-700/90 bg-slate-900/80 px-3 py-1 text-xs font-medium tracking-wide text-slate-300">
+              {content.hero.badge}
+            </p>
+          )}
 
           <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-slate-100 md:text-5xl">
             {content.hero.headlineLead}{" "}
