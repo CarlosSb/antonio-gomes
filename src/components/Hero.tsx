@@ -8,6 +8,9 @@ type HeroProps = {
   locale: Locale;
 };
 
+const heroImageBlurDataURL =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 837'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%230f172a'/%3E%3Cstop offset='1' stop-color='%231e293b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='720' height='837' fill='url(%23g)'/%3E%3C/svg%3E";
+
 export default function Hero({ content, locale }: HeroProps) {
   return (
     <section id="hero" className="relative isolate w-full overflow-hidden border-b border-slate-800/80 min-h-[88svh]">
@@ -80,12 +83,15 @@ export default function Hero({ content, locale }: HeroProps) {
           <div className="absolute -inset-6 rounded-full bg-cyan-400/20 blur-3xl" aria-hidden="true" />
             <div className="relative aspect-[4/5] w-full max-w-[360px] overflow-hidden rounded-2xl border border-slate-700/70">
               <Image
-                src="/og-image.png"
+                src="/hero/og-hero.webp"
                 alt=""
                 aria-hidden="true"
                 fill
                 priority
-                sizes="(max-width: 1024px) 80vw, 360px"
+                fetchPriority="high"
+                placeholder="blur"
+                blurDataURL={heroImageBlurDataURL}
+                sizes="(min-width: 1280px) 360px, (min-width: 1024px) 30vw, 80vw"
                 className="object-cover object-top"
               />
             </div>
