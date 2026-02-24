@@ -14,7 +14,7 @@ export default function Section({ id, title, description, children }: SectionPro
         <div className="space-y-2">
           <h2
             id={id ? `${id}-title` : undefined}
-            className="text-2xl font-semibold tracking-tight text-white"
+            className="text-2xl font-semibold tracking-tight text-white sm:text-3xl"
           >
             {title}
           </h2>

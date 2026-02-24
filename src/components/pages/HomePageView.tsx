@@ -1,4 +1,6 @@
 import Experience from "@/components/Experience";
+import FinalCta from "@/components/FinalCta";
+import EngineeringMindset from "@/components/EngineeringMindset";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
 import Section from "@/components/Section";
@@ -15,13 +17,13 @@ type HomePageViewProps = {
 
 export default function HomePageView({ featuredProjects, content, locale }: HomePageViewProps) {
   return (
-    <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-4 py-10 sm:px-6 sm:py-12">
+    <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-4 py-10 sm:px-6 sm:py-14">
       <Hero content={content} locale={locale} />
 
       <Section
         id="featured-projects"
-        title={content.homePage.featuredProjectsTitle}
-        description={content.homePage.featuredProjectsDescription}
+        title={content.homePage.selectedWorkTitle}
+        description={content.homePage.selectedWorkDescription}
       >
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {featuredProjects.map((project) => (
@@ -30,9 +32,11 @@ export default function HomePageView({ featuredProjects, content, locale }: Home
         </div>
       </Section>
 
+      <EngineeringMindset content={content} />
       <Experience content={content} />
       <Skills content={content} />
       <StudyAreas content={content} />
+      <FinalCta content={content} locale={locale} />
     </main>
   );
 }
