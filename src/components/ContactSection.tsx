@@ -7,6 +7,9 @@ type ContactSectionProps = {
   id?: string;
 };
 
+const whatsappHref =
+  "https://wa.me/5588992017400?text=Oi%20Ant%C3%B4nio!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20uma%20vaga.";
+
 export default function ContactSection({ content, id = "contact" }: ContactSectionProps) {
   return (
     <Section
@@ -15,14 +18,17 @@ export default function ContactSection({ content, id = "contact" }: ContactSecti
       description={content.contactPage.description}
     >
       <article className="space-y-5 rounded-xl border border-slate-800 bg-slate-900/40 p-5 sm:p-6">
-        <div>
+        <div className="space-y-2">
           <a
-            href={`mailto:${content.profile.email}`}
-            aria-label={content.actions.emailMe}
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chamar no WhatsApp"
             className="inline-flex w-full items-center justify-center rounded-md bg-sky-500 px-5 py-3.5 text-base font-semibold text-slate-950 transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:w-auto"
           >
-            {content.actions.emailMe}
+            Chamar no WhatsApp
           </a>
+          <p className="text-sm text-slate-400">Respondo em até 24h.</p>
         </div>
 
         <div className="flex flex-wrap gap-3">
