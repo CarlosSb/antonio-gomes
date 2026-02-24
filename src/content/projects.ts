@@ -982,7 +982,7 @@ I also integrated cloud media storage and performance-oriented ISR workflows.`,
     slug: "tia-emilia",
     title: "Tia Emília – E-commerce de Produtos Digitais com IA e PIX",
     cardImage: {
-      src: "/cases/tia-emilia/overview.png",
+      src: "/cases/tia-emilia/home.png",
       alt: {
         pt: "Visão geral do e-commerce Tia Emília",
         en: "Tia Emília e-commerce overview",

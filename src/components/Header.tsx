@@ -30,6 +30,7 @@ type HeaderProps = {
 export default function Header({ content, locale }: HeaderProps) {
   const homePath = withLocalePath(locale);
   const navigation = [
+    { href: `${homePath}#hero`, label: content.navigation.home },
     { href: `${homePath}#projetos`, label: content.navigation.projects },
     { href: `${homePath}#experiencia`, label: content.sections.experience },
     { href: `${homePath}#skills`, label: content.sections.skills },
