@@ -261,6 +261,11 @@ export const studyAreas: Record<Locale, StudyAreaItem[]> = {
       description:
         "Exploração de fundamentos de IA, LLMs e integração de IA em aplicações web.",
     },
+    {
+      title: "Inglês",
+      description:
+        "Evolução contínua para comunicação técnica clara em contexto internacional (documentação, reuniões e colaboração).",
+    },
   ],
   en: [
     {
@@ -277,6 +282,11 @@ export const studyAreas: Record<Locale, StudyAreaItem[]> = {
       title: "Artificial Intelligence",
       description:
         "Exploring AI fundamentals, LLMs and AI integration into web applications.",
+    },
+    {
+      title: "English",
+      description:
+        "Continuous improvement for clear technical communication in international contexts (documentation, meetings, and collaboration).",
     },
   ],
 };
@@ -443,7 +453,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         ],
         studyingTitle: "Agora estudando",
         studyingLine:
-          "Python, fundamentos de segurança em aplicações web (OWASP e autenticação) e IA aplicada a produtos web.",
+          "Python, fundamentos de segurança em aplicações web (OWASP e autenticação), IA aplicada a produtos web e inglês para comunicação técnica.",
       },
       introTitle: "Introdução",
       introPoints: [
@@ -769,7 +779,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         ],
         studyingTitle: "Currently studying",
         studyingLine:
-          "Python, web application security fundamentals (OWASP and authentication), and AI applied to web products.",
+          "Python, web application security fundamentals (OWASP and authentication), AI applied to web products, and English for technical communication.",
       },
       introTitle: "Intro",
       introPoints: [
