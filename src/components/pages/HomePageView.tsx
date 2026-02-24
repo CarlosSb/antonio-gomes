@@ -17,7 +17,7 @@ type HomePageViewProps = {
 
 export default function HomePageView({ featuredProjects, content, locale }: HomePageViewProps) {
   return (
-    <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-4 py-10 sm:px-6 sm:py-14">
+    <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-4 pb-16 sm:px-6 sm:pb-20">
       <Hero content={content} locale={locale} />
 
       <Section
