@@ -60,7 +60,6 @@ export default function ProjectCard({ project, content, locale, showDetails = tr
           ) : (
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(56,189,248,0.28),transparent_55%),linear-gradient(140deg,rgba(15,23,42,0.95),rgba(2,6,23,1))]" />
           )}
-          <p className="relative text-xs font-medium tracking-wide text-slate-300">Projeto em produção</p>
         </div>
       </div>
 
