@@ -1,11 +1,11 @@
-"use client";
-
 import Section from "@/components/Section";
-import { useLocalizedContent } from "@/lib/language";
+import type { LocalizedProfileContent } from "@/content/profile";
 
-export default function ContactPageView() {
-  const content = useLocalizedContent();
+type ContactPageViewProps = {
+  content: LocalizedProfileContent;
+};
 
+export default function ContactPageView({ content }: ContactPageViewProps) {
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6 sm:py-12">
       <Section

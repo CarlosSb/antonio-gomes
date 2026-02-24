@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ThemeProvider from "@/components/ThemeProvider";
-import { LanguageProvider } from "@/lib/language";
 import { defaultLocale, profileContent } from "@/content/profile";
 
 const inter = Inter({
@@ -20,9 +16,14 @@ export const metadata: Metadata = {
   description: baseContent.seo.defaultDescription,
 };
 
-const themeInitScript = `
+const initScript = `
 (() => {
   try {
+    const pathLocale = location.pathname.split("/").filter(Boolean)[0];
+    if (pathLocale === "pt" || pathLocale === "en") {
+      document.documentElement.lang = pathLocale;
+    }
+
     const theme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const shouldUseDarkTheme = theme === "dark" || ((!theme || theme === "system") && prefersDark);
@@ -42,23 +43,17 @@ export default function RootLayout({
   return (
     <html lang={defaultLocale} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script dangerouslySetInnerHTML={{ __html: initScript }} />
       </head>
       <body
         className={`${inter.variable} bg-slate-950 font-sans text-slate-100 antialiased selection:bg-sky-500 selection:text-slate-950`}
       >
-        <ThemeProvider>
-          <LanguageProvider>
-            <div
-              className="relative min-h-screen bg-slate-950"
-              style={{ backgroundImage: "var(--app-bg)" }}
-            >
-              <Header />
-              {children}
-              <Footer />
-            </div>
-          </LanguageProvider>
-        </ThemeProvider>
+        <div
+          className="relative min-h-screen bg-slate-950"
+          style={{ backgroundImage: "var(--app-bg)" }}
+        >
+          {children}
+        </div>
       </body>
     </html>
   );

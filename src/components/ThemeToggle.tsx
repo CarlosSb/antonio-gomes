@@ -1,7 +1,33 @@
 "use client";
 
-import { useTheme } from "@/components/ThemeProvider";
-import { useLocalizedContent } from "@/lib/language";
+import { useState } from "react";
+
+type ThemeToggleProps = {
+  themeToggleLabel: string;
+  switchToDarkThemeLabel: string;
+  switchToLightThemeLabel: string;
+};
+
+type ResolvedTheme = "dark" | "light";
+
+function getResolvedTheme(): ResolvedTheme {
+  if (typeof window === "undefined") {
+    return "dark";
+  }
+
+  const storedTheme = window.localStorage.getItem("theme");
+  if (storedTheme === "dark" || storedTheme === "light") {
+    return storedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function applyTheme(theme: ResolvedTheme) {
+  document.documentElement.classList.toggle("dark", theme === "dark");
+  document.documentElement.style.colorScheme = theme;
+  window.localStorage.setItem("theme", theme);
+}
 
 function SunIcon() {
   return (
@@ -31,24 +57,33 @@ function MoonIcon() {
   );
 }
 
-export default function ThemeToggle() {
-  const { resolvedTheme, toggleTheme } = useTheme();
-  const content = useLocalizedContent();
+export default function ThemeToggle({
+  themeToggleLabel,
+  switchToDarkThemeLabel,
+  switchToLightThemeLabel,
+}: ThemeToggleProps) {
+  const [resolvedTheme, setResolvedTheme] = useState<ResolvedTheme>(() =>
+    getResolvedTheme(),
+  );
 
   const nextThemeLabel =
-    resolvedTheme === "dark"
-      ? content.accessibility.switchToLightTheme
-      : content.accessibility.switchToDarkTheme;
+    resolvedTheme === "dark" ? switchToLightThemeLabel : switchToDarkThemeLabel;
+
+  const handleToggle = () => {
+    const nextTheme: ResolvedTheme = resolvedTheme === "dark" ? "light" : "dark";
+    setResolvedTheme(nextTheme);
+    applyTheme(nextTheme);
+  };
 
   return (
     <button
       type="button"
-      onClick={toggleTheme}
+      onClick={handleToggle}
       aria-label={nextThemeLabel}
       title={nextThemeLabel}
       className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-slate-700 bg-slate-900 text-slate-200 transition hover:border-slate-600 hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
     >
-      <span className="sr-only">{content.accessibility.themeToggle}</span>
+      <span className="sr-only">{themeToggleLabel}</span>
       {resolvedTheme === "dark" ? <SunIcon /> : <MoonIcon />}
     </button>
   );

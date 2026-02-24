@@ -1,11 +1,11 @@
-"use client";
-
 import Section from "@/components/Section";
-import { useLocalizedContent } from "@/lib/language";
+import type { LocalizedProfileContent } from "@/content/profile";
 
-export default function StudyAreas() {
-  const content = useLocalizedContent();
+type StudyAreasProps = {
+  content: LocalizedProfileContent;
+};
 
+export default function StudyAreas({ content }: StudyAreasProps) {
   return (
     <Section id="study-areas" title={content.sections.studyAreas}>
       <div className="grid gap-4 md:grid-cols-3">

@@ -1,17 +1,16 @@
-"use client";
-
 import Link from "next/link";
+import type { LocalizedProfileContent, Locale } from "@/content/profile";
 import type { Project } from "@/content/projects";
 import { getProjectSummary } from "@/lib/content";
-import { useLocalizedContent, useLanguage } from "@/lib/language";
+import { withLocalePath } from "@/lib/i18n";
 
 type ProjectCardProps = {
   project: Project;
+  content: LocalizedProfileContent;
+  locale: Locale;
 };
 
-export default function ProjectCard({ project }: ProjectCardProps) {
-  const { locale } = useLanguage();
-  const content = useLocalizedContent();
+export default function ProjectCard({ project, content, locale }: ProjectCardProps) {
   const liveUrl = project.links?.[0]?.href ?? project.liveUrl;
 
   return (
@@ -46,7 +45,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </a>
         ) : null}
         <Link
-          href={`/projects/${project.slug}`}
+          href={withLocalePath(locale, `/projects/${project.slug}`)}
           className="rounded-md border border-slate-700 px-3 py-2 text-sm font-semibold text-slate-100 transition hover:border-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
         >
           {content.actions.viewDetails}

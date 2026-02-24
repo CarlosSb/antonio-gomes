@@ -1,11 +1,11 @@
-"use client";
-
 import Section from "@/components/Section";
-import { useLocalizedContent } from "@/lib/language";
+import type { LocalizedProfileContent } from "@/content/profile";
 
-export default function Experience() {
-  const content = useLocalizedContent();
+type ExperienceProps = {
+  content: LocalizedProfileContent;
+};
 
+export default function Experience({ content }: ExperienceProps) {
   return (
     <Section id="experience" title={content.sections.experience}>
       <div className="space-y-4">

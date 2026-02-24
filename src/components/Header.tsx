@@ -1,10 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import LanguageToggle from "@/components/LanguageToggle";
 import ThemeToggle from "@/components/ThemeToggle";
-import { useLocalizedContent } from "@/lib/language";
+import type { LocalizedProfileContent, Locale } from "@/content/profile";
+import { withLocalePath } from "@/lib/i18n";
 
 const iconClassName = "h-5 w-5";
 
@@ -24,22 +22,24 @@ function LinkedInIcon() {
   );
 }
 
-export default function Header() {
-  const pathname = usePathname();
-  const content = useLocalizedContent();
+type HeaderProps = {
+  content: LocalizedProfileContent;
+  locale: Locale;
+};
 
+export default function Header({ content, locale }: HeaderProps) {
   const navigation = [
-    { href: "/", label: content.navigation.home },
-    { href: "/projects", label: content.navigation.projects },
-    { href: "/about", label: content.navigation.about },
-    { href: "/resume", label: content.navigation.resume },
-    { href: "/contact", label: content.navigation.contact },
+    { href: withLocalePath(locale), label: content.navigation.home },
+    { href: withLocalePath(locale, "/projects"), label: content.navigation.projects },
+    { href: withLocalePath(locale, "/about"), label: content.navigation.about },
+    { href: withLocalePath(locale, "/resume"), label: content.navigation.resume },
+    { href: withLocalePath(locale, "/contact"), label: content.navigation.contact },
   ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <Link href="/" className="text-sm font-semibold tracking-wide text-slate-100">
+        <Link href={withLocalePath(locale)} className="text-sm font-semibold tracking-wide text-slate-100">
           {content.profile.name}
         </Link>
 
@@ -47,22 +47,15 @@ export default function Header() {
           aria-label={content.accessibility.mainNavigation}
           className="hidden items-center gap-5 md:flex"
         >
-          {navigation.map((item) => {
-            const isActive =
-              item.href === "/" ? pathname === item.href : pathname.startsWith(item.href);
-
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 ${
-                  isActive ? "text-sky-400" : "text-slate-300 hover:text-slate-100"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -84,8 +77,19 @@ export default function Header() {
           >
             <LinkedInIcon />
           </a>
-          <ThemeToggle />
-          <LanguageToggle />
+          <ThemeToggle
+            themeToggleLabel={content.accessibility.themeToggle}
+            switchToDarkThemeLabel={content.accessibility.switchToDarkTheme}
+            switchToLightThemeLabel={content.accessibility.switchToLightTheme}
+          />
+          <LanguageToggle
+            locale={locale}
+            languageToggleLabel={content.accessibility.languageToggle}
+            ptLabel={content.actions.languagePt}
+            enLabel={content.actions.languageEn}
+            ptShortLabel={content.actions.languagePtShort}
+            enShortLabel={content.actions.languageEnShort}
+          />
         </div>
       </div>
 
@@ -93,22 +97,15 @@ export default function Header() {
         aria-label={content.accessibility.mobileNavigation}
         className="mx-auto flex w-full max-w-6xl gap-4 overflow-x-auto px-4 pb-4 md:hidden sm:px-6"
       >
-        {navigation.map((item) => {
-          const isActive =
-            item.href === "/" ? pathname === item.href : pathname.startsWith(item.href);
-
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`whitespace-nowrap text-sm transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 ${
-                isActive ? "text-sky-400" : "text-slate-300 hover:text-slate-100"
-              }`}
-            >
-              {item.label}
-            </Link>
-          );
-        })}
+        {navigation.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="whitespace-nowrap text-sm text-slate-300 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+          >
+            {item.label}
+          </Link>
+        ))}
       </nav>
     </header>
   );

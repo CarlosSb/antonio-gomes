@@ -1,9 +1,10 @@
-"use client";
+import type { LocalizedProfileContent } from "@/content/profile";
 
-import { useLocalizedContent } from "@/lib/language";
+type FooterProps = {
+  content: LocalizedProfileContent;
+};
 
-export default function Footer() {
-  const content = useLocalizedContent();
+export default function Footer({ content }: FooterProps) {
   const year = new Date().getFullYear();
 
   const rights = content.footer.rights

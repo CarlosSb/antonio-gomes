@@ -1,11 +1,11 @@
-"use client";
-
 import Section from "@/components/Section";
-import { useLocalizedContent } from "@/lib/language";
+import type { LocalizedProfileContent } from "@/content/profile";
 
-export default function Skills() {
-  const content = useLocalizedContent();
+type SkillsProps = {
+  content: LocalizedProfileContent;
+};
 
+export default function Skills({ content }: SkillsProps) {
   return (
     <Section id="skills" title={content.sections.skills}>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
