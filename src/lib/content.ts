@@ -1,11 +1,5 @@
-import { profileContent, defaultLocale, locales, type Locale } from "@/content/profile";
+import { profileContent, defaultLocale, type Locale } from "@/content/profile";
 import { projects, type Project, type ProjectLink } from "@/content/projects";
-
-const validLocales = new Set<Locale>(locales);
-
-export function isLocale(value: string): value is Locale {
-  return validLocales.has(value as Locale);
-}
 
 export function getContent(locale: Locale = defaultLocale) {
   return profileContent[locale];
