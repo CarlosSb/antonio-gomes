@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
 import { withLocalePath } from "@/lib/i18n";
@@ -6,45 +7,6 @@ type HeroProps = {
   content: LocalizedProfileContent;
   locale: Locale;
 };
-
-function DevIllustration() {
-  return (
-    <svg
-      viewBox="0 0 520 460"
-      className="h-auto w-full max-w-[520px]"
-      aria-hidden="true"
-      role="presentation"
-    >
-      <defs>
-        <linearGradient id="hero-accent" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#38bdf8" />
-          <stop offset="100%" stopColor="#22d3ee" />
-        </linearGradient>
-      </defs>
-
-      <rect x="70" y="300" width="360" height="18" rx="9" fill="#111827" opacity="0.85" />
-      <rect x="100" y="135" width="300" height="180" rx="18" fill="#0f172a" stroke="#334155" />
-      <rect x="122" y="156" width="256" height="124" rx="10" fill="#020617" />
-      <rect x="132" y="168" width="110" height="10" rx="5" fill="url(#hero-accent)" opacity="0.9" />
-      <rect x="132" y="186" width="210" height="8" rx="4" fill="#334155" />
-      <rect x="132" y="202" width="180" height="8" rx="4" fill="#334155" />
-      <rect x="132" y="218" width="220" height="8" rx="4" fill="#334155" />
-      <rect x="132" y="236" width="120" height="28" rx="8" fill="#0369a1" opacity="0.9" />
-
-      <ellipse cx="258" cy="103" rx="34" ry="36" fill="#f8fafc" />
-      <path d="M223 108c6-34 60-34 70 0v16h-70v-16Z" fill="#0f172a" />
-      <rect x="238" y="132" width="40" height="24" rx="10" fill="#f1f5f9" />
-      <path d="M194 230c8-46 36-70 64-70s56 24 64 70v28H194v-28Z" fill="#1e293b" />
-
-      <rect x="208" y="254" width="104" height="26" rx="8" fill="#0b1220" />
-      <rect x="190" y="280" width="140" height="14" rx="6" fill="#1e293b" />
-
-      <rect x="320" y="198" width="52" height="10" rx="5" fill="url(#hero-accent)" />
-      <circle cx="360" cy="118" r="8" fill="#22d3ee" opacity="0.9" />
-      <circle cx="140" cy="124" r="6" fill="#38bdf8" opacity="0.8" />
-    </svg>
-  );
-}
 
 export default function Hero({ content, locale }: HeroProps) {
   return (
@@ -119,9 +81,17 @@ export default function Hero({ content, locale }: HeroProps) {
 
         <div className="relative lg:col-span-5">
           <div className="absolute -inset-6 rounded-full bg-cyan-400/20 blur-3xl" aria-hidden="true" />
-          <div className="relative flex items-center justify-center rounded-3xl border border-slate-800/70 bg-slate-900/60 p-4 sm:p-6">
-            <DevIllustration />
-          </div>
+            <div className="relative aspect-[4/5] w-full max-w-[360px] overflow-hidden rounded-2xl border border-slate-700/70">
+              <Image
+                src="/og-image.png"
+                alt=""
+                aria-hidden="true"
+                fill
+                priority
+                sizes="(max-width: 1024px) 80vw, 360px"
+                className="object-cover object-top"
+              />
+            </div>
         </div>
       </div>
     </section>
