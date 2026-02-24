@@ -23,6 +23,7 @@ export type Project = {
   slug: string;
   title: string;
   mainCase?: boolean;
+  cardImage?: ProjectScreenshot;
   shortDescription?: LocalizedText;
   liveUrl?: string;
   stack: string[];
@@ -47,6 +48,13 @@ export const projects: Project[] = [
     slug: "ong-tudo-por-amor",
     title: "ONG Tudo por Amor",
     mainCase: true,
+    cardImage: {
+      src: "/cases/ong/home.png",
+      alt: {
+        pt: "Tela inicial do projeto ONG Tudo por Amor",
+        en: "ONG Tudo por Amor home screen",
+      },
+    },
     shortDescription: {
       pt: "Plataforma institucional com CMS headless, SEO técnico e publicação contínua para adoção e transparência financeira.",
       en: "Headless CMS institutional platform focused on adoption workflows and financial transparency.",
@@ -230,6 +238,13 @@ I standardized metadata, sitemap, and structured data to improve indexing consis
   {
     slug: "digital-net-telecom",
     title: "Digital.Net Telecom – Plataforma ISP Multi-Cidade",
+    cardImage: {
+      src: "/cases/digital-net-telecom/home.png",
+      alt: {
+        pt: "Tela inicial do projeto Digital.Net Telecom",
+        en: "Digital.Net Telecom home screen",
+      },
+    },
     shortDescription: {
       pt: "Plataforma fullstack para operação de ISP com arquitetura multi-cidade, painel admin e APIs testadas.",
       en: "Fullstack ISP operations platform with multi-city architecture, admin panel and tested APIs.",
@@ -411,6 +426,13 @@ I optimized landing pages for conversion and operational consistency across city
   {
     slug: "provedor-connect",
     title: "Provedor Connect – Plataforma ISP com Integração SGP",
+    cardImage: {
+      src: "/cases/provedor-connect/home.png",
+      alt: {
+        pt: "Tela inicial do projeto Provedor Connect",
+        en: "Provedor Connect home screen",
+      },
+    },
     shortDescription: {
       pt: "Plataforma fullstack para ISP com portal de autoatendimento, dashboard admin e drivers SGP desacoplados.",
       en: "Fullstack ISP platform with self-service portal, admin dashboard and decoupled SGP drivers.",
@@ -589,6 +611,13 @@ This allowed integration with multiple SGP providers without rewriting the appli
   {
     slug: "otica-plus",
     title: "ÓticaPlus – SaaS Multi-Tenant para Óticas",
+    cardImage: {
+      src: "/cases/otica-plus/dashboad.png",
+      alt: {
+        pt: "Tela inicial do projeto ÓticaPlus",
+        en: "ÓticaPlus home screen",
+      },
+    },
     shortDescription: {
       pt: "SaaS fullstack multi-tenant para CRM, gestão financeira, billing e OCR com IA.",
       en: "Fullstack multi-tenant SaaS for CRM, financial management, billing and AI-powered OCR.",
@@ -769,6 +798,13 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
   {
     slug: "gordo-construcoes",
     title: "Gordo Construções – Plataforma Imobiliária Fullstack",
+    cardImage: {
+      src: "/cases/gordo-construcoes/home.png",
+      alt: {
+        pt: "Tela inicial do projeto Gordo Construções",
+        en: "Gordo Construções home screen",
+      },
+    },
     shortDescription: {
       pt: "Plataforma imobiliária fullstack com catálogo público, captação de leads e painel admin autenticado.",
       en: "Fullstack real estate platform with public catalog, lead capture and authenticated admin panel.",
@@ -945,6 +981,13 @@ I also integrated cloud media storage and performance-oriented ISR workflows.`,
   {
     slug: "tia-emilia",
     title: "Tia Emília – E-commerce de Produtos Digitais com IA e PIX",
+    cardImage: {
+      src: "/cases/tia-emilia/overview.png",
+      alt: {
+        pt: "Visão geral do e-commerce Tia Emília",
+        en: "Tia Emília e-commerce overview",
+      },
+    },
     shortDescription: {
       pt: "Plataforma fullstack de produtos digitais com checkout PIX, processamento de webhook e conteúdo assistido por IA.",
       en: "Fullstack digital product platform with PIX checkout, webhook processing and AI-assisted content.",

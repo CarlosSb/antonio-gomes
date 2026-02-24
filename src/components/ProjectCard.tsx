@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
 import type { Project } from "@/content/projects";
-import { getProjectLiveLink, getProjectSummary } from "@/lib/content";
+import { getProjectLiveLink, getProjectSummary, localizeText } from "@/lib/content";
 import { withLocalePath } from "@/lib/i18n";
 
 type ProjectCardProps = {
@@ -12,33 +12,10 @@ type ProjectCardProps = {
   showDetails?: boolean;
 };
 
-const projectHeroImages: Record<string, { src: string; alt: string }> = {
-  "ong-tudo-por-amor": {
-    src: "/cases/ong/tela-home-ong.png",
-    alt: "Tela inicial do projeto ONG Tudo por Amor",
-  },
-  "digital-net-telecom": {
-    src: "/cases/digital-net-telecom/home.png",
-    alt: "Tela inicial do projeto Digital.Net Telecom",
-  },
-  "provedor-connect": {
-    src: "/cases/provedor-connect/home.png",
-    alt: "Tela inicial do projeto Provedor Connect",
-  },
-  "gordo-construcoes": {
-    src: "/cases/gordo-construcoes/home.png",
-    alt: "Tela inicial do projeto Gordo Construções",
-  },
-  "otica-plus": {
-    src: "/cases/otica-plus/dashboad.png",
-    alt: "Tela inicial do dashboad Otica Plus"
-  }
-};
-
 export default function ProjectCard({ project, content, locale, showDetails = true }: ProjectCardProps) {
   const liveLink = getProjectLiveLink(project);
   const caseLink = withLocalePath(locale, `/projects/${project.slug}`);
-  const projectHeroImage = projectHeroImages[project.slug];
+  const projectHeroImage = project.cardImage ?? project.gallery?.[0];
   const summary = getProjectSummary(project, locale);
 
   return (
@@ -50,7 +27,7 @@ export default function ProjectCard({ project, content, locale, showDetails = tr
             <>
               <Image
                 src={projectHeroImage.src}
-                alt={projectHeroImage.alt}
+                alt={localizeText(projectHeroImage.alt, locale)}
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover"
