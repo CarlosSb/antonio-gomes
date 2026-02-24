@@ -79,26 +79,16 @@ export default function Hero({ content, locale }: HeroProps) {
             </span>
           </h1>
 
-          <p className="max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-300/90 sm:text-base">
             {content.hero.description}
           </p>
 
-          <div className="max-w-2xl rounded-lg border border-slate-800/90 bg-slate-900/45 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
-              {content.hero.aboutLabel}
-            </p>
-            <div className="mt-2 space-y-1.5 text-xs leading-relaxed text-slate-400 sm:text-sm">
-              {content.hero.aboutSummaryLines.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
-            </div>
-            <Link
-              href={withLocalePath(locale, "/about")}
-              className="mt-3 inline-flex text-sm font-medium text-sky-400 transition-colors duration-200 hover:text-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
-            >
-              {content.hero.aboutLinkLabel}
-            </Link>
-          </div>
+          <Link
+            href={withLocalePath(locale, "/about")}
+            className="inline-flex w-fit text-sm font-medium text-slate-400 transition-colors duration-200 hover:text-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+          >
+            {content.hero.aboutLinkLabel}
+          </Link>
 
           <div className="flex flex-wrap gap-3">
             <Link

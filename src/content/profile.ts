@@ -46,8 +46,6 @@ type HeroContent = {
   headlineLead: string;
   headlineAccent: string;
   description: string;
-  aboutLabel: string;
-  aboutSummaryLines: string[];
   aboutLinkLabel: string;
   tags: string[];
 };
@@ -278,13 +276,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       headlineLead: "Construo produtos digitais",
       headlineAccent: "rápidos, escaláveis e prontos para crescer.",
       description:
-        "Experiência em SaaS, arquitetura multi-tenant, pagamentos e integrações de IA com foco em entrega real de valor.",
-      aboutLabel: "Sobre",
-      aboutSummaryLines: [
-        "Fullstack há +4 anos, focado em SaaS, integrações e arquitetura escalável.",
-        "Experiência com performance, refatoração de APIs e decisões orientadas a produto.",
-      ],
-      aboutLinkLabel: "Ler mais →",
+        "Engenheiro fullstack com mais de 4 anos de experiência em SaaS, arquitetura multi-tenant, integrações complexas e decisões orientadas a produto. Foco em performance, clareza arquitetural e entrega real em produção.",
+      aboutLinkLabel: "Saiba mais sobre minha trajetória →",
       tags: ["SaaS", "Multi-tenant", "Payments", "IA", "Performance", "DX"],
     },
     homePage: {
@@ -475,13 +468,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       headlineLead: "I build digital products",
       headlineAccent: "that are fast, scalable, and ready to grow.",
       description:
-        "Hands-on experience with SaaS, multi-tenant architecture, payments, and AI integrations focused on measurable product impact.",
-      aboutLabel: "About",
-      aboutSummaryLines: [
-        "Fullstack engineer with 4+ years focused on SaaS, integrations, and scalable architecture.",
-        "Experience in performance work, API refactoring, and product-driven technical decisions.",
-      ],
-      aboutLinkLabel: "Read more →",
+        "Fullstack engineer with over 4 years of experience in SaaS, multi-tenant architecture, complex integrations, and product-driven decision making. Focused on performance, architectural clarity, and real production delivery.",
+      aboutLinkLabel: "Learn more about my journey →",
       tags: ["SaaS", "Multi-tenant", "Payments", "AI", "Performance", "DX"],
     },
     homePage: {
