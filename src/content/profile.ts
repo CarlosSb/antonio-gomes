@@ -17,6 +17,8 @@ type ActionsContent = {
   contact: string;
   downloadResume: string;
   viewDetails: string;
+  caseStudy: string;
+  repository: string;
   liveDemo: string;
   backToProjects: string;
   githubProfile: string;
@@ -279,6 +281,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       contact: "Contato",
       downloadResume: "Baixar Currículo",
       viewDetails: "Ver detalhes",
+      caseStudy: "Case",
+      repository: "Repo",
       liveDemo: "Acessar projeto",
       backToProjects: "Voltar para projetos",
       githubProfile: "GitHub",
@@ -553,6 +557,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       contact: "Contact",
       downloadResume: "Download Resume",
       viewDetails: "View details",
+      caseStudy: "Case",
+      repository: "Repo",
       liveDemo: "Live demo",
       backToProjects: "Back to projects",
       githubProfile: "GitHub",
