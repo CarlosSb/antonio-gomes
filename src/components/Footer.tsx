@@ -18,7 +18,7 @@ export default function Footer({ content, locale }: FooterProps) {
   const navigationLinks = [
     { href: `${homePath}#hero`, label: content.navigation.home },
     { href: `${homePath}#projetos`, label: content.navigation.projects },
-    { href: `${homePath}#case`, label: content.navigation.caseStudy },
+    { href: withLocalePath(locale, "/projects/ong-tudo-por-amor"), label: content.navigation.caseStudy },
     { href: `${homePath}#experiencia`, label: content.sections.experience },
     { href: `${homePath}#skills`, label: content.sections.skills },
     { href: `${homePath}#sobre`, label: content.navigation.about },

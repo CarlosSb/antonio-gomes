@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import HomePageView from "@/components/pages/HomePageView";
 import { locales, type Locale } from "@/content/profile";
-import { getAllProjects, getContent, getProjectBySlug } from "@/lib/content";
+import { getAllProjects, getContent } from "@/lib/content";
 import { isLocale } from "@/lib/i18n";
 import { createMetadata } from "@/lib/seo";
 
@@ -30,12 +30,10 @@ export default async function LocalizedHomePage({ params }: HomePageProps) {
   const { locale } = await params;
   const resolvedLocale: Locale = isLocale(locale) ? locale : "pt";
   const projects = getAllProjects();
-  const mainCaseProject = getProjectBySlug("ong-tudo-por-amor") ?? projects[0]!;
 
   return (
     <HomePageView
       projects={projects}
-      mainCaseProject={mainCaseProject}
       content={getContent(resolvedLocale)}
       locale={resolvedLocale}
     />
