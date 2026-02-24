@@ -76,7 +76,7 @@ export default function Hero({ content, locale }: HeroProps) {
           </ul>
         </div>
 
-        <div className="relative lg:col-span-5">
+        <div className="relative lg:col-span-5 hidden md:block">
           <div className="absolute -inset-6 rounded-full bg-cyan-400/20 blur-3xl" aria-hidden="true" />
             <div className="relative aspect-[4/5] w-full max-w-[360px] overflow-hidden rounded-2xl border border-slate-700/70">
               <Image
