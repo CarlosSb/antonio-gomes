@@ -11,6 +11,23 @@ function joinUrl(pathname: string): string {
   return `${siteUrl}${pathname.startsWith("/") ? pathname : `/${pathname}`}`;
 }
 
+function getLocalizedAlternates(pathname: string) {
+  const normalizedPath = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  const segments = normalizedPath.split("/").filter(Boolean);
+  const firstSegment = segments[0];
+
+  if (firstSegment !== "pt" && firstSegment !== "en") {
+    return undefined;
+  }
+
+  const suffix = segments.slice(1).join("/");
+
+  return {
+    "pt-BR": joinUrl(`/pt${suffix ? `/${suffix}` : ""}`),
+    "en-US": joinUrl(`/en${suffix ? `/${suffix}` : ""}`),
+  };
+}
+
 type CreateMetadataParams = {
   title: string;
   description: string;
@@ -33,6 +50,7 @@ export function createMetadata({
     keywords: content.seo.keywords,
     alternates: {
       canonical: url,
+      languages: getLocalizedAlternates(pathname),
     },
     openGraph: {
       type: "website",
