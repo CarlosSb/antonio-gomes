@@ -48,7 +48,7 @@ function DevIllustration() {
 
 export default function Hero({ content, locale }: HeroProps) {
   return (
-    <section className="relative isolate left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden border-b border-slate-800/80 min-h-[88vh]">
+    <section className="relative isolate w-full overflow-hidden border-b border-slate-800/80 min-h-[calc(100svh-6rem)] md:min-h-[calc(100svh-4.5rem)]">
       <div className="absolute inset-0" style={{ backgroundColor: "var(--hero-base)" }} />
       <div
         className="absolute inset-0"
@@ -66,20 +66,20 @@ export default function Hero({ content, locale }: HeroProps) {
         }}
       />
 
-      <div className="relative mx-auto grid min-h-[88vh] w-full max-w-6xl grid-cols-1 items-center gap-10 px-4 py-10 sm:px-6 lg:grid-cols-12 lg:gap-6">
-        <div className="space-y-7 lg:col-span-7">
-          <p className="inline-flex rounded-full border border-slate-700/90 bg-slate-900/80 px-3 py-1 text-xs font-medium tracking-wide text-slate-300">
+      <div className="relative mx-auto grid min-h-[calc(100svh-6rem)] w-full max-w-6xl grid-cols-1 items-center gap-8 px-4 py-8 md:min-h-[calc(100svh-4.5rem)] sm:px-6 lg:grid-cols-12 lg:gap-6">
+        <div className="space-y-5 lg:col-span-7">
+          <p className="inline-flex max-w-full rounded-full border border-slate-700/90 bg-slate-900/80 px-3 py-1 text-xs font-medium tracking-wide text-slate-300">
             {content.hero.badge}
           </p>
 
-          <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-slate-100 sm:text-6xl">
+          <h1 className="max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-slate-100 sm:text-5xl lg:text-[3.25rem]">
             {content.hero.headlineLead}{" "}
             <span className="bg-gradient-to-r from-sky-300 via-cyan-300 to-sky-500 bg-clip-text text-transparent">
               {content.hero.headlineAccent}
             </span>
           </h1>
 
-          <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+          <p className="max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base">
             {content.hero.description}
           </p>
 
@@ -98,11 +98,11 @@ export default function Hero({ content, locale }: HeroProps) {
             </Link>
           </div>
 
-          <ul className="flex flex-wrap gap-2.5">
+          <ul className="flex flex-wrap gap-2">
             {content.hero.tags.map((tag) => (
               <li
                 key={tag}
-                className="rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-300 transition-all duration-200 hover:-translate-y-1 hover:border-slate-600"
+                className="rounded-full border border-slate-700 bg-slate-900/70 px-2.5 py-1 text-xs text-slate-300 transition-all duration-200 hover:-translate-y-1 hover:border-slate-600"
               >
                 {tag}
               </li>
