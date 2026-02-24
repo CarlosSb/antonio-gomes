@@ -49,13 +49,19 @@ function DevIllustration() {
 export default function Hero({ content, locale }: HeroProps) {
   return (
     <section className="relative isolate left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen overflow-hidden border-b border-slate-800/80 min-h-[88vh]">
-      <div className="absolute inset-0 bg-[#0b0f19]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(34,211,238,0.16),transparent_45%)]" />
+      <div className="absolute inset-0" style={{ backgroundColor: "var(--hero-base)" }} />
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 20% 10%, var(--hero-glow), transparent 45%)",
+        }}
+      />
       <div
         className="absolute inset-0 opacity-[0.08]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #94a3b8 1px, transparent 1px), linear-gradient(to bottom, #94a3b8 1px, transparent 1px)",
+            "linear-gradient(to right, var(--hero-grid) 1px, transparent 1px), linear-gradient(to bottom, var(--hero-grid) 1px, transparent 1px)",
           backgroundSize: "32px 32px",
         }}
       />
