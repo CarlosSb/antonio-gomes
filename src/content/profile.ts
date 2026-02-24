@@ -262,9 +262,9 @@ export const studyAreas: Record<Locale, StudyAreaItem[]> = {
         "Exploração de fundamentos de IA, LLMs e integração de IA em aplicações web.",
     },
     {
-      title: "Inglês",
+      title: "Inglês (Autodidata)",
       description:
-        "Evolução contínua para comunicação técnica clara em contexto internacional (documentação, reuniões e colaboração).",
+        "Evolução contínua e autodidata para comunicação técnica clara em contexto internacional (documentação, reuniões e colaboração).",
     },
   ],
   en: [
@@ -284,9 +284,9 @@ export const studyAreas: Record<Locale, StudyAreaItem[]> = {
         "Exploring AI fundamentals, LLMs and AI integration into web applications.",
     },
     {
-      title: "English",
+      title: "English (Self-taught)",
       description:
-        "Continuous improvement for clear technical communication in international contexts (documentation, meetings, and collaboration).",
+        "Continuous self-taught improvement for clear technical communication in international contexts (documentation, meetings, and collaboration).",
     },
   ],
 };
@@ -453,7 +453,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         ],
         studyingTitle: "Agora estudando",
         studyingLine:
-          "Python, fundamentos de segurança em aplicações web (OWASP e autenticação), IA aplicada a produtos web e inglês para comunicação técnica.",
+          "Python, fundamentos de segurança em aplicações web (OWASP e autenticação), IA aplicada a produtos web e inglês autodidata para comunicação técnica.",
       },
       introTitle: "Introdução",
       introPoints: [
@@ -779,7 +779,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         ],
         studyingTitle: "Currently studying",
         studyingLine:
-          "Python, web application security fundamentals (OWASP and authentication), AI applied to web products, and English for technical communication.",
+          "Python, web application security fundamentals (OWASP and authentication), AI applied to web products, and self-taught English for technical communication.",
       },
       introTitle: "Intro",
       introPoints: [
