@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { defaultLocale, profileContent } from "@/content/profile";
@@ -14,6 +14,24 @@ const baseContent = profileContent[defaultLocale];
 export const metadata: Metadata = {
   title: baseContent.seo.defaultTitle,
   description: baseContent.seo.defaultDescription,
+  manifest: "/favicon/manifest.json",
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico" },
+      { url: "/favicon/icon1.png", type: "image/png", sizes: "96x96" },
+      { url: "/favicon/icon0.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/favicon/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon/favicon.ico"],
+    other: [{ rel: "mask-icon", url: "/favicon/icon0.svg", color: "#0ea5e9" }],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
+    { media: "(prefers-color-scheme: dark)", color: "#020617" },
+  ],
 };
 
 const initScript = `
