@@ -28,16 +28,17 @@ type HeaderProps = {
 };
 
 export default function Header({ content, locale }: HeaderProps) {
+  const homePath = withLocalePath(locale);
   const navigation = [
-    { href: withLocalePath(locale), label: content.navigation.home },
+    { href: homePath, label: content.navigation.home },
     { href: withLocalePath(locale, "/projects"), label: content.navigation.projects },
     { href: withLocalePath(locale, "/about"), label: content.navigation.about },
-    { href: withLocalePath(locale, "/resume"), label: content.navigation.resume },
-    { href: withLocalePath(locale, "/contact"), label: content.navigation.contact },
+    { href: `${homePath}#resume`, label: content.navigation.resume },
+    { href: `${homePath}#contact`, label: content.navigation.contact },
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur">
+    <header id="top" className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <Link href={withLocalePath(locale)} className="text-sm font-semibold tracking-wide text-slate-100">
           {content.profile.name}
