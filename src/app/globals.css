@@ -10,6 +10,9 @@
   --accent-hover: #075985;
   --accent-soft: #0ea5e9;
   --app-bg: radial-gradient(circle at top, #f8fafc 0%, #e2e8f0 55%, #f8fafc 100%);
+  --hero-base: #e2e8f0;
+  --hero-glow: rgba(3, 105, 161, 0.18);
+  --hero-grid: #94a3b8;
   color-scheme: light;
 }
 
@@ -23,6 +26,9 @@
   --accent-hover: #7dd3fc;
   --accent-soft: #bae6fd;
   --app-bg: radial-gradient(circle at top, #0f172a 0%, #020617 55%, #020617 100%);
+  --hero-base: #0b0f19;
+  --hero-glow: rgba(34, 211, 238, 0.16);
+  --hero-grid: #94a3b8;
   color-scheme: dark;
 }
 
