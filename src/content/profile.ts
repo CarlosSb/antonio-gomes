@@ -14,6 +14,7 @@ type NavigationContent = {
 type ActionsContent = {
   viewProjects: string;
   contact: string;
+  downloadResume: string;
   viewDetails: string;
   liveDemo: string;
   backToProjects: string;
@@ -41,8 +42,11 @@ type AccessibilityContent = {
 
 type HeroContent = {
   availability: string;
-  title: string;
+  badge: string;
+  headlineLead: string;
+  headlineAccent: string;
   description: string;
+  tags: string[];
 };
 
 type HomePageContent = {
@@ -232,6 +236,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     actions: {
       viewProjects: "Ver Projetos",
       contact: "Contato",
+      downloadResume: "Baixar Currículo",
       viewDetails: "Ver detalhes",
       liveDemo: "Acessar projeto",
       backToProjects: "Voltar para projetos",
@@ -257,9 +262,12 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     },
     hero: {
       availability: "Disponível para oportunidades remotas e híbridas",
-      title: "Desenvolvo produtos digitais de alto impacto com foco em performance, escala e experiência real do usuário.",
+      badge: "Fullstack Engineer • Next.js • TypeScript",
+      headlineLead: "Construo produtos digitais",
+      headlineAccent: "rápidos, escaláveis e prontos para crescer.",
       description:
-        "Portfólio profissional em PT/EN para recrutadores brasileiros e internacionais.",
+        "Experiência em SaaS, arquitetura multi-tenant, pagamentos e integrações de IA com foco em entrega real de valor.",
+      tags: ["SaaS", "Multi-tenant", "Payments", "IA", "Performance", "DX"],
     },
     homePage: {
       selectedWorkTitle: "Selected Work",
@@ -405,6 +413,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     actions: {
       viewProjects: "View Projects",
       contact: "Contact",
+      downloadResume: "Download Resume",
       viewDetails: "View details",
       liveDemo: "Live demo",
       backToProjects: "Back to projects",
@@ -430,9 +439,12 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     },
     hero: {
       availability: "Open to remote and hybrid opportunities",
-      title: "I build high-impact digital products focused on performance, scalability, and real user experience.",
+      badge: "Fullstack Engineer • Next.js • TypeScript",
+      headlineLead: "I build digital products",
+      headlineAccent: "that are fast, scalable, and ready to grow.",
       description:
-        "Professional bilingual portfolio for Brazilian and international recruiters.",
+        "Hands-on experience with SaaS, multi-tenant architecture, payments, and AI integrations focused on measurable product impact.",
+      tags: ["SaaS", "Multi-tenant", "Payments", "AI", "Performance", "DX"],
     },
     homePage: {
       selectedWorkTitle: "Selected Work",
