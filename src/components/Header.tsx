@@ -31,7 +31,6 @@ export default function Header({ content, locale }: HeaderProps) {
   const homePath = withLocalePath(locale);
   const navigation = [
     { href: `${homePath}#projetos`, label: content.navigation.projects },
-    { href: withLocalePath(locale, "/projects/ong-tudo-por-amor"), label: content.navigation.caseStudy },
     { href: `${homePath}#experiencia`, label: content.sections.experience },
     { href: `${homePath}#skills`, label: content.sections.skills },
     { href: `${homePath}#sobre`, label: content.navigation.about },
