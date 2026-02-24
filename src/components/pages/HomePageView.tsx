@@ -17,26 +17,27 @@ type HomePageViewProps = {
 
 export default function HomePageView({ featuredProjects, content, locale }: HomePageViewProps) {
   return (
-    <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-4 pb-16 sm:px-6 sm:pb-20">
+    <>
       <Hero content={content} locale={locale} />
+      <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-14">
+        <Section
+          id="featured-projects"
+          title={content.homePage.selectedWorkTitle}
+          description={content.homePage.selectedWorkDescription}
+        >
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.slug} project={project} content={content} locale={locale} />
+            ))}
+          </div>
+        </Section>
 
-      <Section
-        id="featured-projects"
-        title={content.homePage.selectedWorkTitle}
-        description={content.homePage.selectedWorkDescription}
-      >
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.slug} project={project} content={content} locale={locale} />
-          ))}
-        </div>
-      </Section>
-
-      <EngineeringMindset content={content} />
-      <Experience content={content} />
-      <Skills content={content} />
-      <StudyAreas content={content} />
-      <FinalCta content={content} locale={locale} />
-    </main>
+        <EngineeringMindset content={content} />
+        <Experience content={content} />
+        <Skills content={content} />
+        <StudyAreas content={content} />
+        <FinalCta content={content} locale={locale} />
+      </main>
+    </>
   );
 }
