@@ -91,6 +91,7 @@ type ResumePageContent = {
   title: string;
   description: string;
   downloadTitle: string;
+  highlights: string[];
   lastUpdateLabel: string;
   lastUpdateValue: string;
 };
@@ -98,7 +99,10 @@ type ResumePageContent = {
 type ContactPageContent = {
   title: string;
   description: string;
+  headline: string;
   directTitle: string;
+  copyEmailLabel: string;
+  copyEmailSuccess: string;
 };
 
 type ExperienceItem = {
@@ -127,6 +131,13 @@ type SeoContent = {
 
 type FooterContent = {
   rights: string;
+  tagline: string;
+  locationLabel: string;
+  locationValue: string;
+  navigationTitle: string;
+  contactTitle: string;
+  buildLine: string;
+  backToTop: string;
 };
 
 export type LocalizedProfileContent = {
@@ -332,6 +343,11 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       description:
         "Baixe meu currículo em português ou inglês em PDF.",
       downloadTitle: "Downloads",
+      highlights: [
+        "4+ anos construindo aplicações fullstack em produção.",
+        "Experiência prática com SaaS, integrações, performance e arquitetura escalável.",
+        "Foco em qualidade técnica, UX e entrega orientada a negócio.",
+      ],
       lastUpdateLabel: "Última atualização",
       lastUpdateValue: "Fevereiro de 2026",
     },
@@ -339,7 +355,10 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       title: "Contato",
       description:
         "Vamos conversar sobre oportunidades, projetos e colaboração técnica.",
+      headline: "Vamos construir algo relevante juntos.",
       directTitle: "Contato direto",
+      copyEmailLabel: "Copiar e-mail",
+      copyEmailSuccess: "E-mail copiado",
     },
     sections: {
       experience: "Experiência",
@@ -393,6 +412,13 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     },
     footer: {
       rights: "© {year} {name}. Todos os direitos reservados.",
+      tagline: "Engenharia fullstack para produtos digitais escaláveis.",
+      locationLabel: "Localização",
+      locationValue: "Brasil / Remote",
+      navigationTitle: "Navegação",
+      contactTitle: "Contato",
+      buildLine: "Built with Next.js • Hosted on Vercel",
+      backToTop: "Voltar ao topo",
     },
   },
   en: {
@@ -508,6 +534,11 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       title: "Resume",
       description: "Download my resume in Portuguese or English PDF formats.",
       downloadTitle: "Downloads",
+      highlights: [
+        "4+ years building fullstack production systems.",
+        "Hands-on work with SaaS, integrations, performance, and scalable architecture.",
+        "Strong focus on technical quality, UX, and business-driven delivery.",
+      ],
       lastUpdateLabel: "Last update",
       lastUpdateValue: "February 2026",
     },
@@ -515,7 +546,10 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       title: "Contact",
       description:
         "Let us connect about opportunities, projects, and technical collaboration.",
+      headline: "Let us build something meaningful together.",
       directTitle: "Direct contact",
+      copyEmailLabel: "Copy e-mail",
+      copyEmailSuccess: "E-mail copied",
     },
     sections: {
       experience: "Experience",
@@ -569,6 +603,13 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     },
     footer: {
       rights: "© {year} {name}. All rights reserved.",
+      tagline: "Fullstack engineering for scalable digital products.",
+      locationLabel: "Location",
+      locationValue: "Brazil / Remote",
+      navigationTitle: "Navigation",
+      contactTitle: "Contact",
+      buildLine: "Built with Next.js • Hosted on Vercel",
+      backToTop: "Back to top",
     },
   },
 };
