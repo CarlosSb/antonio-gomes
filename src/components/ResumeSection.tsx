@@ -3,12 +3,13 @@ import type { LocalizedProfileContent } from "@/content/profile";
 
 type ResumeSectionProps = {
   content: LocalizedProfileContent;
+  id?: string;
 };
 
-export default function ResumeSection({ content }: ResumeSectionProps) {
+export default function ResumeSection({ content, id = "resume" }: ResumeSectionProps) {
   return (
     <Section
-      id="resume"
+      id={id}
       title={content.resumePage.title}
       description={content.resumePage.description}
     >

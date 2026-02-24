@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import AboutPageView from "@/components/pages/AboutPageView";
+import { redirect } from "next/navigation";
 import { locales, type Locale } from "@/content/profile";
 import { getContent } from "@/lib/content";
 import { isLocale } from "@/lib/i18n";
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: AboutPageProps): Promise<Meta
   return createMetadata({
     title: `${content.aboutPage.title} | ${content.seo.siteName}`,
     description: content.aboutPage.description,
-    pathname: `/${resolvedLocale}/about`,
+    pathname: `/${resolvedLocale}`,
     locale: resolvedLocale,
   });
 }
@@ -29,6 +29,6 @@ export async function generateMetadata({ params }: AboutPageProps): Promise<Meta
 export default async function LocalizedAboutPage({ params }: AboutPageProps) {
   const { locale } = await params;
   const resolvedLocale: Locale = isLocale(locale) ? locale : "pt";
-
-  return <AboutPageView content={getContent(resolvedLocale)} locale={resolvedLocale} />;
+  const homePath = `/${resolvedLocale}`;
+  redirect(`${homePath}#sobre`);
 }

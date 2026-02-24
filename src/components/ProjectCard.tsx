@@ -1,17 +1,19 @@
 import Link from "next/link";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
 import type { Project } from "@/content/projects";
-import { getProjectSummary } from "@/lib/content";
+import { getProjectSummary, localizeList } from "@/lib/content";
 import { withLocalePath } from "@/lib/i18n";
 
 type ProjectCardProps = {
   project: Project;
   content: LocalizedProfileContent;
   locale: Locale;
+  showDetails?: boolean;
 };
 
-export default function ProjectCard({ project, content, locale }: ProjectCardProps) {
+export default function ProjectCard({ project, content, locale, showDetails = true }: ProjectCardProps) {
   const liveUrl = project.links?.[0]?.href ?? project.liveUrl;
+  const impactHighlights = localizeList(project.impact, locale).slice(0, 2);
 
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/45 p-6 transition duration-300 hover:-translate-y-1 hover:border-slate-700 hover:shadow-[0_20px_45px_-30px_rgba(56,189,248,0.6)]">
@@ -21,6 +23,13 @@ export default function ProjectCard({ project, content, locale }: ProjectCardPro
         <p className="text-sm leading-relaxed text-slate-300">
           {getProjectSummary(project, locale)}
         </p>
+        {impactHighlights.length > 0 ? (
+          <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
+            {impactHighlights.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        ) : null}
       </div>
 
       <ul className="relative mb-6 flex flex-wrap gap-2">
@@ -45,12 +54,14 @@ export default function ProjectCard({ project, content, locale }: ProjectCardPro
             {content.actions.liveDemo}
           </a>
         ) : null}
-        <Link
-          href={withLocalePath(locale, `/projects/${project.slug}`)}
-          className="rounded-md border border-slate-700 px-3.5 py-2 text-sm font-semibold text-slate-100 transition duration-300 hover:border-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
-        >
-          {content.actions.viewDetails}
-        </Link>
+        {showDetails ? (
+          <Link
+            href={withLocalePath(locale, `/projects/${project.slug}`)}
+            className="rounded-md border border-slate-700 px-3.5 py-2 text-sm font-semibold text-slate-100 transition duration-300 hover:border-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+          >
+            {content.actions.viewDetails}
+          </Link>
+        ) : null}
       </div>
     </article>
   );

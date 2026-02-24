@@ -3,11 +3,12 @@ import type { LocalizedProfileContent } from "@/content/profile";
 
 type ExperienceProps = {
   content: LocalizedProfileContent;
+  id?: string;
 };
 
-export default function Experience({ content }: ExperienceProps) {
+export default function Experience({ content, id = "experience" }: ExperienceProps) {
   return (
-    <Section id="experience" title={content.sections.experience}>
+    <Section id={id} title={content.sections.experience}>
       <div className="space-y-4">
         {content.experience.map((item) => (
           <article

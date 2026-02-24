@@ -16,11 +16,11 @@ export default function Footer({ content, locale }: FooterProps) {
     .replace("{name}", content.profile.name);
 
   const navigationLinks = [
-    { href: homePath, label: content.navigation.home },
-    { href: withLocalePath(locale, "/projects"), label: content.navigation.projects },
-    { href: withLocalePath(locale, "/about"), label: content.navigation.about },
-    { href: `${homePath}#resume`, label: content.navigation.resume },
-    { href: `${homePath}#contact`, label: content.navigation.contact },
+    { href: `${homePath}#hero`, label: content.navigation.home },
+    { href: `${homePath}#projetos`, label: content.navigation.projects },
+    { href: `${homePath}#sobre`, label: content.navigation.about },
+    { href: `${homePath}#curriculo`, label: content.navigation.resume },
+    { href: `${homePath}#contato`, label: content.navigation.contact },
   ];
 
   return (

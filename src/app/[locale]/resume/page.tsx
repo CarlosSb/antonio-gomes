@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ResumePageView from "@/components/pages/ResumePageView";
+import { redirect } from "next/navigation";
 import { locales, type Locale } from "@/content/profile";
 import { getContent } from "@/lib/content";
 import { isLocale } from "@/lib/i18n";
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: ResumePageProps): Promise<Met
   return createMetadata({
     title: `${content.resumePage.title} | ${content.seo.siteName}`,
     description: content.resumePage.description,
-    pathname: `/${resolvedLocale}/resume`,
+    pathname: `/${resolvedLocale}`,
     locale: resolvedLocale,
   });
 }
@@ -29,6 +29,6 @@ export async function generateMetadata({ params }: ResumePageProps): Promise<Met
 export default async function LocalizedResumePage({ params }: ResumePageProps) {
   const { locale } = await params;
   const resolvedLocale: Locale = isLocale(locale) ? locale : "pt";
-
-  return <ResumePageView content={getContent(resolvedLocale)} />;
+  const homePath = `/${resolvedLocale}`;
+  redirect(`${homePath}#curriculo`);
 }

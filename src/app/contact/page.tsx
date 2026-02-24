@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function LegacyContactRedirect() {
-  redirect("/pt/contact");
+  redirect("/pt#contato");
 }

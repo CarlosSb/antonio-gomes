@@ -10,7 +10,7 @@ type HeroProps = {
 
 export default function Hero({ content, locale }: HeroProps) {
   return (
-    <section className="relative isolate w-full overflow-hidden border-b border-slate-800/80 min-h-[calc(100svh-6rem)] md:min-h-[calc(100svh-4.5rem)]">
+    <section id="hero" className="relative isolate w-full overflow-hidden border-b border-slate-800/80 min-h-[calc(100svh-6rem)] md:min-h-[calc(100svh-4.5rem)]">
       <div className="absolute inset-0" style={{ backgroundColor: "var(--hero-base)" }} />
       <div
         className="absolute inset-0"
@@ -54,16 +54,16 @@ export default function Hero({ content, locale }: HeroProps) {
 
           <div className="flex flex-wrap gap-3">
             <Link
-              href={withLocalePath(locale, "/projects")}
+              href={`${withLocalePath(locale)}#projetos`}
               className="rounded-md bg-sky-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-all duration-200 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
             >
               {content.actions.viewProjects}
             </Link>
             <Link
-              href={withLocalePath(locale, "/resume")}
+              href={`${withLocalePath(locale)}#contato`}
               className="rounded-md border border-slate-700 px-5 py-2.5 text-sm font-semibold text-slate-100 transition-all duration-200 hover:border-slate-600 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
             >
-              {content.actions.downloadResume}
+              {content.actions.contact}
             </Link>
           </div>
 

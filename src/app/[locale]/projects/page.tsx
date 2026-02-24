@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import ProjectsPageView from "@/components/pages/ProjectsPageView";
+import { redirect } from "next/navigation";
 import { locales, type Locale } from "@/content/profile";
-import { getAllProjects, getContent } from "@/lib/content";
+import { getContent } from "@/lib/content";
 import { isLocale } from "@/lib/i18n";
 import { createMetadata } from "@/lib/seo";
 
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: ProjectsPageProps): Promise<M
   return createMetadata({
     title: `${content.projectsPage.title} | ${content.seo.siteName}`,
     description: content.projectsPage.description,
-    pathname: `/${resolvedLocale}/projects`,
+    pathname: `/${resolvedLocale}`,
     locale: resolvedLocale,
   });
 }
@@ -29,12 +29,6 @@ export async function generateMetadata({ params }: ProjectsPageProps): Promise<M
 export default async function LocalizedProjectsPage({ params }: ProjectsPageProps) {
   const { locale } = await params;
   const resolvedLocale: Locale = isLocale(locale) ? locale : "pt";
-
-  return (
-    <ProjectsPageView
-      projects={getAllProjects()}
-      content={getContent(resolvedLocale)}
-      locale={resolvedLocale}
-    />
-  );
+  const homePath = `/${resolvedLocale}`;
+  redirect(`${homePath}#projetos`);
 }

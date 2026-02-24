@@ -4,12 +4,13 @@ import type { LocalizedProfileContent } from "@/content/profile";
 
 type ContactSectionProps = {
   content: LocalizedProfileContent;
+  id?: string;
 };
 
-export default function ContactSection({ content }: ContactSectionProps) {
+export default function ContactSection({ content, id = "contact" }: ContactSectionProps) {
   return (
     <Section
-      id="contact"
+      id={id}
       title={content.contactPage.title}
       description={content.contactPage.description}
     >

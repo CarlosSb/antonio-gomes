@@ -53,6 +53,10 @@ type HeroContent = {
 type HomePageContent = {
   selectedWorkTitle: string;
   selectedWorkDescription: string;
+  caseTitle: string;
+  caseDescription: string;
+  caseContextLabel: string;
+  caseCta: string;
   engineeringMindsetTitle: string;
   engineeringMindsetDescription: string;
   engineeringMindsetItems: Array<{
@@ -262,7 +266,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         "Desenvolvedor Fullstack (+4 anos) especialista no ecossistema JavaScript (React.js, Next.js, Node.js), com experiência em plataformas de automação (chatbots), performance, qualidade de código (testes), caching e refatoração de APIs para melhoria da UX.",
     },
     navigation: {
-      home: "Home",
+      home: "Início",
       projects: "Projetos",
       about: "Sobre",
       resume: "Currículo",
@@ -297,18 +301,23 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     },
     hero: {
       availability: "Disponível para oportunidades remotas e híbridas",
-      badge: "Fullstack Engineer • Next.js • TypeScript",
+      badge: "Engenheiro Fullstack • Next.js • TypeScript",
       headlineLead: "Engenharia fullstack para produtos que rodam em",
       headlineAccent: "produção.",
       description:
         "Engenheiro fullstack com mais de 4 anos de experiência em SaaS, arquitetura multi-tenant, integrações complexas e decisões orientadas a produto. Foco em performance, clareza arquitetural e entrega real em produção.",
       aboutLinkLabel: "Saiba mais sobre minha trajetória →",
-      tags: ["SaaS", "Multi-tenant", "Payments", "IA", "Performance", "DX"],
+      tags: ["SaaS", "Multi-tenant", "Pagamentos", "IA", "Performance", "DX"],
     },
     homePage: {
       selectedWorkTitle: "Trabalhos em Destaque",
       selectedWorkDescription:
         "Três projetos com maior profundidade técnica, foco de negócio e resultados concretos.",
+      caseTitle: "Case em Profundidade",
+      caseDescription:
+        "ONG Tudo por Amor: contexto real, decisões técnicas e impacto operacional.",
+      caseContextLabel: "Contexto",
+      caseCta: "Ver case completo",
       engineeringMindsetTitle: "Mentalidade de Engenharia",
       engineeringMindsetDescription:
         "Princípios que guiam minha tomada de decisão em produto e arquitetura.",
@@ -360,7 +369,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         "Construo software de produção com foco em arquitetura sustentável, performance e impacto real no produto.",
       introTitle: "Introdução",
       introPoints: [
-        "Sou Fullstack Engineer focado em SaaS multi-tenant, integrações e fluxos críticos como autenticação, billing e pagamentos.",
+        "Sou engenheiro fullstack focado em SaaS multi-tenant, integrações e fluxos críticos como autenticação, billing e pagamentos.",
         "Trabalho com Next.js + TypeScript no front e back (APIs, banco, filas e webhooks), com atenção a performance, SEO e manutenção no longo prazo.",
         "Priorizo entrega rápida com arquitetura sustentável, observabilidade, segurança básica (RBAC, validações, idempotência) e experiência do usuário.",
         "Se você precisa tirar um produto do papel e colocar em produção com responsabilidade, vamos conversar.",
@@ -488,12 +497,12 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       },
     ],
     skills: [
-      { category: "Frontend", items: sharedSkills.frontend },
-      { category: "Backend", items: sharedSkills.backend },
-      { category: "Quality", items: sharedSkills.quality },
+      { category: "Front-end", items: sharedSkills.frontend },
+      { category: "Back-end", items: sharedSkills.backend },
+      { category: "Qualidade", items: sharedSkills.quality },
       { category: "Cloud/DevOps", items: sharedSkills.cloud },
-      { category: "Databases", items: sharedSkills.databases },
-      { category: "Architecture", items: sharedSkills.architecture },
+      { category: "Bancos de Dados", items: sharedSkills.databases },
+      { category: "Arquitetura", items: sharedSkills.architecture },
     ],
     studyAreas: studyAreas.pt,
     seo: {
@@ -514,7 +523,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       rights: "© {year} {name}. Todos os direitos reservados.",
       tagline: "Engenharia fullstack para produtos digitais escaláveis.",
       locationLabel: "Localização",
-      locationValue: "Brasil / Remote",
+      locationValue: "Brasil / Remoto",
       navigationTitle: "Navegação",
       contactTitle: "Contato",
       buildLine: "Construído com Next.js • Hospedado na Vercel",
@@ -577,6 +586,11 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       selectedWorkTitle: "Selected Work",
       selectedWorkDescription:
         "Three projects with stronger technical depth, business context, and measurable delivery quality.",
+      caseTitle: "Deep Case Study",
+      caseDescription:
+        "ONG Tudo por Amor: real context, technical decisions, and operational impact.",
+      caseContextLabel: "Context",
+      caseCta: "View full case study",
       engineeringMindsetTitle: "Engineering Mindset",
       engineeringMindsetDescription:
         "Core principles that drive my product and architecture decisions.",

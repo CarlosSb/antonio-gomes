@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ContactPageView from "@/components/pages/ContactPageView";
+import { redirect } from "next/navigation";
 import { locales, type Locale } from "@/content/profile";
 import { getContent } from "@/lib/content";
 import { isLocale } from "@/lib/i18n";
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: ContactPageProps): Promise<Me
   return createMetadata({
     title: `${content.contactPage.title} | ${content.seo.siteName}`,
     description: content.contactPage.description,
-    pathname: `/${resolvedLocale}/contact`,
+    pathname: `/${resolvedLocale}`,
     locale: resolvedLocale,
   });
 }
@@ -29,6 +29,6 @@ export async function generateMetadata({ params }: ContactPageProps): Promise<Me
 export default async function LocalizedContactPage({ params }: ContactPageProps) {
   const { locale } = await params;
   const resolvedLocale: Locale = isLocale(locale) ? locale : "pt";
-
-  return <ContactPageView content={getContent(resolvedLocale)} />;
+  const homePath = `/${resolvedLocale}`;
+  redirect(`${homePath}#contato`);
 }

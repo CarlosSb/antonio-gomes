@@ -3,12 +3,13 @@ import type { LocalizedProfileContent } from "@/content/profile";
 
 type EngineeringMindsetProps = {
   content: LocalizedProfileContent;
+  id?: string;
 };
 
-export default function EngineeringMindset({ content }: EngineeringMindsetProps) {
+export default function EngineeringMindset({ content, id = "engineering-mindset" }: EngineeringMindsetProps) {
   return (
     <Section
-      id="engineering-mindset"
+      id={id}
       title={content.homePage.engineeringMindsetTitle}
       description={content.homePage.engineeringMindsetDescription}
     >
