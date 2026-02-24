@@ -22,7 +22,7 @@ export default function CopyEmailButton({
 
     const timeoutId = window.setTimeout(() => {
       setIsCopied(false);
-    }, 1800);
+    }, 1500);
 
     return () => window.clearTimeout(timeoutId);
   }, [isCopied]);
