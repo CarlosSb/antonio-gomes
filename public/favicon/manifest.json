@@ -1,0 +1,25 @@
+{
+  "name": "Antonio Gomes | Portfolio",
+  "short_name": "Antonio",
+  "icons": [
+    {
+      "src": "/favicon/icon1.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/icon0.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#020617",
+  "background_color": "#020617",
+  "display": "standalone"
+}
