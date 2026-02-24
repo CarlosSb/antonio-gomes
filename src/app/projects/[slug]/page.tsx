@@ -1,48 +1,17 @@
-import type { Metadata } from "next";
-import ProjectDetailsPageView from "@/components/pages/ProjectDetailsPageView";
-import ProjectNotFoundView from "@/components/pages/ProjectNotFoundView";
-import { defaultLocale, profileContent } from "@/content/profile";
-import { getAllProjects, getProjectBySlug, getProjectSummary } from "@/lib/content";
-import { createMetadata } from "@/lib/seo";
+import { redirect } from "next/navigation";
+import { getAllProjects } from "@/lib/content";
 
-type ProjectDetailPageProps = {
+type LegacyProjectDetailProps = {
   params: Promise<{ slug: string }>;
 };
 
-const content = profileContent[defaultLocale];
+export const dynamicParams = false;
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return getAllProjects().map((project) => ({ slug: project.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: ProjectDetailPageProps): Promise<Metadata> {
+export default async function LegacyProjectDetailRedirect({ params }: LegacyProjectDetailProps) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
-
-  if (!project) {
-    return createMetadata({
-      title: `${content.projectsPage.notFoundTitle} | ${content.seo.siteName}`,
-      description: content.projectsPage.notFoundDescription,
-      pathname: `/projects/${slug}`,
-    });
-  }
-
-  return createMetadata({
-    title: project.seoTitle ?? `${project.title} | ${content.seo.siteName}`,
-    description: getProjectSummary(project, defaultLocale),
-    pathname: `/projects/${project.slug}`,
-  });
-}
-
-export default async function ProjectDetailPage({ params }: ProjectDetailPageProps) {
-  const { slug } = await params;
-  const project = getProjectBySlug(slug);
-
-  if (!project) {
-    return <ProjectNotFoundView />;
-  }
-
-  return <ProjectDetailsPageView project={project} />;
+  redirect(`/pt/projects/${slug}`);
 }
