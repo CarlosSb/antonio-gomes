@@ -21,6 +21,10 @@ const projectHeroImages: Record<string, { src: string; alt: string }> = {
     src: "/cases/digital-net-telecom/overview.png",
     alt: "Tela inicial do projeto Digital.Net Telecom",
   },
+  "provedor-connect": {
+    src: "/cases/provedor-connect/home-connect.png",
+    alt: "Tela inicial do projeto Provedor Connect",
+  },
 };
 
 export default function ProjectCard({ project, content, locale, showDetails = true }: ProjectCardProps) {
