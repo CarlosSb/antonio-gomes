@@ -23,11 +23,6 @@ export default function ProjectCard({ project, content, locale, showDetails = tr
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/45 p-6 transition duration-300 hover:-translate-y-1 hover:border-slate-700 hover:shadow-[0_20px_45px_-30px_rgba(56,189,248,0.6)]">
       <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.12),transparent_48%)]" />
-      {project.mainCase ? (
-        <p className="relative mb-3 inline-flex w-fit rounded-full border border-sky-500/50 bg-sky-500/10 px-2.5 py-1 text-xs font-semibold text-sky-300">
-          {content.homePage.projectsMainCaseHighlight.badge}
-        </p>
-      ) : null}
       <div className="relative mb-5 overflow-hidden rounded-xl border border-slate-800 bg-slate-950/80">
         <div className="aspect-[16/9] w-full bg-[radial-gradient(circle_at_20%_15%,rgba(56,189,248,0.28),transparent_55%),linear-gradient(140deg,rgba(15,23,42,0.95),rgba(2,6,23,1))] p-4">
           <p className="text-xs font-medium tracking-wide text-slate-300">Projeto em produção</p>
