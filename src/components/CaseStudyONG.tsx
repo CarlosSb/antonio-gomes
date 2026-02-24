@@ -48,6 +48,17 @@ export default function CaseStudyONG({ locale, content, project }: CaseStudyONGP
           </div>
         ) : null}
 
+        <div className="space-y-2">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-300">
+            {content.homePage.caseQuickSummaryTitle}
+          </h3>
+          <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
+            {content.homePage.caseQuickSummaryBullets.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
         {challenge ? (
           <div className="space-y-2">
             <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-300">

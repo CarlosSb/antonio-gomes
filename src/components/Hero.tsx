@@ -61,10 +61,11 @@ export default function Hero({ content, locale }: HeroProps) {
               {content.actions.viewProjects}
             </Link>
             <Link
-              href={`${withLocalePath(locale)}#case`}
+              href={withLocalePath(locale, "/projects/ong-tudo-por-amor")}
+              aria-label={content.homePage.heroMainCaseCtaAriaLabel}
               className="rounded-md border border-slate-700 px-5 py-2.5 text-sm font-semibold text-slate-100 transition-all duration-200 hover:border-slate-600 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
             >
-              {content.homePage.caseCta}
+              {content.homePage.heroMainCaseCtaLabel}
             </Link>
           </div>
 
