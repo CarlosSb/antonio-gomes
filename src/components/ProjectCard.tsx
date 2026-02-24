@@ -18,12 +18,16 @@ const projectHeroImages: Record<string, { src: string; alt: string }> = {
     alt: "Tela inicial do projeto ONG Tudo por Amor",
   },
   "digital-net-telecom": {
-    src: "/cases/digital-net-telecom/overview.png",
+    src: "/cases/digital-net-telecom/home-digital-net.png",
     alt: "Tela inicial do projeto Digital.Net Telecom",
   },
   "provedor-connect": {
     src: "/cases/provedor-connect/home-connect.png",
     alt: "Tela inicial do projeto Provedor Connect",
+  },
+  "gordo-construcoes": {
+    src: "/cases/gordo-construcoes/home.png",
+    alt: "Tela inicial do projeto Gordo Construções",
   },
 };
 
