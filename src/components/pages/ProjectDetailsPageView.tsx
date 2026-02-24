@@ -17,12 +17,16 @@ export default function ProjectDetailsPageView({
   locale,
 }: ProjectDetailsPageViewProps) {
   const overview = localizeText(project.description, locale);
+  const challenge = localizeText(project.challenge, locale);
+  const solution = localizeText(project.solution, locale);
   const architecture = localizeList(project.architecture, locale);
+  const technicalDecisions = localizeList(project.technicalDecisions, locale);
   const engineeringHighlights = localizeList(
     project.highlights ?? project.technicalDecisions,
     locale,
   );
   const impact = localizeList(project.impact, locale);
+  const results = localizeList(project.results, locale);
 
   const links: ProjectLink[] = project.links?.length
     ? project.links
@@ -65,11 +69,33 @@ export default function ProjectDetailsPageView({
         </Section>
       ) : null}
 
+      {challenge ? (
+        <Section id="project-challenge" title={content.projectsPage.challengeLabel}>
+          <p className="text-sm leading-relaxed whitespace-pre-line text-slate-300">{challenge}</p>
+        </Section>
+      ) : null}
+
+      {solution ? (
+        <Section id="project-solution" title={content.projectsPage.solutionLabel}>
+          <p className="text-sm leading-relaxed whitespace-pre-line text-slate-300">{solution}</p>
+        </Section>
+      ) : null}
+
       {architecture.length > 0 ? (
         <Section id="project-architecture" title={content.projectsPage.architectureLabel}>
           <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
             {architecture.map((item) => (
               <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
+
+      {technicalDecisions.length > 0 ? (
+        <Section id="project-technical-decisions" title={content.projectsPage.technicalDecisionsLabel}>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
+            {technicalDecisions.map((decision) => (
+              <li key={decision}>{decision}</li>
             ))}
           </ul>
         </Section>
@@ -92,6 +118,16 @@ export default function ProjectDetailsPageView({
         <Section id="project-impact" title={content.projectsPage.impactLabel}>
           <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
             {impact.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
+
+      {results.length > 0 ? (
+        <Section id="project-results" title={content.projectsPage.resultsLabel}>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
+            {results.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
