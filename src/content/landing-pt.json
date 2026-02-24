@@ -1,0 +1,134 @@
+{
+  "seo": {
+    "title": "Antonio Gomes | Engenheiro Fullstack",
+    "description": "Portfólio em PT-BR com projetos reais em produção, foco em Next.js, TypeScript, arquitetura e performance."
+  },
+  "nav": [
+    { "id": "projetos", "label": "Projetos" },
+    { "id": "case", "label": "Case ONG" },
+    { "id": "experiencia", "label": "Experiência" },
+    { "id": "skills", "label": "Skills" },
+    { "id": "sobre", "label": "Sobre" },
+    { "id": "contato", "label": "Contato" }
+  ],
+  "hero": {
+    "headline": "Engenharia fullstack para produtos que rodam em produção.",
+    "subheadline": "Crio e evoluo sistemas SaaS com arquitetura sustentável, integrações críticas e foco em resultado de negócio.",
+    "chips": [
+      "6 projetos em produção",
+      "SaaS e integrações complexas",
+      "SEO, performance e DX"
+    ],
+    "primaryCta": "Ver projetos",
+    "secondaryCta": "Ver case ONG"
+  },
+  "projects": [
+    {
+      "slug": "ong-tudo-por-amor",
+      "title": "ONG Tudo por Amor",
+      "description": "Plataforma institucional com CMS headless, SEO técnico e transparência financeira.",
+      "stack": ["Next.js", "TypeScript", "Sanity CMS", "Tailwind"],
+      "impact": [
+        "Autonomia editorial para publicação de conteúdo",
+        "Estrutura de transparência com páginas e relatórios"
+      ],
+      "liveUrl": "https://nextjs-ong-tudo-por-amor.vercel.app/",
+      "repoUrl": "https://github.com/carlossb",
+      "caseUrl": "/pt#case"
+    },
+    {
+      "slug": "digital-net-telecom",
+      "title": "Digital.Net Telecom – Plataforma ISP Multi-Cidade",
+      "description": "Plataforma fullstack para operação de ISP com painel administrativo e APIs validadas.",
+      "stack": ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+      "impact": [
+        "Padronização operacional entre cidades",
+        "Validação e testes para reduzir regressões"
+      ],
+      "liveUrl": "https://digital-net-telecom.vercel.app/",
+      "repoUrl": "https://github.com/carlossb",
+      "caseUrl": "/pt/projects/digital-net-telecom"
+    },
+    {
+      "slug": "provedor-connect",
+      "title": "Provedor Connect – Plataforma ISP com Integração SGP",
+      "description": "Plataforma com autoatendimento, admin dashboard e integração desacoplada com SGP.",
+      "stack": ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+      "impact": [
+        "Redução de suporte via portal de autoatendimento",
+        "Menor acoplamento com sistemas externos"
+      ],
+      "liveUrl": "https://provedor-connect-sand.vercel.app/",
+      "repoUrl": "https://github.com/carlossb",
+      "caseUrl": "/pt/projects/provedor-connect"
+    },
+    {
+      "slug": "otica-plus",
+      "title": "ÓticaPlus – SaaS Multi-Tenant para Óticas",
+      "description": "SaaS fullstack com CRM, financeiro, billing e OCR com IA.",
+      "stack": ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+      "impact": [
+        "Centralização de fluxo comercial e financeiro",
+        "Redução de entrada manual com OCR"
+      ],
+      "liveUrl": "https://otica-plus-app.vercel.app/",
+      "repoUrl": "https://github.com/carlossb",
+      "caseUrl": "/pt/projects/otica-plus"
+    },
+    {
+      "slug": "gordo-construcoes",
+      "title": "Gordo Construções – Plataforma Imobiliária Fullstack",
+      "description": "Catálogo público com filtros, captação de leads e painel autenticado.",
+      "stack": ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+      "impact": [
+        "Fluxo de leads estruturado com validação",
+        "SEO dinâmico para páginas de imóvel"
+      ],
+      "liveUrl": "https://gordo-construcoes.vercel.app/",
+      "repoUrl": "https://github.com/carlossb",
+      "caseUrl": "/pt/projects/gordo-construcoes"
+    },
+    {
+      "slug": "tia-emilia",
+      "title": "Tia Emília – E-commerce de Produtos Digitais com IA e PIX",
+      "description": "Checkout PIX, webhook assíncrono e entrega automatizada por e-mail.",
+      "stack": ["Next.js", "TypeScript", "Mercado Pago", "PostgreSQL"],
+      "impact": [
+        "Automação do ciclo pagamento-entrega",
+        "Reconciliação idempotente de webhooks"
+      ],
+      "liveUrl": "https://tia-emilia-next.vercel.app/",
+      "repoUrl": "https://github.com/carlossb",
+      "caseUrl": "/pt/projects/tia-emilia"
+    }
+  ],
+  "caseStudyONG": {
+    "contexto": "Plataforma institucional para adoção de animais, transparência financeira e comunicação contínua com autonomia editorial.",
+    "problema": [
+      "Publicação dependente de suporte técnico",
+      "Informações institucionais dispersas",
+      "Baixa consistência de SEO entre páginas"
+    ],
+    "solucao": [
+      "Arquitetura headless com Next.js + Sanity",
+      "Rotas dinâmicas para adoção, notícias e relatórios",
+      "ISR + revalidação por webhook para atualização rápida"
+    ],
+    "arquitetura": "Frontend Next.js -> API/Renderização -> Sanity CMS -> ISR/Revalidação -> Entrega de conteúdo",
+    "tradeoffs": [
+      "ISR no lugar de SSR completo para equilibrar custo e atualização",
+      "CMS headless no lugar de conteúdo hardcoded para autonomia editorial",
+      "SEO centralizado para reduzir divergência entre páginas"
+    ],
+    "resultados": [
+      "Autonomia editorial sem necessidade de deploy",
+      "Estrutura clara para relatórios e transparência",
+      "Melhor consistência de indexação em páginas-chave"
+    ],
+    "metricasPlaceholder": [
+      "SEO orgânico: [preencher variação de impressões/cliques]",
+      "Performance: [preencher Lighthouse/Web Vitals antes x depois]",
+      "Produtividade editorial: [preencher tempo médio de publicação]"
+    ]
+  }
+}

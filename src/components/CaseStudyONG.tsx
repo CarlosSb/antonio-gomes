@@ -1,0 +1,130 @@
+import Link from "next/link";
+import Section from "@/components/Section";
+import type { LocalizedProfileContent, Locale } from "@/content/profile";
+import type { Project } from "@/content/projects";
+import { localizeList, localizeText } from "@/lib/content";
+import { withLocalePath } from "@/lib/i18n";
+
+type CaseStudyONGProps = {
+  locale: Locale;
+  content: LocalizedProfileContent;
+  project: Project;
+};
+
+const metricPlaceholdersPt = [
+  "SEO orgânico: [preencher com variação de impressões/cliques]",
+  "Performance: [preencher com Lighthouse/Web Vitals antes e depois]",
+  "Produtividade editorial: [preencher com tempo médio de publicação]",
+];
+
+const metricPlaceholdersEn = [
+  "Organic SEO: [fill with impressions/clicks delta]",
+  "Performance: [fill with Lighthouse/Web Vitals before and after]",
+  "Editorial productivity: [fill with average publishing time]",
+];
+
+export default function CaseStudyONG({ locale, content, project }: CaseStudyONGProps) {
+  const context = localizeText(project.description, locale);
+  const challenge = localizeText(project.challenge, locale);
+  const solution = localizeText(project.solution, locale);
+  const architecture = localizeList(project.architecture, locale);
+  const tradeoffs = localizeList(project.technicalDecisions, locale);
+  const results = localizeList(project.results, locale);
+  const liveLink =
+    project.links?.find((link) => link.label.toLowerCase().includes("live"))?.href ??
+    project.links?.[0]?.href ??
+    project.liveUrl;
+  const metricPlaceholders = locale === "pt" ? metricPlaceholdersPt : metricPlaceholdersEn;
+
+  return (
+    <Section id="case" title={content.homePage.caseTitle} description={content.homePage.caseDescription}>
+      <article className="space-y-6 rounded-2xl border border-slate-800/80 bg-slate-900/45 p-6">
+        {context ? (
+          <div className="space-y-2">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-300">
+              {content.homePage.caseContextLabel}
+            </h3>
+            <p className="text-sm leading-relaxed whitespace-pre-line text-slate-300">{context}</p>
+          </div>
+        ) : null}
+
+        {challenge ? (
+          <div className="space-y-2">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-300">
+              {content.projectsPage.challengeLabel}
+            </h3>
+            <p className="text-sm leading-relaxed whitespace-pre-line text-slate-300">{challenge}</p>
+          </div>
+        ) : null}
+
+        {solution ? (
+          <div className="space-y-2">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-300">
+              {content.projectsPage.solutionLabel}
+            </h3>
+            <p className="text-sm leading-relaxed whitespace-pre-line text-slate-300">{solution}</p>
+          </div>
+        ) : null}
+
+        {architecture.length > 0 ? (
+          <div className="space-y-2">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-300">
+              {content.projectsPage.architectureLabel}
+            </h3>
+            <p className="rounded-lg border border-slate-800 bg-slate-950/60 px-3 py-2 text-sm text-slate-300">
+              {architecture.join(" -> ")}
+            </p>
+          </div>
+        ) : null}
+
+        {tradeoffs.length > 0 ? (
+          <div className="space-y-2">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-300">
+              {content.projectsPage.technicalDecisionsLabel}
+            </h3>
+            <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
+              {tradeoffs.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
+        <div className="space-y-2">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-300">
+            {content.projectsPage.resultsLabel}
+          </h3>
+          <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
+            {results.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+            {metricPlaceholders.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="flex flex-wrap gap-3 pt-1">
+          {liveLink ? (
+            <a
+              href={liveLink}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${content.actions.liveDemo}: ${project.title}`}
+              className="rounded-md bg-sky-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+            >
+              {content.actions.liveDemo}
+            </a>
+          ) : null}
+          <Link
+            href={withLocalePath(locale, `/projects/${project.slug}`)}
+            aria-label={`${content.homePage.caseCta}: ${project.title}`}
+            className="rounded-md border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:border-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+          >
+            {content.homePage.caseCta}
+          </Link>
+        </div>
+      </article>
+    </Section>
+  );
+}
