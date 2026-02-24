@@ -328,7 +328,7 @@ I optimized landing pages for conversion and operational consistency across city
     },
     gallery: [
       {
-        src: "/cases/digital-net-telecom/overview.svg",
+        src: "/cases/digital-net-telecom/overview.png",
         alt: {
           pt: "Visão geral da plataforma Digital.Net Telecom",
           en: "Digital.Net Telecom platform overview",
@@ -339,7 +339,7 @@ I optimized landing pages for conversion and operational consistency across city
         },
       },
       {
-        src: "/cases/digital-net-telecom/flow.svg",
+        src: "/cases/digital-net-telecom/flow.png",
         alt: {
           pt: "Fluxo operacional e APIs da Digital.Net Telecom",
           en: "Digital.Net Telecom operational flow and APIs",
@@ -350,7 +350,7 @@ I optimized landing pages for conversion and operational consistency across city
         },
       },
       {
-        src: "/cases/digital-net-telecom/admin.svg",
+        src: "/cases/digital-net-telecom/admin.png",
         alt: {
           pt: "Painel administrativo da Digital.Net Telecom",
           en: "Digital.Net Telecom admin dashboard",
@@ -506,7 +506,7 @@ This allowed integration with multiple SGP providers without rewriting the appli
     },
     gallery: [
       {
-        src: "/cases/provedor-connect/overview.svg",
+        src: "/cases/provedor-connect/overview.png",
         alt: {
           pt: "Visão geral da plataforma Provedor Connect",
           en: "Provedor Connect platform overview",
@@ -517,7 +517,7 @@ This allowed integration with multiple SGP providers without rewriting the appli
         },
       },
       {
-        src: "/cases/provedor-connect/flow.svg",
+        src: "/cases/provedor-connect/flow.png",
         alt: {
           pt: "Fluxo de integração SGP na Provedor Connect",
           en: "Provedor Connect SGP integration flow",
@@ -528,7 +528,7 @@ This allowed integration with multiple SGP providers without rewriting the appli
         },
       },
       {
-        src: "/cases/provedor-connect/admin.svg",
+        src: "/cases/provedor-connect/admin.png",
         alt: {
           pt: "Painel administrativo da Provedor Connect",
           en: "Provedor Connect admin dashboard",
@@ -683,7 +683,7 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
     },
     gallery: [
       {
-        src: "/cases/otica-plus/overview.svg",
+        src: "/cases/otica-plus/overview.png",
         alt: {
           pt: "Visão geral do SaaS ÓticaPlus",
           en: "ÓticaPlus SaaS overview",
@@ -694,7 +694,7 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
         },
       },
       {
-        src: "/cases/otica-plus/flow.svg",
+        src: "/cases/otica-plus/flow.png",
         alt: {
           pt: "Fluxo de pedidos e OCR no ÓticaPlus",
           en: "ÓticaPlus order and OCR flow",
@@ -705,7 +705,7 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
         },
       },
       {
-        src: "/cases/otica-plus/admin.svg",
+        src: "/cases/otica-plus/admin.png",
         alt: {
           pt: "Painel administrativo do ÓticaPlus",
           en: "ÓticaPlus admin dashboard",
@@ -862,7 +862,7 @@ I also integrated cloud media storage and performance-oriented ISR workflows.`,
     },
     gallery: [
       {
-        src: "/cases/gordo-construcoes/overview.svg",
+        src: "/cases/gordo-construcoes/overview.png",
         alt: {
           pt: "Visão geral da plataforma Gordo Construções",
           en: "Gordo Construções platform overview",
@@ -873,7 +873,7 @@ I also integrated cloud media storage and performance-oriented ISR workflows.`,
         },
       },
       {
-        src: "/cases/gordo-construcoes/flow.svg",
+        src: "/cases/gordo-construcoes/flow.png",
         alt: {
           pt: "Fluxo de captação de leads na Gordo Construções",
           en: "Gordo Construções lead capture flow",
@@ -884,7 +884,7 @@ I also integrated cloud media storage and performance-oriented ISR workflows.`,
         },
       },
       {
-        src: "/cases/gordo-construcoes/admin.svg",
+        src: "/cases/gordo-construcoes/admin.png",
         alt: {
           pt: "Painel administrativo da Gordo Construções",
           en: "Gordo Construções admin dashboard",
@@ -1040,7 +1040,7 @@ I organized transactional flows to reduce manual intervention and increase opera
     },
     gallery: [
       {
-        src: "/cases/tia-emilia/overview.svg",
+        src: "/cases/tia-emilia/overview.png",
         alt: {
           pt: "Visão geral do e-commerce Tia Emília",
           en: "Tia Emília e-commerce overview",
@@ -1051,7 +1051,7 @@ I organized transactional flows to reduce manual intervention and increase opera
         },
       },
       {
-        src: "/cases/tia-emilia/flow.svg",
+        src: "/cases/tia-emilia/flow.png",
         alt: {
           pt: "Fluxo PIX e webhook da Tia Emília",
           en: "Tia Emília PIX and webhook flow",
@@ -1062,7 +1062,7 @@ I organized transactional flows to reduce manual intervention and increase opera
         },
       },
       {
-        src: "/cases/tia-emilia/admin.svg",
+        src: "/cases/tia-emilia/admin.png",
         alt: {
           pt: "Painel de gestão da Tia Emília",
           en: "Tia Emília management dashboard",
