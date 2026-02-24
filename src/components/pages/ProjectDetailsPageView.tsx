@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Section from "@/components/Section";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
@@ -19,6 +20,14 @@ export default function ProjectDetailsPageView({
   const overview = localizeText(project.description, locale);
   const challenge = localizeText(project.challenge, locale);
   const solution = localizeText(project.solution, locale);
+  const challengeBullets = challenge
+    .split("\n")
+    .map((item) => item.trim())
+    .filter(Boolean);
+  const solutionBullets = solution
+    .split("\n")
+    .map((item) => item.trim())
+    .filter(Boolean);
   const architecture = localizeList(project.architecture, locale);
   const technicalDecisions = localizeList(project.technicalDecisions, locale);
   const engineeringHighlights = localizeList(
@@ -27,6 +36,8 @@ export default function ProjectDetailsPageView({
   );
   const impact = localizeList(project.impact, locale);
   const results = localizeList(project.results, locale);
+  const gallery = project.gallery ?? [];
+  const metrics = project.metrics ?? [];
 
   const links: ProjectLink[] = project.links?.length
     ? project.links
@@ -69,15 +80,64 @@ export default function ProjectDetailsPageView({
         </Section>
       ) : null}
 
+      {gallery.length > 0 ? (
+        <Section id="project-gallery" title={content.projectsPage.galleryLabel}>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {gallery.map((item) => {
+              const alt = localizeText(item.alt, locale);
+              const caption = localizeText(item.caption, locale);
+
+              return (
+                <figure
+                  key={`${item.src}-${alt}`}
+                  className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/40"
+                >
+                  <div className="relative aspect-[16/9]">
+                    <Image
+                      src={item.src}
+                      alt={alt}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  {caption ? (
+                    <figcaption className="border-t border-slate-800 px-3 py-2 text-xs text-slate-400">
+                      {caption}
+                    </figcaption>
+                  ) : null}
+                </figure>
+              );
+            })}
+          </div>
+        </Section>
+      ) : null}
+
       {challenge ? (
         <Section id="project-challenge" title={content.projectsPage.challengeLabel}>
-          <p className="text-sm leading-relaxed whitespace-pre-line text-slate-300">{challenge}</p>
+          {challengeBullets.length > 1 ? (
+            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
+              {challengeBullets.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm leading-relaxed whitespace-pre-line text-slate-300">{challenge}</p>
+          )}
         </Section>
       ) : null}
 
       {solution ? (
         <Section id="project-solution" title={content.projectsPage.solutionLabel}>
-          <p className="text-sm leading-relaxed whitespace-pre-line text-slate-300">{solution}</p>
+          {solutionBullets.length > 1 ? (
+            <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
+              {solutionBullets.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm leading-relaxed whitespace-pre-line text-slate-300">{solution}</p>
+          )}
         </Section>
       ) : null}
 
@@ -131,6 +191,26 @@ export default function ProjectDetailsPageView({
               <li key={item}>{item}</li>
             ))}
           </ul>
+        </Section>
+      ) : null}
+
+      {metrics.length > 0 ? (
+        <Section id="project-metrics" title={content.projectsPage.metricsLabel}>
+          <div className="grid gap-3 sm:grid-cols-3">
+            {metrics.map((metric) => (
+              <article
+                key={localizeText(metric.label, locale)}
+                className="rounded-lg border border-slate-800 bg-slate-900/40 p-4"
+              >
+                <h3 className="text-sm font-semibold text-slate-200">
+                  {localizeText(metric.label, locale)}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                  {localizeText(metric.value, locale)}
+                </p>
+              </article>
+            ))}
+          </div>
         </Section>
       ) : null}
 

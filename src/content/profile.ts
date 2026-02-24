@@ -83,11 +83,13 @@ type HomePageContent = {
 type ProjectsPageContent = {
   title: string;
   description: string;
+  galleryLabel: string;
   overviewLabel: string;
   architectureLabel: string;
   engineeringHighlightsLabel: string;
   technicalDecisionsLabel: string;
   impactLabel: string;
+  metricsLabel: string;
   stackLabel: string;
   linksLabel: string;
   liveLinkLabel: string;
@@ -393,11 +395,13 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       title: "Projetos",
       description:
         "Cases com foco em UI moderna, performance e experiência final do usuário.",
+      galleryLabel: "Galeria do produto",
       overviewLabel: "Visão geral",
       architectureLabel: "Arquitetura",
       engineeringHighlightsLabel: "Destaques de Engenharia",
       technicalDecisionsLabel: "Decisões técnicas",
       impactLabel: "Impacto",
+      metricsLabel: "Métricas",
       stackLabel: "Tecnologias",
       linksLabel: "Links",
       liveLinkLabel: "Link ao vivo",
@@ -415,13 +419,13 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         "Construo software de produção com foco em arquitetura sustentável, performance e impacto real no produto.",
       homeAbout: {
         layerOneLines: [
-          "Sou engenheiro fullstack com foco em produto real, não em demo.",
-          "Atuo em SaaS com arquitetura multi-tenant, integrações e fluxos críticos de operação.",
-          "Trabalho ponta a ponta: interface, APIs, dados, autenticação e entrega em produção.",
-          "Meu foco é combinar velocidade de entrega com base técnica sustentável.",
-          "Priorizo performance, SEO, clareza arquitetural e manutenção de longo prazo.",
-          "Tenho experiência prática com pagamentos, webhooks, CMS headless e painéis administrativos.",
-          "Se o desafio é tirar um produto do papel com responsabilidade técnica, eu encaixo bem.",
+          "Sou desenvolvedor fullstack com +4 anos no ecossistema JavaScript (React, Next.js e Node.js).",
+          "Tenho experiência prática em plataformas de automação e chatbots, com foco em operação real.",
+          "Na Ligo.cloud (Apr 2024 – Apr 2025), atuei na evolução de features e performance do Ligo Bots.",
+          "Na Code7 (May 2021 – Apr 2024), trabalhei em plataforma low-code com integrações e escalabilidade.",
+          "Atuo ponta a ponta: interface, APIs, dados, autenticação e entrega em produção.",
+          "Meu foco técnico é performance, testes com Jest, caching e refatoração de APIs.",
+          "Entrego software com clareza arquitetural, manutenção sustentável e impacto de negócio.",
         ],
         expandLabel: "Ver detalhes sobre como eu trabalho",
         workTitle: "Como eu trabalho",
@@ -717,11 +721,13 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       title: "Projects",
       description:
         "Case studies focused on modern UI, performance, and user experience quality.",
+      galleryLabel: "Product gallery",
       overviewLabel: "Overview",
       architectureLabel: "Architecture",
       engineeringHighlightsLabel: "Engineering Highlights",
       technicalDecisionsLabel: "Technical Decisions",
       impactLabel: "Impact",
+      metricsLabel: "Metrics",
       stackLabel: "Stack",
       linksLabel: "Links",
       liveLinkLabel: "Live Link",

@@ -1,0 +1,16 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g4" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g4)"/>
+  <rect x="110" y="90" width="420" height="720" rx="18" fill="#0b1220" stroke="#334155"/>
+  <rect x="570" y="90" width="920" height="720" rx="18" fill="#0b1220" stroke="#334155"/>
+  <rect x="620" y="170" width="820" height="70" rx="12" fill="#111827" stroke="#334155"/>
+  <rect x="620" y="270" width="820" height="430" rx="12" fill="#111827" stroke="#334155"/>
+  <text x="150" y="170" fill="#94a3b8" font-size="24" font-family="Inter, Arial, sans-serif">Sanity Studio</text>
+  <text x="640" y="215" fill="#e2e8f0" font-size="24" font-family="Inter, Arial, sans-serif">Editor de Conteudo</text>
+  <text x="640" y="330" fill="#94a3b8" font-size="22" font-family="Inter, Arial, sans-serif">Publicacao sem deploy</text>
+</svg>
