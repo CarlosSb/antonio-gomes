@@ -1,8 +1,9 @@
+import ContactSection from "@/components/ContactSection";
 import Experience from "@/components/Experience";
-import FinalCta from "@/components/FinalCta";
 import EngineeringMindset from "@/components/EngineeringMindset";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
+import ResumeSection from "@/components/ResumeSection";
 import Section from "@/components/Section";
 import Skills from "@/components/Skills";
 import StudyAreas from "@/components/StudyAreas";
@@ -36,7 +37,8 @@ export default function HomePageView({ featuredProjects, content, locale }: Home
         <Experience content={content} />
         <Skills content={content} />
         <StudyAreas content={content} />
-        <FinalCta content={content} locale={locale} />
+        <ResumeSection content={content} />
+        <ContactSection content={content} />
       </main>
     </>
   );
