@@ -8,9 +8,21 @@ export type ProjectLink = {
   href: string;
 };
 
+export type ProjectScreenshot = {
+  src: string;
+  alt: LocalizedText;
+  caption?: LocalizedText;
+};
+
+export type ProjectMetric = {
+  label: LocalizedText;
+  value: LocalizedText;
+};
+
 export type Project = {
   slug: string;
   title: string;
+  mainCase?: boolean;
   shortDescription?: LocalizedText;
   liveUrl?: string;
   stack: string[];
@@ -23,6 +35,8 @@ export type Project = {
   architecture?: LocalizedList;
   technicalDecisions?: LocalizedList;
   impact?: LocalizedList;
+  gallery?: ProjectScreenshot[];
+  metrics?: ProjectMetric[];
   links?: ProjectLink[];
   featured?: boolean;
   seoTitle?: string;
@@ -32,8 +46,9 @@ export const projects: Project[] = [
   {
     slug: "ong-tudo-por-amor",
     title: "ONG Tudo por Amor",
+    mainCase: true,
     shortDescription: {
-      pt: "Plataforma institucional com CMS headless focada em fluxos de adoção e transparência financeira.",
+      pt: "Plataforma institucional com CMS headless, SEO técnico e publicação contínua para adoção e transparência financeira.",
       en: "Headless CMS institutional platform focused on adoption workflows and financial transparency.",
     },
     description: {
@@ -110,16 +125,83 @@ I standardized metadata, sitemap, and structured data to improve indexing consis
     },
     impact: {
       pt: [
-        "Autonomia editorial para equipe da ONG",
-        "Maior transparência com relatórios financeiros estruturados",
-        "Entrega de conteúdo otimizada com ISR",
+        "Autonomia editorial para equipe da ONG com atualização sem deploy.",
+        "ISR + revalidação por webhook para conteúdo atualizado com boa performance.",
       ],
       en: [
-        "Enabled editorial autonomy for NGO staff",
-        "Improved transparency with structured financial reports",
-        "Optimized content delivery using ISR",
+        "Enabled editorial autonomy for NGO staff without deploy dependency.",
+        "ISR + webhook revalidation kept content fresh with stable performance.",
       ],
     },
+    gallery: [
+      {
+        src: "/cases/ong/overview.svg",
+        alt: {
+          pt: "Visão institucional da plataforma ONG Tudo por Amor",
+          en: "Institutional overview for ONG Tudo por Amor platform",
+        },
+        caption: {
+          pt: "Página institucional com conteúdo dinâmico e navegação orientada à adoção.",
+          en: "Institutional page with dynamic content and adoption-focused navigation.",
+        },
+      },
+      {
+        src: "/cases/ong/adocao.svg",
+        alt: {
+          pt: "Fluxo de adoção com listagem dinâmica de animais",
+          en: "Adoption flow with dynamic animal listings",
+        },
+        caption: {
+          pt: "Rotas dinâmicas para jornada de adoção e atualização editorial rápida.",
+          en: "Dynamic routes for the adoption journey and fast editorial updates.",
+        },
+      },
+      {
+        src: "/cases/ong/transparencia.svg",
+        alt: {
+          pt: "Página de transparência financeira com estrutura organizada",
+          en: "Financial transparency page with structured information",
+        },
+        caption: {
+          pt: "Transparência financeira com estrutura clara para prestação de contas.",
+          en: "Financial transparency with clear accountability structure.",
+        },
+      },
+      {
+        src: "/cases/ong/cms.svg",
+        alt: {
+          pt: "Fluxo de publicação no CMS utilizado pela ONG",
+          en: "CMS publishing workflow used by NGO staff",
+        },
+        caption: {
+          pt: "Autonomia editorial: equipe da ONG publica e atualiza sem depender de deploy.",
+          en: "Editorial autonomy: NGO staff publishes and updates without deploy dependency.",
+        },
+      },
+    ],
+    metrics: [
+      {
+        label: { pt: "Lighthouse", en: "Lighthouse" },
+        value: {
+          pt: "Mobile: [preencher] | Desktop: [preencher]",
+          en: "Mobile: [fill] | Desktop: [fill]",
+        },
+      },
+      {
+        label: { pt: "Tempo de publicação", en: "Publishing time" },
+        value: {
+          pt: "Antes: [preencher] -> Depois: [preencher]",
+          en: "Before: [fill] -> After: [fill]",
+        },
+      },
+      {
+        label: { pt: "SEO / Google Search Console", en: "SEO / Google Search Console" },
+        value: {
+          pt: "Impressões: [preencher] | Cliques: [preencher] | CTR: [preencher]",
+          en: "Impressions: [fill] | Clicks: [fill] | CTR: [fill]",
+        },
+      },
+    ],
     results: {
       pt: [
         "Antes: atualização de conteúdo dependia de suporte técnico -> Depois: equipe da ONG com autonomia editorial no CMS.",
