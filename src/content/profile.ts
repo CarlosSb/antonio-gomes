@@ -328,8 +328,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       mobileNavigation: "Navegação mobile",
     },
     hero: {
-      availability: "Disponível para oportunidades remotas e híbridas",
-      badge: "Next.js • TypeScript • Node.js",
+      availability: "Disponível para oportunidades remotas",
+      badge: "",
       headlineLead: "Engenharia fullstack com foco em confiabilidade e",
       headlineAccent: "execução.",
       description:
@@ -654,8 +654,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       mobileNavigation: "Mobile navigation",
     },
     hero: {
-      availability: "Open to remote and hybrid opportunities",
-      badge: "Fullstack Engineer • Next.js • TypeScript",
+      availability: "Open to remote opportunities",
+      badge: "",
       headlineLead: "Full-stack engineering for",
       headlineAccent: "production-grade products.",
       description:
