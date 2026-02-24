@@ -72,7 +72,7 @@ export default function Hero({ content, locale }: HeroProps) {
             {content.hero.badge}
           </p>
 
-          <h1 className="max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-slate-100 sm:text-5xl lg:text-[3.25rem]">
+          <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-slate-100 md:text-5xl">
             {content.hero.headlineLead}{" "}
             <span className="bg-gradient-to-r from-sky-300 via-cyan-300 to-sky-500 bg-clip-text text-transparent">
               {content.hero.headlineAccent}

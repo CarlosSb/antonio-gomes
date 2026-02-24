@@ -85,7 +85,32 @@ type ProjectsPageContent = {
 type AboutPageContent = {
   title: string;
   description: string;
-  paragraphs: string[];
+  introTitle: string;
+  introPoints: string[];
+  timelineTitle: string;
+  timelineItems: Array<{
+    company: string;
+    period: string;
+    role: string;
+    highlights: string[];
+  }>;
+  principlesTitle: string;
+  principles: Array<{
+    title: string;
+    description: string;
+  }>;
+  impactTitle: string;
+  impactPoints: string[];
+  proofTitle: string;
+  proofDescription: string;
+  proofProjects: Array<{
+    slug: string;
+    title: string;
+    description: string;
+  }>;
+  proofLinkLabel: string;
+  exploringTitle: string;
+  exploringDescription: string;
 };
 
 type ResumePageContent = {
@@ -273,8 +298,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     hero: {
       availability: "Disponível para oportunidades remotas e híbridas",
       badge: "Fullstack Engineer • Next.js • TypeScript",
-      headlineLead: "Construo produtos digitais",
-      headlineAccent: "rápidos, escaláveis e prontos para crescer.",
+      headlineLead: "Engenharia fullstack para produtos que rodam em",
+      headlineAccent: "produção.",
       description:
         "Engenheiro fullstack com mais de 4 anos de experiência em SaaS, arquitetura multi-tenant, integrações complexas e decisões orientadas a produto. Foco em performance, clareza arquitetural e entrega real em produção.",
       aboutLinkLabel: "Saiba mais sobre minha trajetória →",
@@ -332,12 +357,87 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     aboutPage: {
       title: "Sobre",
       description:
-        "Experiência sólida em produtos digitais, integrações e evolução contínua de arquitetura.",
-      paragraphs: [
-        "Atuo como desenvolvedor Fullstack há mais de 4 anos, com foco no ecossistema JavaScript e entrega de produtos escaláveis.",
-        "Tenho experiência direta em plataformas de automação com chatbots, otimização de performance, melhoria de fluxos e refatoração de APIs para melhor experiência do usuário.",
-        "Valorizo código limpo, colaboração multidisciplinar e decisões orientadas a impacto de negócio.",
+        "Resumo profissional com foco em execução técnica, direção de arquitetura e impacto de produto.",
+      introTitle: "Intro",
+      introPoints: [
+        "Engenheiro fullstack com mais de 4 anos construindo aplicações em produção.",
+        "Atuação em SaaS, automação, integrações complexas e evolução de arquitetura.",
+        "Perfil orientado a clareza técnica, colaboração e impacto de negócio.",
       ],
+      timelineTitle: "Linha da Carreira",
+      timelineItems: [
+        {
+          company: "Ligo.cloud",
+          period: "Apr 2024 – Apr 2025",
+          role: "Desenvolvedor Fullstack",
+          highlights: [
+            "Evolução contínua do Ligo Bots com entrega de novas features.",
+            "Melhoria de performance e estabilidade em fluxos críticos.",
+            "Trabalho em conjunto com times multidisciplinares para melhorar UX.",
+          ],
+        },
+        {
+          company: "Code7",
+          period: "May 2021 – Apr 2024",
+          role: "Desenvolvedor de Software",
+          highlights: [
+            "Desenvolvimento de plataforma low-code para automação com chatbots.",
+            "Criação de integrações com APIs e serviços externos.",
+            "Otimização de fluxos e ajustes arquiteturais para escalabilidade.",
+          ],
+        },
+      ],
+      principlesTitle: "Como eu trabalho",
+      principles: [
+        {
+          title: "Context first, code second",
+          description:
+            "Entendo restrições de produto e operação antes de decidir implementação.",
+        },
+        {
+          title: "Performance by default",
+          description:
+            "Busco respostas rápidas e arquitetura eficiente desde o primeiro deploy.",
+        },
+        {
+          title: "Sustainable delivery",
+          description:
+            "Prefiro soluções legíveis e evolutivas para manter velocidade com qualidade.",
+        },
+      ],
+      impactTitle: "Onde entrego mais valor",
+      impactPoints: [
+        "Arquitetura e evolução de produtos SaaS com múltiplos contextos de negócio.",
+        "Integrações externas (pagamentos, webhooks, APIs) com foco em confiabilidade.",
+        "Refatoração de APIs e fluxos para reduzir fricção e melhorar UX real.",
+      ],
+      proofTitle: "Provas",
+      proofDescription:
+        "Três cases que mostram profundidade técnica e entrega em produção.",
+      proofProjects: [
+        {
+          slug: "ong-tudo-por-amor",
+          title: "ONG Tudo por Amor",
+          description:
+            "Plataforma institucional com CMS headless, SEO técnico e ISR.",
+        },
+        {
+          slug: "otica-plus",
+          title: "ÓticaPlus",
+          description:
+            "SaaS multi-tenant com CRM, billing e fluxo operacional completo.",
+        },
+        {
+          slug: "digital-net-telecom",
+          title: "Digital.Net Telecom",
+          description:
+            "Plataforma fullstack com arquitetura multi-cidade e APIs testadas.",
+        },
+      ],
+      proofLinkLabel: "Ver case",
+      exploringTitle: "Explorando agora",
+      exploringDescription:
+        "Áreas em estudo contínuo para ampliar capacidade técnica e visão de produto.",
     },
     resumePage: {
       title: "Currículo",
@@ -465,11 +565,11 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     hero: {
       availability: "Open to remote and hybrid opportunities",
       badge: "Fullstack Engineer • Next.js • TypeScript",
-      headlineLead: "I build digital products",
-      headlineAccent: "that are fast, scalable, and ready to grow.",
+      headlineLead: "Full-stack engineering for",
+      headlineAccent: "production-grade products.",
       description:
         "Fullstack engineer with over 4 years of experience in SaaS, multi-tenant architecture, complex integrations, and product-driven decision making. Focused on performance, architectural clarity, and real production delivery.",
-      aboutLinkLabel: "Learn more about my journey →",
+      aboutLinkLabel: "Read more about my background →",
       tags: ["SaaS", "Multi-tenant", "Payments", "AI", "Performance", "DX"],
     },
     homePage: {
@@ -524,12 +624,87 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     aboutPage: {
       title: "About",
       description:
-        "Solid experience with digital products, integrations, and architecture evolution.",
-      paragraphs: [
-        "I have worked as a Full-Stack developer for 4+ years, focused on the JavaScript ecosystem and scalable product delivery.",
-        "My background includes automation platforms with chatbots, performance optimization, flow improvements, and API refactoring to improve end-user experience.",
-        "I value clean code, multidisciplinary collaboration, and business-impact-driven technical decisions.",
+        "Professional overview focused on technical execution, architecture direction, and product impact.",
+      introTitle: "Intro",
+      introPoints: [
+        "Full-stack engineer with 4+ years building and shipping production systems.",
+        "Experience across SaaS, automation, complex integrations, and architecture evolution.",
+        "Work style grounded in technical clarity, collaboration, and business outcomes.",
       ],
+      timelineTitle: "Career Timeline",
+      timelineItems: [
+        {
+          company: "Ligo.cloud",
+          period: "Apr 2024 – Apr 2025",
+          role: "Full-Stack Developer",
+          highlights: [
+            "Continuously shipped new capabilities in Ligo Bots.",
+            "Improved performance and stability in business-critical flows.",
+            "Collaborated across teams to prioritize user-experience improvements.",
+          ],
+        },
+        {
+          company: "Code7",
+          period: "May 2021 – Apr 2024",
+          role: "Software Developer",
+          highlights: [
+            "Built low-code automation products for chatbot operations.",
+            "Implemented integrations with external APIs and services.",
+            "Optimized platform workflows and architectural consistency.",
+          ],
+        },
+      ],
+      principlesTitle: "How I work",
+      principles: [
+        {
+          title: "Context first, code second",
+          description:
+            "I align implementation choices with product and operational constraints.",
+        },
+        {
+          title: "Performance by default",
+          description:
+            "I design for speed and efficiency from the first production release.",
+        },
+        {
+          title: "Sustainable delivery",
+          description:
+            "I prioritize maintainable solutions that keep teams moving fast with quality.",
+        },
+      ],
+      impactTitle: "Where I deliver the most",
+      impactPoints: [
+        "SaaS architecture and product evolution across complex business flows.",
+        "External integrations (payments, webhooks, APIs) with reliability in mind.",
+        "API and workflow refactoring to improve real-world user experience.",
+      ],
+      proofTitle: "Proof",
+      proofDescription:
+        "Three projects that represent technical depth and production delivery.",
+      proofProjects: [
+        {
+          slug: "ong-tudo-por-amor",
+          title: "ONG Tudo por Amor",
+          description:
+            "Institutional platform with headless CMS, technical SEO, and ISR.",
+        },
+        {
+          slug: "otica-plus",
+          title: "ÓticaPlus",
+          description:
+            "Multi-tenant SaaS with CRM, billing, and end-to-end operations.",
+        },
+        {
+          slug: "digital-net-telecom",
+          title: "Digital.Net Telecom",
+          description:
+            "Fullstack ISP platform with multi-city architecture and tested APIs.",
+        },
+      ],
+      proofLinkLabel: "View case",
+      exploringTitle: "What I’m exploring",
+      exploringDescription:
+        "Continuous study tracks to expand technical capability and product thinking.",
     },
     resumePage: {
       title: "Resume",
