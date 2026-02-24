@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Section from "@/components/Section";
 import type { LocalizedProfileContent } from "@/content/profile";
 
@@ -7,22 +6,49 @@ type AboutSectionProps = {
 };
 
 export default function AboutSection({ content }: AboutSectionProps) {
-  const leadPoint = content.aboutPage.introPoints[0] ?? "";
-  const supportPoint = content.aboutPage.introPoints[1] ?? "";
+  const { homeAbout } = content.aboutPage;
 
   return (
     <Section id="sobre" title={content.aboutPage.title} description={content.aboutPage.description}>
-      <article className="rounded-xl border border-slate-800 bg-slate-900/40 p-5">
-        <p className="text-sm leading-relaxed text-slate-300">{leadPoint}</p>
-        <p className="mt-3 text-sm leading-relaxed text-slate-300">{supportPoint}</p>
-        <Link
-          href={content.profile.linkedinUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-4 inline-flex text-sm font-medium text-sky-400 transition-colors duration-200 hover:text-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
-        >
-          {content.actions.linkedinProfile}
-        </Link>
+      <article className="space-y-5 rounded-xl border border-slate-800 bg-slate-900/40 p-5">
+        <div className="space-y-2">
+          {homeAbout.layerOneLines.map((line) => (
+            <p key={line} className="text-sm leading-relaxed text-slate-300">
+              {line}
+            </p>
+          ))}
+        </div>
+
+        <details className="rounded-lg border border-slate-800 bg-slate-950/40 p-4">
+          <summary className="cursor-pointer list-none text-sm font-semibold text-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500">
+            {homeAbout.expandLabel}
+          </summary>
+
+          <div className="mt-4 space-y-4">
+            <section className="space-y-2">
+              <h3 className="text-sm font-semibold text-slate-100">{homeAbout.workTitle}</h3>
+              <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
+                {homeAbout.workBullets.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="space-y-2">
+              <h3 className="text-sm font-semibold text-slate-100">{homeAbout.deliveredTitle}</h3>
+              <ul className="list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-slate-300 marker:text-slate-500">
+                {homeAbout.deliveredBullets.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="space-y-2">
+              <h3 className="text-sm font-semibold text-slate-100">{homeAbout.studyingTitle}</h3>
+              <p className="text-sm leading-relaxed text-slate-300">{homeAbout.studyingLine}</p>
+            </section>
+          </div>
+        </details>
       </article>
     </Section>
   );

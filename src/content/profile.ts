@@ -56,10 +56,20 @@ type HeroContent = {
 type HomePageContent = {
   selectedWorkTitle: string;
   selectedWorkDescription: string;
+  heroMainCaseCtaLabel: string;
+  heroMainCaseCtaAriaLabel: string;
+  projectsMainCaseHighlight: {
+    badge: string;
+    lineOne: string;
+    lineTwo: string;
+    ctaLabel: string;
+  };
   caseTitle: string;
   caseDescription: string;
   caseContextLabel: string;
   caseCta: string;
+  caseQuickSummaryTitle: string;
+  caseQuickSummaryBullets: string[];
   engineeringMindsetTitle: string;
   engineeringMindsetDescription: string;
   engineeringMindsetItems: Array<{
@@ -92,6 +102,16 @@ type ProjectsPageContent = {
 type AboutPageContent = {
   title: string;
   description: string;
+  homeAbout: {
+    layerOneLines: string[];
+    expandLabel: string;
+    workTitle: string;
+    workBullets: string[];
+    deliveredTitle: string;
+    deliveredBullets: string[];
+    studyingTitle: string;
+    studyingLine: string;
+  };
   introTitle: string;
   introPoints: string[];
   timelineTitle: string;
@@ -307,23 +327,43 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     },
     hero: {
       availability: "Disponível para oportunidades remotas e híbridas",
-      badge: "Engenheiro Fullstack • Next.js • TypeScript",
-      headlineLead: "Engenharia fullstack para produtos que rodam em",
-      headlineAccent: "produção.",
+      badge: "Next.js • TypeScript • Node.js",
+      headlineLead: "Engenharia fullstack com foco em confiabilidade e",
+      headlineAccent: "execução.",
       description:
-        "Engenheiro fullstack com mais de 4 anos de experiência em SaaS, arquitetura multi-tenant, integrações complexas e decisões orientadas a produto. Foco em performance, clareza arquitetural e entrega real em produção.",
+        "Oi, sou Antonio. Atuo em sistemas com autenticação, autorização, dados e operação centralizada. Stack principal: Next.js, TypeScript, Node.js e PostgreSQL.",
       aboutLinkLabel: "Saiba mais sobre minha trajetória →",
-      tags: ["SaaS", "Multi-tenant", "Pagamentos", "IA", "Performance", "DX"],
+      tags: ["Fluxos auditáveis", "Admin e autoatendimento", "Deploy contínuo"],
     },
     homePage: {
       selectedWorkTitle: "Trabalhos em Destaque",
       selectedWorkDescription:
         "Três projetos com maior profundidade técnica, foco de negócio e resultados concretos.",
+      heroMainCaseCtaLabel: "Ver case: ONG Tudo por Amor",
+      heroMainCaseCtaAriaLabel:
+        "Ver case principal ONG Tudo por Amor com arquitetura, decisões técnicas e impacto em produção",
+      projectsMainCaseHighlight: {
+        badge: "Case principal",
+        lineOne:
+          "ONG Tudo por Amor: plataforma institucional com CMS headless, SEO técnico e ISR.",
+        lineTwo:
+          "Case com foco em autonomia editorial, transparência financeira e entrega estável em produção.",
+        ctaLabel: "Ler case completo",
+      },
       caseTitle: "Case em Profundidade",
       caseDescription:
         "ONG Tudo por Amor: contexto real, decisões técnicas e impacto operacional.",
       caseContextLabel: "Contexto",
-      caseCta: "Ver case completo",
+      caseCta: "Ver case ONG",
+      caseQuickSummaryTitle: "Resumo rápido do case",
+      caseQuickSummaryBullets: [
+        "Problema: publicação de conteúdo dependia de suporte técnico e gerava gargalo operacional.",
+        "Problema: informações institucionais e de transparência estavam dispersas, com baixa consistência de SEO.",
+        "Solução: arquitetura com Next.js + Sanity CMS para autonomia editorial sem depender de deploy.",
+        "Solução: rotas dinâmicas com ISR e revalidação por webhook para conteúdo atualizado com performance.",
+        "Resultado: equipe da ONG passou a publicar com autonomia e fluxo editorial mais ágil.",
+        "Resultado: estrutura de transparência e SEO ficou mais consistente, melhorando clareza institucional.",
+      ],
       engineeringMindsetTitle: "Mentalidade de Engenharia",
       engineeringMindsetDescription:
         "Princípios que guiam minha tomada de decisão em produto e arquitetura.",
@@ -373,6 +413,34 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       title: "Sobre",
       description:
         "Construo software de produção com foco em arquitetura sustentável, performance e impacto real no produto.",
+      homeAbout: {
+        layerOneLines: [
+          "Sou engenheiro fullstack com foco em produto real, não em demo.",
+          "Atuo em SaaS com arquitetura multi-tenant, integrações e fluxos críticos de operação.",
+          "Trabalho ponta a ponta: interface, APIs, dados, autenticação e entrega em produção.",
+          "Meu foco é combinar velocidade de entrega com base técnica sustentável.",
+          "Priorizo performance, SEO, clareza arquitetural e manutenção de longo prazo.",
+          "Tenho experiência prática com pagamentos, webhooks, CMS headless e painéis administrativos.",
+          "Se o desafio é tirar um produto do papel com responsabilidade técnica, eu encaixo bem.",
+        ],
+        expandLabel: "Ver detalhes sobre como eu trabalho",
+        workTitle: "Como eu trabalho",
+        workBullets: [
+          "Começo pelo problema de negócio e pelos fluxos críticos antes de escolher solução técnica.",
+          "Estruturo o sistema para evoluir sem retrabalho: módulos claros, contratos de API e tipagem forte.",
+          "Trato confiabilidade como requisito: validação, idempotência, logs e trilha de execução.",
+          "Entrego em ciclos curtos, com foco em impacto real para usuário e operação.",
+        ],
+        deliveredTitle: "O que eu já entreguei",
+        deliveredBullets: [
+          "ONG Tudo por Amor: plataforma com Next.js + Sanity CMS, SEO técnico e ISR para dar autonomia editorial e consistência institucional.",
+          "ÓticaPlus e Provedor Connect: produtos SaaS com contexto multi-tenant, RBAC, integração com serviços externos e fluxo administrativo completo.",
+          "Tia Emília e Digital.Net: fluxos de pagamento e operação com webhook assíncrono, validação de APIs e redução de trabalho manual.",
+        ],
+        studyingTitle: "Agora estudando",
+        studyingLine:
+          "Python, fundamentos de segurança em aplicações web (OWASP e autenticação) e IA aplicada a produtos web.",
+      },
       introTitle: "Introdução",
       introPoints: [
         "Sou engenheiro fullstack focado em SaaS multi-tenant, integrações e fluxos críticos como autenticação, billing e pagamentos.",
@@ -595,11 +663,31 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       selectedWorkTitle: "Selected Work",
       selectedWorkDescription:
         "Three projects with stronger technical depth, business context, and measurable delivery quality.",
+      heroMainCaseCtaLabel: "View case: ONG Tudo por Amor",
+      heroMainCaseCtaAriaLabel:
+        "View main case study ONG Tudo por Amor with architecture, technical decisions and production impact",
+      projectsMainCaseHighlight: {
+        badge: "Main case",
+        lineOne:
+          "ONG Tudo por Amor: institutional platform with headless CMS, technical SEO and ISR.",
+        lineTwo:
+          "Case focused on editorial autonomy, financial transparency, and stable production delivery.",
+        ctaLabel: "Read full case study",
+      },
       caseTitle: "Deep Case Study",
       caseDescription:
         "ONG Tudo por Amor: real context, technical decisions, and operational impact.",
       caseContextLabel: "Context",
       caseCta: "View full case study",
+      caseQuickSummaryTitle: "Quick case summary",
+      caseQuickSummaryBullets: [
+        "Problem: content publishing depended on technical support, creating operational bottlenecks.",
+        "Problem: institutional and transparency content was fragmented, with inconsistent SEO.",
+        "Solution: Next.js + Sanity CMS architecture to provide editorial autonomy without deployments.",
+        "Solution: dynamic routes with ISR and webhook revalidation for fresh and fast content delivery.",
+        "Result: NGO staff gained autonomy and a faster editorial workflow.",
+        "Result: transparency structure and SEO became more consistent, improving institutional clarity.",
+      ],
       engineeringMindsetTitle: "Engineering Mindset",
       engineeringMindsetDescription:
         "Core principles that drive my product and architecture decisions.",
@@ -649,6 +737,34 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       title: "About",
       description:
         "I build production software with sustainable architecture, performance, and real product impact.",
+      homeAbout: {
+        layerOneLines: [
+          "I am a full-stack engineer focused on real products, not demos.",
+          "I work on SaaS platforms with multi-tenant architecture, integrations, and critical operational flows.",
+          "I deliver end-to-end: UI, APIs, data, authentication, and production rollout.",
+          "My focus is balancing delivery speed with sustainable technical foundations.",
+          "I prioritize performance, SEO, architectural clarity, and long-term maintainability.",
+          "I have hands-on experience with payments, webhooks, headless CMS, and admin platforms.",
+          "If the challenge is taking a product to production with technical accountability, I am a strong fit.",
+        ],
+        expandLabel: "See details about how I work",
+        workTitle: "How I work",
+        workBullets: [
+          "I start from business pain points and critical flows before choosing implementation details.",
+          "I design systems to evolve without rework: clear modules, API contracts, and strong typing.",
+          "I treat reliability as a product requirement: validation, idempotency, logs, and traceability.",
+          "I ship in short cycles with focus on measurable impact for users and operations.",
+        ],
+        deliveredTitle: "What I have delivered",
+        deliveredBullets: [
+          "ONG Tudo por Amor: Next.js + Sanity CMS platform with technical SEO and ISR for editorial autonomy.",
+          "ÓticaPlus and Provedor Connect: SaaS products with multi-tenant context, RBAC, and external integrations.",
+          "Tia Emília and Digital.Net: payment and operations flows with async webhooks and validated APIs.",
+        ],
+        studyingTitle: "Currently studying",
+        studyingLine:
+          "Python, web application security fundamentals (OWASP and authentication), and AI applied to web products.",
+      },
       introTitle: "Intro",
       introPoints: [
         "I’m a Fullstack Engineer focused on production-grade SaaS: multi-tenant architecture, integrations, and critical flows like auth, billing, and payments.",
