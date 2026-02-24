@@ -46,8 +46,16 @@ type HeroContent = {
 };
 
 type HomePageContent = {
-  featuredProjectsTitle: string;
-  featuredProjectsDescription: string;
+  selectedWorkTitle: string;
+  selectedWorkDescription: string;
+  engineeringMindsetTitle: string;
+  engineeringMindsetDescription: string;
+  engineeringMindsetItems: Array<{
+    title: string;
+    description: string;
+  }>;
+  finalCtaTitle: string;
+  finalCtaDescription: string;
 };
 
 type ProjectsPageContent = {
@@ -249,14 +257,37 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     },
     hero: {
       availability: "Disponível para oportunidades remotas e híbridas",
-      title: "Construindo produtos web performáticos com foco em UX e qualidade de código.",
+      title: "Desenvolvo produtos digitais de alto impacto com foco em performance, escala e experiência real do usuário.",
       description:
         "Portfólio profissional em PT/EN para recrutadores brasileiros e internacionais.",
     },
     homePage: {
-      featuredProjectsTitle: "Projetos em destaque",
-      featuredProjectsDescription:
-        "Seleção de projetos publicados com foco em entrega de valor e qualidade técnica.",
+      selectedWorkTitle: "Selected Work",
+      selectedWorkDescription:
+        "Três projetos com maior profundidade técnica, foco de negócio e resultados concretos.",
+      engineeringMindsetTitle: "Engineering Mindset",
+      engineeringMindsetDescription:
+        "Princípios que guiam minha tomada de decisão em produto e arquitetura.",
+      engineeringMindsetItems: [
+        {
+          title: "Performance as Baseline",
+          description:
+            "Arquitetura e implementação orientadas para carregamento rápido, eficiência e boa experiência em dispositivos reais.",
+        },
+        {
+          title: "Product-Driven Decisions",
+          description:
+            "Priorização técnica alinhada com impacto de negócio, clareza de fluxo e redução de fricção para o usuário final.",
+        },
+        {
+          title: "Maintainability at Scale",
+          description:
+            "Código modular, tipagem forte e padrões consistentes para acelerar evolução sem comprometer qualidade.",
+        },
+      ],
+      finalCtaTitle: "Vamos construir algo relevante juntos.",
+      finalCtaDescription:
+        "Aberto para oportunidades fullstack, colaboração técnica e projetos com alto padrão de execução.",
     },
     projectsPage: {
       title: "Projetos",
@@ -399,14 +430,37 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     },
     hero: {
       availability: "Open to remote and hybrid opportunities",
-      title: "Building high-performance web products focused on UX and code quality.",
+      title: "I build high-impact digital products focused on performance, scalability, and real user experience.",
       description:
         "Professional bilingual portfolio for Brazilian and international recruiters.",
     },
     homePage: {
-      featuredProjectsTitle: "Featured projects",
-      featuredProjectsDescription:
-        "Selected live projects with a strong focus on delivery quality and business value.",
+      selectedWorkTitle: "Selected Work",
+      selectedWorkDescription:
+        "Three projects with stronger technical depth, business context, and measurable delivery quality.",
+      engineeringMindsetTitle: "Engineering Mindset",
+      engineeringMindsetDescription:
+        "Core principles that drive my product and architecture decisions.",
+      engineeringMindsetItems: [
+        {
+          title: "Performance as Baseline",
+          description:
+            "Architecture and implementation decisions built around fast loading, efficiency, and real-device UX quality.",
+        },
+        {
+          title: "Product-Driven Decisions",
+          description:
+            "Technical priorities aligned with business impact, clarity of flow, and reduced user friction.",
+        },
+        {
+          title: "Maintainability at Scale",
+          description:
+            "Modular code, strong typing, and consistent patterns to scale delivery without sacrificing quality.",
+        },
+      ],
+      finalCtaTitle: "Let us build something meaningful together.",
+      finalCtaDescription:
+        "Open to full-stack opportunities, technical collaboration, and product-focused teams.",
     },
     projectsPage: {
       title: "Projects",
