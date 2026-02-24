@@ -30,5 +30,5 @@ export default async function LocalizedAboutPage({ params }: AboutPageProps) {
   const { locale } = await params;
   const resolvedLocale: Locale = isLocale(locale) ? locale : "pt";
 
-  return <AboutPageView content={getContent(resolvedLocale)} />;
+  return <AboutPageView content={getContent(resolvedLocale)} locale={resolvedLocale} />;
 }
