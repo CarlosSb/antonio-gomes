@@ -46,6 +46,9 @@ type HeroContent = {
   headlineLead: string;
   headlineAccent: string;
   description: string;
+  aboutLabel: string;
+  aboutSummaryLines: string[];
+  aboutLinkLabel: string;
   tags: string[];
 };
 
@@ -99,8 +102,6 @@ type ResumePageContent = {
 type ContactPageContent = {
   title: string;
   description: string;
-  headline: string;
-  directTitle: string;
   copyEmailLabel: string;
   copyEmailSuccess: string;
 };
@@ -278,6 +279,12 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       headlineAccent: "rápidos, escaláveis e prontos para crescer.",
       description:
         "Experiência em SaaS, arquitetura multi-tenant, pagamentos e integrações de IA com foco em entrega real de valor.",
+      aboutLabel: "Sobre",
+      aboutSummaryLines: [
+        "Fullstack há +4 anos, focado em SaaS, integrações e arquitetura escalável.",
+        "Experiência com performance, refatoração de APIs e decisões orientadas a produto.",
+      ],
+      aboutLinkLabel: "Ler mais →",
       tags: ["SaaS", "Multi-tenant", "Payments", "IA", "Performance", "DX"],
     },
     homePage: {
@@ -304,7 +311,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
             "Código modular, tipagem forte e padrões consistentes para acelerar evolução sem comprometer qualidade.",
         },
       ],
-      finalCtaTitle: "Vamos construir algo relevante juntos.",
+      finalCtaTitle:
+        "Aberto a oportunidades fullstack e projetos com alto padrão de execução.",
       finalCtaDescription:
         "Aberto para oportunidades fullstack, colaboração técnica e projetos com alto padrão de execução.",
     },
@@ -355,10 +363,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       title: "Contato",
       description:
         "Vamos conversar sobre oportunidades, projetos e colaboração técnica.",
-      headline: "Vamos construir algo relevante juntos.",
-      directTitle: "Contato direto",
       copyEmailLabel: "Copiar e-mail",
-      copyEmailSuccess: "E-mail copiado",
+      copyEmailSuccess: "Copiado!",
     },
     sections: {
       experience: "Experiência",
@@ -470,6 +476,12 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       headlineAccent: "that are fast, scalable, and ready to grow.",
       description:
         "Hands-on experience with SaaS, multi-tenant architecture, payments, and AI integrations focused on measurable product impact.",
+      aboutLabel: "About",
+      aboutSummaryLines: [
+        "Fullstack engineer with 4+ years focused on SaaS, integrations, and scalable architecture.",
+        "Experience in performance work, API refactoring, and product-driven technical decisions.",
+      ],
+      aboutLinkLabel: "Read more →",
       tags: ["SaaS", "Multi-tenant", "Payments", "AI", "Performance", "DX"],
     },
     homePage: {
@@ -496,7 +508,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
             "Modular code, strong typing, and consistent patterns to scale delivery without sacrificing quality.",
         },
       ],
-      finalCtaTitle: "Let us build something meaningful together.",
+      finalCtaTitle:
+        "Open to full-stack opportunities and projects with a high execution standard.",
       finalCtaDescription:
         "Open to full-stack opportunities, technical collaboration, and product-focused teams.",
     },
@@ -546,10 +559,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       title: "Contact",
       description:
         "Let us connect about opportunities, projects, and technical collaboration.",
-      headline: "Let us build something meaningful together.",
-      directTitle: "Direct contact",
       copyEmailLabel: "Copy e-mail",
-      copyEmailSuccess: "E-mail copied",
+      copyEmailSuccess: "Copied!",
     },
     sections: {
       experience: "Experience",
