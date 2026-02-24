@@ -6,6 +6,7 @@ export const defaultLocale: Locale = "pt";
 type NavigationContent = {
   home: string;
   projects: string;
+  caseStudy: string;
   about: string;
   resume: string;
   contact: string;
@@ -268,6 +269,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     navigation: {
       home: "Início",
       projects: "Projetos",
+      caseStudy: "Case ONG",
       about: "Sobre",
       resume: "Currículo",
       contact: "Contato",
@@ -541,6 +543,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     navigation: {
       home: "Home",
       projects: "Projects",
+      caseStudy: "ONG Case",
       about: "About",
       resume: "Resume",
       contact: "Contact",

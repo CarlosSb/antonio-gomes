@@ -10,7 +10,7 @@ type HeroProps = {
 
 export default function Hero({ content, locale }: HeroProps) {
   return (
-    <section id="hero" className="relative isolate w-full overflow-hidden border-b border-slate-800/80 min-h-[calc(100svh-6rem)] md:min-h-[calc(100svh-4.5rem)]">
+    <section id="hero" className="relative isolate w-full overflow-hidden border-b border-slate-800/80 min-h-[88svh]">
       <div className="absolute inset-0" style={{ backgroundColor: "var(--hero-base)" }} />
       <div
         className="absolute inset-0"
@@ -28,8 +28,9 @@ export default function Hero({ content, locale }: HeroProps) {
         }}
       />
 
-      <div className="relative mx-auto grid min-h-[calc(100svh-6rem)] w-full max-w-6xl grid-cols-1 items-center gap-8 px-4 py-8 md:min-h-[calc(100svh-4.5rem)] sm:px-6 lg:grid-cols-12 lg:gap-6">
+      <div className="relative mx-auto grid min-h-[88svh] w-full max-w-[1200px] grid-cols-1 items-center gap-8 px-4 py-8 sm:px-6 lg:grid-cols-12 lg:gap-6 lg:px-8">
         <div className="space-y-5 lg:col-span-7">
+          <p className="text-xs font-medium tracking-wide text-slate-400">{content.hero.availability}</p>
           <p className="inline-flex max-w-full rounded-full border border-slate-700/90 bg-slate-900/80 px-3 py-1 text-xs font-medium tracking-wide text-slate-300">
             {content.hero.badge}
           </p>
@@ -60,15 +61,15 @@ export default function Hero({ content, locale }: HeroProps) {
               {content.actions.viewProjects}
             </Link>
             <Link
-              href={`${withLocalePath(locale)}#contato`}
+              href={`${withLocalePath(locale)}#case`}
               className="rounded-md border border-slate-700 px-5 py-2.5 text-sm font-semibold text-slate-100 transition-all duration-200 hover:border-slate-600 hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
             >
-              {content.actions.contact}
+              {content.homePage.caseCta}
             </Link>
           </div>
 
           <ul className="flex flex-wrap gap-2">
-            {content.hero.tags.map((tag) => (
+            {content.hero.tags.slice(0, 3).map((tag) => (
               <li
                 key={tag}
                 className="rounded-full border border-slate-700 bg-slate-900/70 px-2.5 py-1 text-xs text-slate-300 transition-all duration-200 hover:-translate-y-1 hover:border-slate-600"
