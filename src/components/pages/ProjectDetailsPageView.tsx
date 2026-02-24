@@ -3,7 +3,7 @@ import Link from "next/link";
 import Section from "@/components/Section";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
 import type { ProjectLink, Project } from "@/content/projects";
-import { getProjectSummary, localizeList, localizeText } from "@/lib/content";
+import { getProjectSummary, getPublicProjectLinks, localizeList, localizeText } from "@/lib/content";
 import { withLocalePath } from "@/lib/i18n";
 
 type ProjectDetailsPageViewProps = {
@@ -39,8 +39,9 @@ export default function ProjectDetailsPageView({
   const gallery = project.gallery ?? [];
   const metrics = project.metrics ?? [];
 
-  const links: ProjectLink[] = project.links?.length
-    ? project.links
+  const publicLinks = getPublicProjectLinks(project);
+  const links: ProjectLink[] = publicLinks.length
+    ? publicLinks
     : project.liveUrl
       ? [{ label: content.actions.liveDemo, href: project.liveUrl }]
       : [];

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
 import type { Project } from "@/content/projects";
-import { getProjectSummary, localizeList } from "@/lib/content";
+import { getProjectLiveLink, getProjectSummary, localizeList } from "@/lib/content";
 import { withLocalePath } from "@/lib/i18n";
 
 type ProjectCardProps = {
@@ -12,11 +12,7 @@ type ProjectCardProps = {
 };
 
 export default function ProjectCard({ project, content, locale, showDetails = true }: ProjectCardProps) {
-  const liveLink =
-    project.links?.find((link) => link.label.toLowerCase().includes("live"))?.href ??
-    project.links?.[0]?.href ??
-    project.liveUrl;
-  const repoLink = project.links?.find((link) => link.label.toLowerCase().includes("repo"))?.href;
+  const liveLink = getProjectLiveLink(project);
   const caseLink = withLocalePath(locale, `/projects/${project.slug}`);
   const impactHighlights = localizeList(project.impact, locale).slice(0, 2);
 
@@ -72,24 +68,6 @@ export default function ProjectCard({ project, content, locale, showDetails = tr
             className="rounded-md border border-slate-800 px-3.5 py-2 text-sm font-semibold text-slate-500"
           >
             {content.actions.liveDemo}
-          </span>
-        )}
-        {repoLink ? (
-          <a
-            href={repoLink}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={`${content.actions.repository}: ${project.title}`}
-            className="rounded-md border border-slate-700 px-3.5 py-2 text-sm font-semibold text-slate-100 transition duration-300 hover:border-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
-          >
-            {content.actions.repository}
-          </a>
-        ) : (
-          <span
-            aria-hidden="true"
-            className="rounded-md border border-slate-800 px-3.5 py-2 text-sm font-semibold text-slate-500"
-          >
-            {content.actions.repository}
           </span>
         )}
         {showDetails ? (

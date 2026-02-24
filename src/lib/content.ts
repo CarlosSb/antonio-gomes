@@ -1,5 +1,5 @@
 import { profileContent, defaultLocale, locales, type Locale } from "@/content/profile";
-import { projects, type Project } from "@/content/projects";
+import { projects, type Project, type ProjectLink } from "@/content/projects";
 
 const validLocales = new Set<Locale>(locales);
 
@@ -63,4 +63,20 @@ export function getProjectSummary(project: Project, locale: Locale): string {
     project.shortDescription ?? project.summary ?? project.description,
     locale,
   );
+}
+
+function isRepositoryLinkLabel(label: string): boolean {
+  const normalizedLabel = label.trim().toLowerCase();
+
+  return normalizedLabel.includes("repo") || normalizedLabel.includes("reposit");
+}
+
+export function getPublicProjectLinks(project: Project): ProjectLink[] {
+  return (project.links ?? []).filter((link) => !isRepositoryLinkLabel(link.label));
+}
+
+export function getProjectLiveLink(project: Project): string | undefined {
+  const links = getPublicProjectLinks(project);
+
+  return links.find((link) => link.label.toLowerCase().includes("live"))?.href ?? links[0]?.href ?? project.liveUrl;
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Section from "@/components/Section";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
 import type { Project } from "@/content/projects";
-import { localizeList, localizeText } from "@/lib/content";
+import { getProjectLiveLink, localizeList, localizeText } from "@/lib/content";
 import { withLocalePath } from "@/lib/i18n";
 
 type CaseStudyONGProps = {
@@ -30,10 +30,7 @@ export default function CaseStudyONG({ locale, content, project }: CaseStudyONGP
   const architecture = localizeList(project.architecture, locale);
   const tradeoffs = localizeList(project.technicalDecisions, locale);
   const results = localizeList(project.results, locale);
-  const liveLink =
-    project.links?.find((link) => link.label.toLowerCase().includes("live"))?.href ??
-    project.links?.[0]?.href ??
-    project.liveUrl;
+  const liveLink = getProjectLiveLink(project);
   const metricPlaceholders = locale === "pt" ? metricPlaceholdersPt : metricPlaceholdersEn;
 
   return (
