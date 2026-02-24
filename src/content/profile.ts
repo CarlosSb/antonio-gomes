@@ -278,7 +278,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       githubProfile: "GitHub",
       linkedinProfile: "LinkedIn",
       downloadPt: "Baixar currículo (PT)",
-      downloadEn: "Baixar resume (EN)",
+      downloadEn: "Baixar currículo (EN)",
       emailMe: "Enviar e-mail",
       languagePt: "Português",
       languageEn: "Inglês",
@@ -306,25 +306,25 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       tags: ["SaaS", "Multi-tenant", "Payments", "IA", "Performance", "DX"],
     },
     homePage: {
-      selectedWorkTitle: "Selected Work",
+      selectedWorkTitle: "Trabalhos em Destaque",
       selectedWorkDescription:
         "Três projetos com maior profundidade técnica, foco de negócio e resultados concretos.",
-      engineeringMindsetTitle: "Engineering Mindset",
+      engineeringMindsetTitle: "Mentalidade de Engenharia",
       engineeringMindsetDescription:
         "Princípios que guiam minha tomada de decisão em produto e arquitetura.",
       engineeringMindsetItems: [
         {
-          title: "Performance as Baseline",
+          title: "Performance como Base",
           description:
             "Arquitetura e implementação orientadas para carregamento rápido, eficiência e boa experiência em dispositivos reais.",
         },
         {
-          title: "Product-Driven Decisions",
+          title: "Decisões Guiadas por Produto",
           description:
             "Priorização técnica alinhada com impacto de negócio, clareza de fluxo e redução de fricção para o usuário final.",
         },
         {
-          title: "Maintainability at Scale",
+          title: "Manutenibilidade em Escala",
           description:
             "Código modular, tipagem forte e padrões consistentes para acelerar evolução sem comprometer qualidade.",
         },
@@ -343,7 +343,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       engineeringHighlightsLabel: "Destaques de Engenharia",
       technicalDecisionsLabel: "Decisões técnicas",
       impactLabel: "Impacto",
-      stackLabel: "Stack",
+      stackLabel: "Tecnologias",
       linksLabel: "Links",
       liveLinkLabel: "Link ao vivo",
       highlightsLabel: "Destaques",
@@ -357,12 +357,13 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     aboutPage: {
       title: "Sobre",
       description:
-        "Resumo profissional com foco em execução técnica, direção de arquitetura e impacto de produto.",
-      introTitle: "Intro",
+        "Construo software de produção com foco em arquitetura sustentável, performance e impacto real no produto.",
+      introTitle: "Introdução",
       introPoints: [
-        "Engenheiro fullstack com mais de 4 anos construindo aplicações em produção.",
-        "Atuação em SaaS, automação, integrações complexas e evolução de arquitetura.",
-        "Perfil orientado a clareza técnica, colaboração e impacto de negócio.",
+        "Sou Fullstack Engineer focado em SaaS multi-tenant, integrações e fluxos críticos como autenticação, billing e pagamentos.",
+        "Trabalho com Next.js + TypeScript no front e back (APIs, banco, filas e webhooks), com atenção a performance, SEO e manutenção no longo prazo.",
+        "Priorizo entrega rápida com arquitetura sustentável, observabilidade, segurança básica (RBAC, validações, idempotência) e experiência do usuário.",
+        "Se você precisa tirar um produto do papel e colocar em produção com responsabilidade, vamos conversar.",
       ],
       timelineTitle: "Linha da Carreira",
       timelineItems: [
@@ -390,17 +391,17 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       principlesTitle: "Como eu trabalho",
       principles: [
         {
-          title: "Context first, code second",
+          title: "Contexto primeiro, código depois",
           description:
             "Entendo restrições de produto e operação antes de decidir implementação.",
         },
         {
-          title: "Performance by default",
+          title: "Performance por padrão",
           description:
             "Busco respostas rápidas e arquitetura eficiente desde o primeiro deploy.",
         },
         {
-          title: "Sustainable delivery",
+          title: "Entrega sustentável",
           description:
             "Prefiro soluções legíveis e evolutivas para manter velocidade com qualidade.",
         },
@@ -461,7 +462,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     },
     sections: {
       experience: "Experiência",
-      skills: "Skills",
+      skills: "Habilidades",
       studyAreas: "Áreas de Estudo",
     },
     experience: [
@@ -516,7 +517,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       locationValue: "Brasil / Remote",
       navigationTitle: "Navegação",
       contactTitle: "Contato",
-      buildLine: "Built with Next.js • Hosted on Vercel",
+      buildLine: "Construído com Next.js • Hospedado na Vercel",
       backToTop: "Voltar ao topo",
     },
   },
@@ -624,12 +625,13 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     aboutPage: {
       title: "About",
       description:
-        "Professional overview focused on technical execution, architecture direction, and product impact.",
+        "I build production software with sustainable architecture, performance, and real product impact.",
       introTitle: "Intro",
       introPoints: [
-        "Full-stack engineer with 4+ years building and shipping production systems.",
-        "Experience across SaaS, automation, complex integrations, and architecture evolution.",
-        "Work style grounded in technical clarity, collaboration, and business outcomes.",
+        "I’m a Fullstack Engineer focused on production-grade SaaS: multi-tenant architecture, integrations, and critical flows like auth, billing, and payments.",
+        "I build with Next.js + TypeScript across frontend and backend (APIs, DB, queues, webhooks), prioritizing performance, SEO, and long-term maintainability.",
+        "I aim for fast delivery with sustainable architecture, solid fundamentals (RBAC, validations, idempotency), and strong UX.",
+        "If you need someone to ship and operate real products, let’s talk.",
       ],
       timelineTitle: "Career Timeline",
       timelineItems: [
@@ -722,7 +724,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       title: "Contact",
       description:
         "Let us connect about opportunities, projects, and technical collaboration.",
-      copyEmailLabel: "Copy e-mail",
+      copyEmailLabel: "Copy email",
       copyEmailSuccess: "Copied!",
     },
     sections: {
