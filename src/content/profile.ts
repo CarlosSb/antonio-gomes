@@ -666,12 +666,12 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     hero: {
       availability: "Open to remote opportunities",
       badge: "",
-      headlineLead: "Full-stack engineering for",
-      headlineAccent: "production-grade products.",
+      headlineLead: "Full-stack engineering focused on reliability and",
+      headlineAccent: "execution.",
       description:
-        "Fullstack engineer with over 4 years of experience in SaaS, multi-tenant architecture, complex integrations, and product-driven decision making. Focused on performance, architectural clarity, and real production delivery.",
+        "Hi, I'm Antonio. I work on systems with authentication, authorization, data, and centralized operations. Main stack: Next.js, TypeScript, Node.js, and PostgreSQL.",
       aboutLinkLabel: "Read more about my background →",
-      tags: ["SaaS", "Multi-tenant", "Payments", "AI", "Performance", "DX"],
+      tags: ["Auditable flows", "Admin and self-service", "Continuous deployment"],
     },
     homePage: {
       selectedWorkTitle: "Selected Work",
@@ -725,7 +725,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       finalCtaTitle:
         "Open to full-stack opportunities and projects with a high execution standard.",
       finalCtaDescription:
-        "Open to full-stack opportunities, technical collaboration, and product-focused teams.",
+        "Open to full-stack opportunities, technical collaboration, and projects with a high execution standard.",
     },
     projectsPage: {
       title: "Projects",
@@ -747,7 +747,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       resultsLabel: "Results",
       notFoundTitle: "Project not found",
       notFoundDescription:
-        "The requested case study is not available yet. You can return to the complete projects list.",
+        "The requested case study is not available. You can return to the complete projects list.",
     },
     aboutPage: {
       title: "About",
@@ -755,13 +755,13 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         "I build production software with sustainable architecture, performance, and real product impact.",
       homeAbout: {
         layerOneLines: [
-          "I am a full-stack engineer focused on real products, not demos.",
-          "I work on SaaS platforms with multi-tenant architecture, integrations, and critical operational flows.",
-          "I deliver end-to-end: UI, APIs, data, authentication, and production rollout.",
-          "My focus is balancing delivery speed with sustainable technical foundations.",
-          "I prioritize performance, SEO, architectural clarity, and long-term maintainability.",
-          "I have hands-on experience with payments, webhooks, headless CMS, and admin platforms.",
-          "If the challenge is taking a product to production with technical accountability, I am a strong fit.",
+          "I am a full-stack developer with 4+ years in the JavaScript ecosystem (React, Next.js, and Node.js).",
+          "I have hands-on experience in automation and chatbot platforms, focused on real operations.",
+          "At Ligo.cloud (Apr 2024 – Apr 2025), I worked on feature evolution and performance improvements for Ligo Bots.",
+          "At Code7 (May 2021 – Apr 2024), I worked on a low-code platform with integrations and scalability.",
+          "I work end-to-end: interface, APIs, data, authentication, and production delivery.",
+          "My technical focus is performance, Jest testing, caching, and API refactoring.",
+          "I deliver software with architectural clarity, sustainable maintenance, and business impact.",
         ],
         expandLabel: "See details about how I work",
         workTitle: "How I work",
@@ -773,20 +773,20 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         ],
         deliveredTitle: "What I have delivered",
         deliveredBullets: [
-          "ONG Tudo por Amor: Next.js + Sanity CMS platform with technical SEO and ISR for editorial autonomy.",
-          "ÓticaPlus and Provedor Connect: SaaS products with multi-tenant context, RBAC, and external integrations.",
-          "Tia Emília and Digital.Net: payment and operations flows with async webhooks and validated APIs.",
+          "ONG Tudo por Amor: platform with Next.js + Sanity CMS, technical SEO, and ISR to provide editorial autonomy and institutional consistency.",
+          "ÓticaPlus and Provedor Connect: SaaS products with multi-tenant context, RBAC, integration with external services, and complete administrative flow.",
+          "Tia Emília and Digital.Net: payment and operations flows with asynchronous webhooks, API validation, and reduced manual work.",
         ],
         studyingTitle: "Currently studying",
         studyingLine:
           "Python, web application security fundamentals (OWASP and authentication), AI applied to web products, and self-taught English for technical communication.",
       },
-      introTitle: "Intro",
+      introTitle: "Introduction",
       introPoints: [
-        "I’m a Fullstack Engineer focused on production-grade SaaS: multi-tenant architecture, integrations, and critical flows like auth, billing, and payments.",
-        "I build with Next.js + TypeScript across frontend and backend (APIs, DB, queues, webhooks), prioritizing performance, SEO, and long-term maintainability.",
-        "I aim for fast delivery with sustainable architecture, solid fundamentals (RBAC, validations, idempotency), and strong UX.",
-        "If you need someone to ship and operate real products, let’s talk.",
+        "I am a full-stack engineer focused on multi-tenant SaaS, integrations, and critical flows such as authentication, billing, and payments.",
+        "I work with Next.js + TypeScript across frontend and backend (APIs, database, queues, and webhooks), with attention to performance, SEO, and long-term maintainability.",
+        "I prioritize fast delivery with sustainable architecture, observability, baseline security (RBAC, validations, idempotency), and user experience.",
+        "If you need to take a product from idea to production responsibly, let's talk.",
       ],
       timelineTitle: "Career Timeline",
       timelineItems: [
@@ -831,13 +831,13 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       ],
       impactTitle: "Where I deliver the most",
       impactPoints: [
-        "SaaS architecture and product evolution across complex business flows.",
-        "External integrations (payments, webhooks, APIs) with reliability in mind.",
-        "API and workflow refactoring to improve real-world user experience.",
+        "Architecture and evolution of SaaS products across multiple business contexts.",
+        "External integrations (payments, webhooks, APIs) focused on reliability.",
+        "API and workflow refactoring to reduce friction and improve real UX.",
       ],
       proofTitle: "Proof",
       proofDescription:
-        "Three projects that represent technical depth and production delivery.",
+        "Three case studies that show technical depth and production delivery.",
       proofProjects: [
         {
           slug: "ong-tudo-por-amor",
@@ -859,7 +859,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         },
       ],
       proofLinkLabel: "View case",
-      exploringTitle: "What I’m exploring",
+      exploringTitle: "Exploring now",
       exploringDescription:
         "Continuous study tracks to expand technical capability and product thinking.",
     },
@@ -878,14 +878,14 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     contactPage: {
       title: "Contact",
       description:
-        "Let us connect about opportunities, projects, and technical collaboration.",
+        "Let's talk about opportunities, projects, and technical collaboration.",
       copyEmailLabel: "Copy email",
       copyEmailSuccess: "Copied!",
     },
     sections: {
       experience: "Experience",
       skills: "Skills",
-      studyAreas: "Currently Exploring",
+      studyAreas: "Study Areas",
     },
     experience: [
       {
