@@ -57,7 +57,7 @@ export const projects: Project[] = [
     },
     shortDescription: {
       pt: "Plataforma institucional com CMS headless, SEO técnico e publicação contínua para adoção e transparência financeira.",
-      en: "Headless CMS institutional platform focused on adoption workflows and financial transparency.",
+      en: "Institutional platform with a headless CMS, technical SEO, and continuous publishing for adoption and financial transparency.",
     },
     description: {
       pt: `Plataforma institucional desenvolvida com Next.js 16 (App Router) integrada ao Sanity CMS.
@@ -814,8 +814,8 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
 Inclui site institucional, catálogo público com filtros,
 SEO dinâmico por imóvel, captação de leads e painel administrativo autenticado.`,
       en: `Fullstack real estate platform built with Next.js 16.
-Includes public catalog with filtering, dynamic SEO,
-lead capture system and authenticated admin panel.`,
+Includes an institutional website, a public catalog with filters,
+dynamic SEO per property, lead capture, and an authenticated admin panel.`,
     },
     challenge: {
       pt: `A operação imobiliária tinha baixa organização de catálogo, geração manual de leads e pouca rastreabilidade.
