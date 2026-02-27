@@ -11,6 +11,8 @@ export type ProjectLink = {
 export type ProjectScreenshot = {
   src: string;
   alt: LocalizedText;
+  type?: "image" | "video";
+  poster?: string;
   caption?: LocalizedText;
 };
 
@@ -49,10 +51,12 @@ export const projects: Project[] = [
     title: "ONG Tudo por Amor",
     mainCase: true,
     cardImage: {
-      src: "/cases/ong/home.png",
+      src: "/cases/ong/video-ong-tudo-por-amor.mp4",
+      type: "video",
+      poster: "/cases/ong/home.png",
       alt: {
-        pt: "Tela inicial do projeto ONG Tudo por Amor",
-        en: "ONG Tudo por Amor home screen",
+        pt: "Vídeo de destaque do projeto ONG Tudo por Amor",
+        en: "Featured video for ONG Tudo por Amor project",
       },
     },
     shortDescription: {

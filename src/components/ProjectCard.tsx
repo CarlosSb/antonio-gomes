@@ -15,7 +15,7 @@ type ProjectCardProps = {
 export default function ProjectCard({ project, content, locale, showDetails = true }: ProjectCardProps) {
   const liveLink = getProjectLiveLink(project);
   const caseLink = withLocalePath(locale, `/projects/${project.slug}`);
-  const projectHeroImage = project.cardImage ?? project.gallery?.[0];
+  const projectHeroMedia = project.cardImage ?? project.gallery?.[0];
   const summary = getProjectSummary(project, locale);
 
   return (
@@ -23,15 +23,30 @@ export default function ProjectCard({ project, content, locale, showDetails = tr
       <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.12),transparent_48%)]" />
       <div className="relative mb-5 overflow-hidden rounded-xl border border-slate-800 bg-slate-950/80">
         <div className="relative h-48 w-full p-4">
-          {projectHeroImage ? (
+          {projectHeroMedia ? (
             <>
-              <Image
-                src={projectHeroImage.src}
-                alt={localizeText(projectHeroImage.alt, locale)}
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover"
-              />
+              {projectHeroMedia.type === "video" ? (
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster={projectHeroMedia.poster}
+                  aria-label={localizeText(projectHeroMedia.alt, locale)}
+                >
+                  <source src={projectHeroMedia.src} type="video/mp4" />
+                </video>
+              ) : (
+                <Image
+                  src={projectHeroMedia.src}
+                  alt={localizeText(projectHeroMedia.alt, locale)}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/40 to-slate-950/10" />
             </>
           ) : (
