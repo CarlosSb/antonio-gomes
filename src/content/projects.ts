@@ -225,7 +225,7 @@ I standardized metadata, sitemap, and structured data to improve indexing consis
     links: [
       {
         label: "Live",
-        href: "https://ong-tudo-por-amor.vercel.app/",
+        href: "https://www.ongtudoporamor.org.br/",
       },
       {
         label: "Repo",
