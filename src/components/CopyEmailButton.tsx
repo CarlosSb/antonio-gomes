@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { captureAnalyticsEvent } from "@/lib/analytics";
 
 type CopyEmailButtonProps = {
   email: string;
@@ -31,8 +32,10 @@ export default function CopyEmailButton({
     try {
       await navigator.clipboard.writeText(email);
       setIsCopied(true);
+      captureAnalyticsEvent("contact_email_copied", { method: "clipboard" });
     } catch {
       setIsCopied(false);
+      captureAnalyticsEvent("contact_email_copy_failed", { method: "clipboard" });
     }
   }
 

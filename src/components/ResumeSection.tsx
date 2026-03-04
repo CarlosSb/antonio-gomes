@@ -1,3 +1,4 @@
+import AnalyticsLink from "@/components/analytics/AnalyticsLink";
 import Section from "@/components/Section";
 import type { LocalizedProfileContent } from "@/content/profile";
 
@@ -27,28 +28,34 @@ export default function ResumeSection({ content, id = "resume" }: ResumeSectionP
         </ul>
 
         <div className="mt-5 flex flex-wrap gap-3">
-          <a
+          <AnalyticsLink
             href="/resume-pt.pdf"
             download
+            eventName="resume_download_clicked"
+            eventProperties={{ file: "resume-pt.pdf", locale: "pt", location: id }}
             className="rounded-md bg-sky-500 px-4 py-2 text-sm font-semibold text-slate-950 transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
           >
             {content.actions.downloadPt}
-          </a>
-          <a
+          </AnalyticsLink>
+          <AnalyticsLink
             href="/resume-en.pdf"
             download
+            eventName="resume_download_clicked"
+            eventProperties={{ file: "resume-en.pdf", locale: "en", location: id }}
             className="rounded-md border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-100 transition-all duration-200 hover:border-slate-600 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
           >
             {content.actions.downloadEn}
-          </a>
-          <a
+          </AnalyticsLink>
+          <AnalyticsLink
             href={content.profile.linkedinUrl}
             target="_blank"
             rel="noreferrer"
+            eventName="social_link_clicked"
+            eventProperties={{ location: id, platform: "linkedin" }}
             className="rounded-md border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-100 transition-all duration-200 hover:border-slate-600 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
           >
             {content.actions.linkedinProfile}
-          </a>
+          </AnalyticsLink>
         </div>
 
         <p className="mt-4 text-xs text-slate-400">

@@ -25,6 +25,26 @@ npm run lint
 npm run build
 ```
 
+## Analytics avançado
+
+O projeto usa `PostHog` para capturar:
+
+- pageviews em navegação SPA
+- origem do tráfego, UTM, referrer e landing page
+- dispositivo, navegador, sistema operacional e país/cidade aproximados
+- autocapture de cliques e interações
+- session replay
+- eventos nomeados para downloads de currículo, links de contato, links sociais, troca de idioma, troca de tema e cliques nos projetos
+
+Configure no ambiente:
+
+```bash
+NEXT_PUBLIC_POSTHOG_KEY=phc_your_project_api_key
+NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
+```
+
+Na Vercel, adicione essas variáveis em `Project Settings > Environment Variables`.
+
 ## Estrutura de conteúdo
 
 - `src/content/profile.ts`: textos globais PT/EN, navegação, hero, seções, experiência e skills.

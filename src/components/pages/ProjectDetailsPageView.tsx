@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AnalyticsLink from "@/components/analytics/AnalyticsLink";
 import Section from "@/components/Section";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
 import type { ProjectLink, Project } from "@/content/projects";
@@ -57,14 +58,21 @@ export default function ProjectDetailsPageView({
       >
         <div className="flex flex-wrap gap-3">
           {links[0] ? (
-            <a
+            <AnalyticsLink
               href={links[0].href}
               target="_blank"
               rel="noreferrer"
+              eventName="project_link_clicked"
+              eventProperties={{
+                destination: "primary_project_link",
+                location: "project_details_header",
+                project_slug: project.slug,
+                project_title: project.title,
+              }}
               className="rounded-md bg-sky-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
             >
               {links[0].label}
-            </a>
+            </AnalyticsLink>
           ) : null}
           <Link
             href={withLocalePath(locale, "/projects")}
@@ -234,15 +242,22 @@ export default function ProjectDetailsPageView({
         <Section id="project-links" title={linksSectionTitle}>
           <div className="flex flex-wrap gap-3">
             {links.map((projectLink) => (
-              <a
+              <AnalyticsLink
                 key={`${projectLink.label}-${projectLink.href}`}
                 href={projectLink.href}
                 target="_blank"
                 rel="noreferrer"
+                eventName="project_link_clicked"
+                eventProperties={{
+                  destination: projectLink.label,
+                  location: "project_details_links",
+                  project_slug: project.slug,
+                  project_title: project.title,
+                }}
                 className="rounded-md border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:border-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
               >
                 {projectLink.label}
-              </a>
+              </AnalyticsLink>
             ))}
           </div>
         </Section>

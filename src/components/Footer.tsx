@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AnalyticsLink from "@/components/analytics/AnalyticsLink";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
 import { withLocalePath } from "@/lib/i18n";
 
@@ -59,31 +60,37 @@ export default function Footer({ content, locale }: FooterProps) {
               {content.footer.contactTitle}
             </h2>
             <div className="flex flex-col gap-2">
-              <a
+              <AnalyticsLink
                 href={`mailto:${content.profile.email}`}
                 aria-label={content.actions.emailMe}
+                eventName="contact_link_clicked"
+                eventProperties={{ channel: "email", location: "footer" }}
                 className="w-fit text-sm text-sky-400 transition hover:text-sky-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
               >
                 {content.profile.email}
-              </a>
-              <a
+              </AnalyticsLink>
+              <AnalyticsLink
                 href={content.profile.linkedinUrl}
                 target="_blank"
                 rel="noreferrer"
                 aria-label={content.accessibility.linkedin}
+                eventName="social_link_clicked"
+                eventProperties={{ location: "footer", platform: "linkedin" }}
                 className="w-fit text-sm text-slate-300 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
               >
                 {content.actions.linkedinProfile}
-              </a>
-              <a
+              </AnalyticsLink>
+              <AnalyticsLink
                 href={content.profile.githubUrl}
                 target="_blank"
                 rel="noreferrer"
                 aria-label={content.accessibility.github}
+                eventName="social_link_clicked"
+                eventProperties={{ location: "footer", platform: "github" }}
                 className="w-fit text-sm text-slate-300 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
               >
                 {content.actions.githubProfile}
-              </a>
+              </AnalyticsLink>
             </div>
           </section>
         </div>
@@ -91,13 +98,15 @@ export default function Footer({ content, locale }: FooterProps) {
         <div className="mt-8 flex flex-col gap-3 border-t border-slate-800/80 pt-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
           <p>{rights}</p>
           <p>{content.footer.buildLine}</p>
-          <a
+          <AnalyticsLink
             href="#top"
             aria-label={content.footer.backToTop}
+            eventName="navigation_anchor_clicked"
+            eventProperties={{ anchor: "top", location: "footer" }}
             className="w-fit text-slate-300 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
           >
             {content.footer.backToTop}
-          </a>
+          </AnalyticsLink>
         </div>
       </div>
     </footer>

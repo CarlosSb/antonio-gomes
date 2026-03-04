@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AnalyticsLink from "@/components/analytics/AnalyticsLink";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
 import type { Project } from "@/content/projects";
 import { getProjectLiveLink, getProjectSummary, localizeText } from "@/lib/content";
@@ -73,15 +74,22 @@ export default function ProjectCard({ project, content, locale, showDetails = tr
 
       <div className="relative mt-auto flex flex-wrap gap-3">
         {liveLink ? (
-          <a
+          <AnalyticsLink
             href={liveLink}
             target="_blank"
             rel="noreferrer"
             aria-label={`${content.actions.liveDemo}: ${project.title}`}
+            eventName="project_link_clicked"
+            eventProperties={{
+              destination: "live_demo",
+              location: "project_card",
+              project_slug: project.slug,
+              project_title: project.title,
+            }}
             className="rounded-md bg-sky-500 px-3.5 py-2 text-sm font-semibold text-slate-950 transition duration-300 hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
           >
             {content.actions.liveDemo}
-          </a>
+          </AnalyticsLink>
         ) : (
           <span
             aria-hidden="true"

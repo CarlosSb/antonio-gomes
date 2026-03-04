@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AnalyticsLink from "@/components/analytics/AnalyticsLink";
 import LanguageToggle from "@/components/LanguageToggle";
 import ThemeToggle from "@/components/ThemeToggle";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
@@ -61,24 +62,28 @@ export default function Header({ content, locale }: HeaderProps) {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
+          <AnalyticsLink
             href={content.profile.githubUrl}
             target="_blank"
             rel="noreferrer"
             aria-label={content.accessibility.github}
+            eventName="social_link_clicked"
+            eventProperties={{ location: "header", platform: "github" }}
             className="text-slate-300 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
           >
             <GitHubIcon />
-          </a>
-          <a
+          </AnalyticsLink>
+          <AnalyticsLink
             href={content.profile.linkedinUrl}
             target="_blank"
             rel="noreferrer"
             aria-label={content.accessibility.linkedin}
+            eventName="social_link_clicked"
+            eventProperties={{ location: "header", platform: "linkedin" }}
             className="text-slate-300 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
           >
             <LinkedInIcon />
-          </a>
+          </AnalyticsLink>
           <ThemeToggle
             themeToggleLabel={content.accessibility.themeToggle}
             switchToDarkThemeLabel={content.accessibility.switchToDarkTheme}

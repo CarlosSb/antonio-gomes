@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { captureAnalyticsEvent } from "@/lib/analytics";
 
 type ThemeToggleProps = {
   themeToggleLabel: string;
@@ -73,6 +74,7 @@ export default function ThemeToggle({
     const nextTheme: ResolvedTheme = resolvedTheme === "dark" ? "light" : "dark";
     setResolvedTheme(nextTheme);
     applyTheme(nextTheme);
+    captureAnalyticsEvent("theme_changed", { theme: nextTheme });
   };
 
   return (

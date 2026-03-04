@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import type { Locale } from "@/content/profile";
+import { captureAnalyticsEvent } from "@/lib/analytics";
 
 type LanguageToggleProps = {
   locale: Locale;
@@ -33,6 +34,11 @@ export default function LanguageToggle({
 
     const nextPath = `/${segments.join("/")}`;
     document.cookie = `lang=${targetLocale}; path=/; max-age=31536000; samesite=lax`;
+    captureAnalyticsEvent("language_changed", {
+      from_locale: locale,
+      to_locale: targetLocale,
+      next_path: nextPath,
+    });
     router.push(nextPath);
   };
 
