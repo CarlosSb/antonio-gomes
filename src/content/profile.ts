@@ -154,6 +154,10 @@ type ResumePageContent = {
 type ContactPageContent = {
   title: string;
   description: string;
+  whatsappLabel: string;
+  whatsappAriaLabel: string;
+  whatsappMessage: string;
+  whatsappResponseTime: string;
   copyEmailLabel: string;
   copyEmailSuccess: string;
 };
@@ -298,7 +302,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       ...sharedProfile,
       role: "Desenvolvedor Fullstack",
       summary:
-        "Desenvolvedor Fullstack (+4 anos) especialista no ecossistema JavaScript (React.js, Next.js, Node.js), com experiência em plataformas de automação (chatbots), performance, qualidade de código (testes), caching e refatoração de APIs para melhoria da UX.",
+        "Desenvolvedor fullstack com 4+ anos construindo produtos com Next.js, TypeScript, Node.js e PostgreSQL, atuando em SaaS, painéis administrativos, integrações críticas, autenticação, billing e operação em produção.",
     },
     navigation: {
       home: "Início",
@@ -338,19 +342,19 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       mobileNavigation: "Navegação mobile",
     },
     hero: {
-      availability: "Disponível para oportunidades remotas",
+      availability: "Disponível para vagas remotas",
       badge: "",
-      headlineLead: "Engenharia fullstack com foco em confiabilidade e",
-      headlineAccent: "execução.",
+      headlineLead: "Desenvolvedor fullstack para",
+      headlineAccent: "SaaS, painéis admin e integrações críticas.",
       description:
-        "Oi, sou Antonio. Atuo em sistemas com autenticação, autorização, dados e operação centralizada. Stack principal: Next.js, TypeScript, Node.js e PostgreSQL.",
-      aboutLinkLabel: "Saiba mais sobre minha trajetória →",
-      tags: ["Fluxos auditáveis", "Admin e autoatendimento", "Deploy contínuo"],
+        "Sou Antonio. Tenho 4+ anos construindo produtos com Next.js, TypeScript, Node.js e PostgreSQL, atuando em front-end, APIs, autenticação, billing, webhooks e operação em produção.",
+      aboutLinkLabel: "Minha trajetória e forma de trabalhar →",
+      tags: ["SaaS e multi-tenant", "Auth, billing e webhooks", "Painéis admin e autoatendimento"],
     },
     homePage: {
-      selectedWorkTitle: "Trabalhos em Destaque",
+      selectedWorkTitle: "Cases em Destaque",
       selectedWorkDescription:
-        "Três projetos com maior profundidade técnica, foco de negócio e resultados concretos.",
+        "Seleção de cases reais que representam meu trabalho com produto, arquitetura e operação em produção.",
       heroMainCaseCtaLabel: "Ver case: ONG Tudo por Amor",
       heroMainCaseCtaAriaLabel:
         "Ver case principal ONG Tudo por Amor com arquitetura, decisões técnicas e impacto em produção",
@@ -397,14 +401,14 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         },
       ],
       finalCtaTitle:
-        "Aberto a oportunidades fullstack e projetos com alto padrão de execução.",
+        "Aberto a vagas fullstack remotas em produtos que precisam de autonomia técnica.",
       finalCtaDescription:
-        "Aberto para oportunidades fullstack, colaboração técnica e projetos com alto padrão de execução.",
+        "Se você busca alguém para tocar front e back com responsabilidade, clareza arquitetural e foco em produção, vamos conversar.",
     },
     projectsPage: {
       title: "Projetos",
       description:
-        "Cases com foco em UI moderna, performance e experiência final do usuário.",
+        "Cases com foco em arquitetura, integrações, fluxo de produto e entrega em produção.",
       galleryLabel: "Galeria do produto",
       overviewLabel: "Visão geral",
       architectureLabel: "Arquitetura",
@@ -426,30 +430,28 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     aboutPage: {
       title: "Sobre",
       description:
-        "Construo software de produção com foco em arquitetura sustentável, performance e impacto real no produto.",
+        "Construo produtos web que precisam funcionar de verdade, do front-end à operação em produção.",
       homeAbout: {
         layerOneLines: [
-          "Sou desenvolvedor fullstack com +4 anos no ecossistema JavaScript (React, Next.js e Node.js).",
-          "Tenho experiência prática em plataformas de automação e chatbots, com foco em operação real.",
-          "Na Ligo.cloud (Apr 2024 – Apr 2025), atuei na evolução de features e performance do Ligo Bots.",
-          "Na Code7 (May 2021 – Apr 2024), trabalhei em plataforma low-code com integrações e escalabilidade.",
-          "Atuo ponta a ponta: interface, APIs, dados, autenticação e entrega em produção.",
-          "Meu foco técnico é performance, testes com Jest, caching e refatoração de APIs.",
-          "Entrego software com clareza arquitetural, manutenção sustentável e impacto de negócio.",
+          "Sou desenvolvedor fullstack com 4+ anos no ecossistema JavaScript, atuando principalmente com Next.js, Node.js e TypeScript.",
+          "Gosto de produtos que combinam interface, regras de negócio, integrações e operação real no dia a dia.",
+          "Na Ligo.cloud, trabalhei na evolução do Ligo Bots, com foco em performance, estabilidade e entrega contínua.",
+          "Na Code7, atuei em uma plataforma low-code de automação, lidando com integrações, escalabilidade e manutenção de produto.",
         ],
         expandLabel: "Ver detalhes sobre como eu trabalho",
         workTitle: "Como eu trabalho",
         workBullets: [
-          "Começo pelo problema de negócio e pelos fluxos críticos antes de escolher solução técnica.",
-          "Estruturo o sistema para evoluir sem retrabalho: módulos claros, contratos de API e tipagem forte.",
-          "Trato confiabilidade como requisito: validação, idempotência, logs e trilha de execução.",
-          "Entrego em ciclos curtos, com foco em impacto real para usuário e operação.",
+          "Começo pelo problema de negócio e pelos fluxos mais críticos antes de discutir stack ou arquitetura.",
+          "Busco estruturas simples de manter: módulos claros, contratos previsíveis e tipagem forte.",
+          "Trato confiabilidade como parte do produto: validação, idempotência, logs e rastreabilidade.",
+          "Prefiro entregas curtas e frequentes, com foco em impacto real para usuário e operação.",
         ],
         deliveredTitle: "O que eu já entreguei",
         deliveredBullets: [
-          "ONG Tudo por Amor: plataforma com Next.js + Sanity CMS, SEO técnico e ISR para dar autonomia editorial e consistência institucional.",
-          "ÓticaPlus e Provedor Connect: produtos SaaS com contexto multi-tenant, RBAC, integração com serviços externos e fluxo administrativo completo.",
-          "Tia Emília e Digital.Net: fluxos de pagamento e operação com webhook assíncrono, validação de APIs e redução de trabalho manual.",
+          "ONG Tudo por Amor: site institucional com CMS headless, SEO técnico e autonomia editorial para a equipe.",
+          "ÓticaPlus: SaaS multi-tenant com CRM, billing, OCR com IA e governança de acesso por contexto.",
+          "Provedor Connect e Digital.Net: produtos para ISP com autoatendimento, painel admin, APIs e padronização operacional.",
+          "Gordo Construções e Tia Emília: fluxos de catálogo, leads, pagamento e automação com foco em operação real.",
         ],
         studyingTitle: "Agora estudando",
         studyingLine:
@@ -457,10 +459,10 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       },
       introTitle: "Introdução",
       introPoints: [
-        "Sou engenheiro fullstack focado em SaaS multi-tenant, integrações e fluxos críticos como autenticação, billing e pagamentos.",
-        "Trabalho com Next.js + TypeScript no front e back (APIs, banco, filas e webhooks), com atenção a performance, SEO e manutenção no longo prazo.",
-        "Priorizo entrega rápida com arquitetura sustentável, observabilidade, segurança básica (RBAC, validações, idempotência) e experiência do usuário.",
-        "Se você precisa tirar um produto do papel e colocar em produção com responsabilidade, vamos conversar.",
+        "Sou desenvolvedor fullstack focado em produtos com integrações, autenticação, billing, pagamentos e webhooks.",
+        "Trabalho no front e no back, cuidando de interface, APIs, banco de dados e entrega em produção.",
+        "Procuro equilibrar velocidade com manutenção, observabilidade e segurança básica.",
+        "Costumo agregar mais valor em times que precisam de alguém com autonomia para atravessar produto e engenharia.",
       ],
       timelineTitle: "Linha da Carreira",
       timelineItems: [
@@ -505,31 +507,31 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       ],
       impactTitle: "Onde entrego mais valor",
       impactPoints: [
-        "Arquitetura e evolução de produtos SaaS com múltiplos contextos de negócio.",
-        "Integrações externas (pagamentos, webhooks, APIs) com foco em confiabilidade.",
-        "Refatoração de APIs e fluxos para reduzir fricção e melhorar UX real.",
+        "Produtos SaaS e plataformas operacionais que concentram fluxo de negócio em um só lugar.",
+        "Integrações com pagamentos, webhooks, APIs externas e regras de acesso com foco em confiabilidade.",
+        "Refatoração de APIs e fluxos para reduzir fricção, retrabalho e risco operacional.",
       ],
       proofTitle: "Provas",
       proofDescription:
-        "Três cases que mostram profundidade técnica e entrega em produção.",
+        "Cases reais que mostram o tipo de problema que eu resolvo, as decisões que tomo e o impacto da entrega em produção.",
       proofProjects: [
         {
           slug: "ong-tudo-por-amor",
           title: "ONG Tudo por Amor",
           description:
-            "Plataforma institucional com CMS headless, SEO técnico e ISR.",
+            "Site institucional com CMS headless, SEO técnico e autonomia editorial.",
         },
         {
           slug: "otica-plus",
           title: "ÓticaPlus",
           description:
-            "SaaS multi-tenant com CRM, billing e fluxo operacional completo.",
+            "SaaS multi-tenant com CRM, billing e operação integrada ponta a ponta.",
         },
         {
           slug: "digital-net-telecom",
           title: "Digital.Net Telecom",
           description:
-            "Plataforma fullstack com arquitetura multi-cidade e APIs testadas.",
+            "Plataforma fullstack com arquitetura multi-cidade, painel admin e APIs validadas.",
         },
       ],
       proofLinkLabel: "Ver case",
@@ -544,8 +546,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       downloadTitle: "Downloads",
       highlights: [
         "4+ anos construindo aplicações fullstack em produção.",
-        "Experiência prática com SaaS, integrações, performance e arquitetura escalável.",
-        "Foco em qualidade técnica, UX e entrega orientada a negócio.",
+        "Experiência prática com SaaS, integrações, billing, performance e arquitetura escalável.",
+        "Foco em produto, qualidade técnica e execução ponta a ponta.",
       ],
       lastUpdateLabel: "Última atualização",
       lastUpdateValue: "Fevereiro de 2026",
@@ -553,7 +555,12 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     contactPage: {
       title: "Contato",
       description:
-        "Vamos conversar sobre oportunidades, projetos e colaboração técnica.",
+        "Converso sobre vagas fullstack remotas e oportunidades em times de produto que precisem de alguém para atuar ponta a ponta.",
+      whatsappLabel: "Conversar sobre oportunidade",
+      whatsappAriaLabel: "Chamar no WhatsApp para conversar sobre oportunidade",
+      whatsappMessage:
+        "Oi Antônio! Vi seu portfólio e quero conversar sobre uma oportunidade.",
+      whatsappResponseTime: "Respondo em até 24h.",
       copyEmailLabel: "Copiar e-mail",
       copyEmailSuccess: "Copiado!",
     },
@@ -597,7 +604,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       siteName: "Antonio Gomes | Portfólio",
       defaultTitle: "Antonio Gomes | Desenvolvedor Fullstack",
       defaultDescription:
-        "Portfólio profissional de Antonio Gomes com projetos em Next.js, React e TypeScript.",
+        "Portfólio de Antonio Gomes, desenvolvedor fullstack com foco em SaaS, painéis administrativos, integrações críticas e produtos em produção.",
       keywords: [
         "Antonio Gomes",
         "Desenvolvedor Fullstack",
@@ -609,7 +616,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     },
     footer: {
       rights: "© {year} {name}. Todos os direitos reservados.",
-      tagline: "Engenharia fullstack para produtos digitais escaláveis.",
+      tagline: "Desenvolvedor fullstack para produtos digitais com operação real.",
       locationLabel: "Localização",
       locationValue: "Brasil / Remoto",
       navigationTitle: "Navegação",
@@ -624,7 +631,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       ...sharedProfile,
       role: "Full-Stack Software Developer",
       summary:
-        "Full-Stack Software Developer (4+ years) specializing in the JavaScript ecosystem (React.js, Next.js, Node.js), experienced in automation platforms (chatbots), performance optimization, testing, caching strategies, scalability, and API refactoring to improve UX.",
+        "Full-stack developer with 4+ years building products with Next.js, TypeScript, Node.js, and PostgreSQL, working across SaaS, admin dashboards, critical integrations, authentication, billing, and production operations.",
     },
     navigation: {
       home: "Home",
@@ -664,19 +671,19 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       mobileNavigation: "Mobile navigation",
     },
     hero: {
-      availability: "Open to remote opportunities",
+      availability: "Open to remote roles",
       badge: "",
-      headlineLead: "Full-stack engineering focused on reliability and",
-      headlineAccent: "execution.",
+      headlineLead: "Full-stack developer for",
+      headlineAccent: "SaaS, admin dashboards, and critical integrations.",
       description:
-        "Hi, I'm Antonio. I work on systems with authentication, authorization, data, and centralized operations. Main stack: Next.js, TypeScript, Node.js, and PostgreSQL.",
-      aboutLinkLabel: "Read more about my background →",
-      tags: ["Auditable flows", "Admin and self-service", "Continuous deployment"],
+        "I'm Antonio. I have 4+ years building products with Next.js, TypeScript, Node.js, and PostgreSQL, working across frontend, APIs, authentication, billing, webhooks, and production operations.",
+      aboutLinkLabel: "My background and how I work →",
+      tags: ["SaaS and multi-tenant", "Auth, billing, and webhooks", "Admin dashboards and self-service"],
     },
     homePage: {
-      selectedWorkTitle: "Selected Work",
+      selectedWorkTitle: "Featured Case Studies",
       selectedWorkDescription:
-        "Three projects with stronger technical depth, business context, and measurable delivery quality.",
+        "A curated selection of real projects that represent my work across product, architecture, and production delivery.",
       heroMainCaseCtaLabel: "View case: ONG Tudo por Amor",
       heroMainCaseCtaAriaLabel:
         "View main case study ONG Tudo por Amor with architecture, technical decisions and production impact",
@@ -723,14 +730,14 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         },
       ],
       finalCtaTitle:
-        "Open to full-stack opportunities and projects with a high execution standard.",
+        "Open to remote full-stack roles in products that need strong technical ownership.",
       finalCtaDescription:
-        "Open to full-stack opportunities, technical collaboration, and projects with a high execution standard.",
+        "If you need someone who can handle frontend and backend with responsibility, architectural clarity, and production focus, let's talk.",
     },
     projectsPage: {
       title: "Projects",
       description:
-        "Case studies focused on modern UI, performance, and user experience quality.",
+        "Case studies focused on architecture, integrations, product flow, and production delivery.",
       galleryLabel: "Product gallery",
       overviewLabel: "Overview",
       architectureLabel: "Architecture",
@@ -752,30 +759,28 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     aboutPage: {
       title: "About",
       description:
-        "I build production software with sustainable architecture, performance, and real product impact.",
+        "I build web products that need to work in the real world, from frontend to production operations.",
       homeAbout: {
         layerOneLines: [
-          "I am a full-stack developer with 4+ years in the JavaScript ecosystem (React, Next.js, and Node.js).",
-          "I have hands-on experience in automation and chatbot platforms, focused on real operations.",
-          "At Ligo.cloud (Apr 2024 – Apr 2025), I worked on feature evolution and performance improvements for Ligo Bots.",
-          "At Code7 (May 2021 – Apr 2024), I worked on a low-code platform with integrations and scalability.",
-          "I work end-to-end: interface, APIs, data, authentication, and production delivery.",
-          "My technical focus is performance, Jest testing, caching, and API refactoring.",
-          "I deliver software with architectural clarity, sustainable maintenance, and business impact.",
+          "I am a full-stack developer with 4+ years in the JavaScript ecosystem, working mainly with Next.js, Node.js, and TypeScript.",
+          "I enjoy products that mix interface, business rules, integrations, and real operational workflows.",
+          "At Ligo.cloud, I worked on the evolution of Ligo Bots, focusing on performance, stability, and continuous delivery.",
+          "At Code7, I contributed to a low-code automation platform, dealing with integrations, scalability, and long-term product maintenance.",
         ],
         expandLabel: "See details about how I work",
         workTitle: "How I work",
         workBullets: [
-          "I start from business pain points and critical flows before choosing implementation details.",
-          "I design systems to evolve without rework: clear modules, API contracts, and strong typing.",
-          "I treat reliability as a product requirement: validation, idempotency, logs, and traceability.",
-          "I ship in short cycles with focus on measurable impact for users and operations.",
+          "I start from the business problem and the most critical flows before discussing stack or architecture.",
+          "I aim for systems that are easy to maintain: clear modules, predictable contracts, and strong typing.",
+          "I treat reliability as part of the product: validation, idempotency, logs, and traceability.",
+          "I prefer short, frequent deliveries focused on real impact for users and operations.",
         ],
         deliveredTitle: "What I have delivered",
         deliveredBullets: [
-          "ONG Tudo por Amor: platform with Next.js + Sanity CMS, technical SEO, and ISR to provide editorial autonomy and institutional consistency.",
-          "ÓticaPlus and Provedor Connect: SaaS products with multi-tenant context, RBAC, integration with external services, and complete administrative flow.",
-          "Tia Emília and Digital.Net: payment and operations flows with asynchronous webhooks, API validation, and reduced manual work.",
+          "ONG Tudo por Amor: institutional website with headless CMS, technical SEO, and editorial autonomy for the team.",
+          "ÓticaPlus: multi-tenant SaaS with CRM, billing, AI-powered OCR, and context-based access control.",
+          "Provedor Connect and Digital.Net: ISP products with self-service, admin dashboards, APIs, and operational standardization.",
+          "Gordo Construções and Tia Emília: catalog, lead, payment, and automation flows focused on real-world operations.",
         ],
         studyingTitle: "Currently studying",
         studyingLine:
@@ -783,10 +788,10 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       },
       introTitle: "Introduction",
       introPoints: [
-        "I am a full-stack engineer focused on multi-tenant SaaS, integrations, and critical flows such as authentication, billing, and payments.",
-        "I work with Next.js + TypeScript across frontend and backend (APIs, database, queues, and webhooks), with attention to performance, SEO, and long-term maintainability.",
-        "I prioritize fast delivery with sustainable architecture, observability, baseline security (RBAC, validations, idempotency), and user experience.",
-        "If you need to take a product from idea to production responsibly, let's talk.",
+        "I am a full-stack developer focused on products with integrations, authentication, billing, payments, and webhooks.",
+        "I work across frontend and backend, handling interface, APIs, data, and production delivery.",
+        "I try to balance speed with maintainability, observability, and baseline security.",
+        "I add the most value in teams that need someone with enough autonomy to move across product and engineering.",
       ],
       timelineTitle: "Career Timeline",
       timelineItems: [
@@ -831,31 +836,31 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       ],
       impactTitle: "Where I deliver the most",
       impactPoints: [
-        "Architecture and evolution of SaaS products across multiple business contexts.",
-        "External integrations (payments, webhooks, APIs) focused on reliability.",
-        "API and workflow refactoring to reduce friction and improve real UX.",
+        "SaaS products and operational platforms that bring core business flows into one place.",
+        "Integrations with payments, webhooks, external APIs, and access rules with a reliability-first mindset.",
+        "API and workflow refactoring that reduces friction, rework, and operational risk.",
       ],
       proofTitle: "Proof",
       proofDescription:
-        "Three case studies that show technical depth and production delivery.",
+        "Real projects that show the kinds of problems I solve, the decisions I make, and the impact of shipping to production.",
       proofProjects: [
         {
           slug: "ong-tudo-por-amor",
           title: "ONG Tudo por Amor",
           description:
-            "Institutional platform with headless CMS, technical SEO, and ISR.",
+            "Institutional website with headless CMS, technical SEO, and editorial autonomy.",
         },
         {
           slug: "otica-plus",
           title: "ÓticaPlus",
           description:
-            "Multi-tenant SaaS with CRM, billing, and end-to-end operations.",
+            "Multi-tenant SaaS with CRM, billing, and integrated end-to-end operations.",
         },
         {
           slug: "digital-net-telecom",
           title: "Digital.Net Telecom",
           description:
-            "Fullstack ISP platform with multi-city architecture and tested APIs.",
+            "Fullstack ISP platform with multi-city architecture, admin dashboard, and validated APIs.",
         },
       ],
       proofLinkLabel: "View case",
@@ -869,8 +874,8 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       downloadTitle: "Downloads",
       highlights: [
         "4+ years building fullstack production systems.",
-        "Hands-on work with SaaS, integrations, performance, and scalable architecture.",
-        "Strong focus on technical quality, UX, and business-driven delivery.",
+        "Hands-on work with SaaS, integrations, billing, performance, and scalable architecture.",
+        "Strong focus on product, technical quality, and end-to-end execution.",
       ],
       lastUpdateLabel: "Last update",
       lastUpdateValue: "February 2026",
@@ -878,7 +883,12 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     contactPage: {
       title: "Contact",
       description:
-        "Let's talk about opportunities, projects, and technical collaboration.",
+        "I am open to remote full-stack roles and product teams that need someone who can work end to end.",
+      whatsappLabel: "Talk about an opportunity",
+      whatsappAriaLabel: "Open WhatsApp to talk about an opportunity",
+      whatsappMessage:
+        "Hi Antonio! I saw your portfolio and would like to talk about an opportunity.",
+      whatsappResponseTime: "I usually reply within 24 hours.",
       copyEmailLabel: "Copy email",
       copyEmailSuccess: "Copied!",
     },
@@ -922,7 +932,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       siteName: "Antonio Gomes | Portfolio",
       defaultTitle: "Antonio Gomes | Full-Stack Developer",
       defaultDescription:
-        "Professional portfolio of Antonio Gomes featuring Next.js, React, and TypeScript projects.",
+        "Portfolio of Antonio Gomes, a full-stack developer focused on SaaS, admin dashboards, critical integrations, and production systems.",
       keywords: [
         "Antonio Gomes",
         "Full-Stack Developer",
@@ -934,7 +944,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     },
     footer: {
       rights: "© {year} {name}. All rights reserved.",
-      tagline: "Fullstack engineering for scalable digital products.",
+      tagline: "Full-stack developer for digital products with real operations.",
       locationLabel: "Location",
       locationValue: "Brazil / Remote",
       navigationTitle: "Navigation",

@@ -8,10 +8,9 @@ type ContactSectionProps = {
   id?: string;
 };
 
-const whatsappHref =
-  "https://wa.me/5588992017400?text=Oi%20Ant%C3%B4nio!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20uma%20vaga.";
-
 export default function ContactSection({ content, id = "contact" }: ContactSectionProps) {
+  const whatsappHref = `https://wa.me/5588992017400?text=${encodeURIComponent(content.contactPage.whatsappMessage)}`;
+
   return (
     <Section
       id={id}
@@ -24,14 +23,14 @@ export default function ContactSection({ content, id = "contact" }: ContactSecti
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Chamar no WhatsApp"
+            aria-label={content.contactPage.whatsappAriaLabel}
             eventName="contact_link_clicked"
             eventProperties={{ channel: "whatsapp", location: "contact_section" }}
             className="inline-flex w-full items-center justify-center rounded-md bg-sky-500 px-5 py-3.5 text-base font-semibold text-slate-950 transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:w-auto"
           >
-            Chamar no WhatsApp
+            {content.contactPage.whatsappLabel}
           </AnalyticsLink>
-          <p className="text-sm text-slate-400">Respondo em até 24h.</p>
+          <p className="text-sm text-slate-400">{content.contactPage.whatsappResponseTime}</p>
         </div>
 
         <div className="flex flex-wrap gap-3">

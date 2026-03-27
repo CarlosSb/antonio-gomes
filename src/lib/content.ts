@@ -10,9 +10,32 @@ export function getAllProjects(): Project[] {
 }
 
 export function getFeaturedProjects(limit = 3): Project[] {
-  const featuredProjects = projects.filter((project) => project.featured);
+  const featuredOrder = [
+    "ong-tudo-por-amor",
+    "gordo-construcoes",
+    "otica-plus",
+    "provedor-connect",
+    "digital-net-telecom",
+  ];
+
+  const featuredProjects = projects
+    .filter((project) => project.featured)
+    .sort((a, b) => {
+      const aIndex = featuredOrder.indexOf(a.slug);
+      const bIndex = featuredOrder.indexOf(b.slug);
+      const safeAIndex = aIndex === -1 ? Number.MAX_SAFE_INTEGER : aIndex;
+      const safeBIndex = bIndex === -1 ? Number.MAX_SAFE_INTEGER : bIndex;
+
+      return safeAIndex - safeBIndex;
+    });
+
   if (featuredProjects.length > 0) {
-    return featuredProjects.slice(0, limit);
+    if (featuredProjects.length >= limit) {
+      return featuredProjects.slice(0, limit);
+    }
+
+    const remainingProjects = projects.filter((project) => !project.featured);
+    return [...featuredProjects, ...remainingProjects].slice(0, limit);
   }
 
   return projects.slice(0, limit);

@@ -38,7 +38,10 @@ export default function ProjectDetailsPageView({
   const impact = localizeList(project.impact, locale);
   const results = localizeList(project.results, locale);
   const gallery = project.gallery ?? [];
-  const metrics = project.metrics ?? [];
+  const metrics = (project.metrics ?? []).filter((metric) => {
+    const value = localizeText(metric.value, locale);
+    return !value.includes("[preencher]") && !value.includes("[fill]");
+  });
 
   const publicLinks = getPublicProjectLinks(project);
   const links: ProjectLink[] = publicLinks.length

@@ -60,30 +60,28 @@ export const projects: Project[] = [
       },
     },
     shortDescription: {
-      pt: "Plataforma institucional com CMS headless, SEO técnico e publicação contínua para adoção e transparência financeira.",
-      en: "Institutional platform with a headless CMS, technical SEO, and continuous publishing for adoption and financial transparency.",
+      pt: "Site institucional para ONG com CMS headless, SEO técnico e atualização sem depender de deploy.",
+      en: "Institutional website for an NGO with a headless CMS, technical SEO, and content updates without deployment dependency.",
     },
     description: {
-      pt: `Plataforma institucional desenvolvida com Next.js 16 (App Router) integrada ao Sanity CMS.
-O projeto atende três jornadas principais: adoção de animais, transparência financeira e comunicação institucional.
-Implementado com foco em SEO, performance e autonomia editorial.`,
-      en: `Institutional platform built with Next.js 16 (App Router) integrated with Sanity CMS.
-The system supports three main journeys: animal adoption, financial transparency, and institutional communication.
-Designed with strong SEO, performance optimization, and editorial autonomy in mind.`,
+      pt: `Projeto institucional desenvolvido com Next.js 16 e Sanity CMS para centralizar adoção, transparência financeira e comunicação da ONG.
+A solução foi pensada para facilitar o dia a dia da equipe, melhorar a presença orgânica e dar mais consistência à publicação de conteúdo.`,
+      en: `Institutional project built with Next.js 16 and Sanity CMS to centralize adoption, financial transparency, and the NGO's communication.
+The solution was designed to make content operations easier for the team, improve organic presence, and bring more consistency to publishing.`,
     },
     challenge: {
-      pt: `A ONG tinha conteúdo institucional disperso e publicação dependente de suporte técnico.
-Também faltava estrutura consistente para transparência financeira e SEO nas páginas.`,
-      en: `The NGO had fragmented institutional content and publishing depended on technical support.
-It also lacked a consistent structure for financial transparency and SEO across pages.`,
+      pt: `O conteúdo institucional estava disperso, a publicação dependia de suporte técnico e a área de transparência não tinha uma estrutura clara.
+Isso dificultava atualização, prestação de contas e consistência de SEO.`,
+      en: `Institutional content was fragmented, publishing depended on technical support, and the transparency area lacked a clear structure.
+That made updates, accountability, and SEO consistency harder than they should be.`,
     },
     solution: {
-      pt: `Implementei uma arquitetura headless com Next.js + Sanity para dar autonomia editorial.
-Estruturei rotas dinâmicas para adoção, notícias e relatórios, com ISR e revalidação por webhook.
-Organizei metadata, sitemap e dados estruturados para aumentar consistência de indexação.`,
-      en: `I implemented a headless architecture with Next.js + Sanity to provide editorial autonomy.
-I structured dynamic routes for adoption, news, and reports using ISR and webhook-driven revalidation.
-I standardized metadata, sitemap, and structured data to improve indexing consistency.`,
+      pt: `Desenvolvi uma arquitetura headless com Next.js + Sanity para que a equipe pudesse publicar e atualizar conteúdo sem depender de deploy.
+Estruturei rotas dinâmicas para adoção, notícias e relatórios, com ISR, revalidação por webhook, sitemap e dados estruturados.
+O resultado foi um fluxo editorial mais simples, rápido e sustentável.`,
+      en: `I built a headless architecture with Next.js + Sanity so the team could publish and update content without depending on deploys.
+I structured dynamic routes for adoption, news, and reports, with ISR, webhook revalidation, sitemap generation, and structured data.
+The result was a simpler, faster, and more sustainable editorial workflow.`,
     },
     stack: [
       "Next.js 16",
@@ -216,14 +214,14 @@ I standardized metadata, sitemap, and structured data to improve indexing consis
     ],
     results: {
       pt: [
-        "Antes: atualização de conteúdo dependia de suporte técnico -> Depois: equipe da ONG com autonomia editorial no CMS.",
-        "Antes: comunicação financeira fragmentada -> Depois: relatórios e páginas de transparência estruturados.",
-        "Antes: publicações com latência de atualização -> Depois: ISR + revalidação seletiva para entrega mais eficiente.",
+        "Antes: atualizar conteúdo dependia de suporte técnico -> Depois: equipe da ONG publica com autonomia no CMS.",
+        "Antes: transparência financeira era fragmentada -> Depois: relatórios e páginas ficaram organizados em uma estrutura única.",
+        "Antes: publicar e atualizar conteúdo era mais lento -> Depois: ISR + revalidação seletiva deixaram a entrega mais ágil e previsível.",
       ],
       en: [
-        "Before: content updates depended on technical support -> After: NGO staff gained editorial autonomy in the CMS.",
-        "Before: financial communication was fragmented -> After: transparency pages and reports were structured.",
-        "Before: publication updates had delivery latency -> After: ISR + selective revalidation improved content delivery.",
+        "Before: content updates depended on technical support -> After: the NGO team could publish autonomously in the CMS.",
+        "Before: financial transparency was fragmented -> After: reports and pages were organized into a single clear structure.",
+        "Before: publishing and updating content was slower -> After: ISR + selective revalidation made delivery faster and more predictable.",
       ],
     },
     links: [
@@ -242,6 +240,7 @@ I standardized metadata, sitemap, and structured data to improve indexing consis
   {
     slug: "digital-net-telecom",
     title: "Digital.Net Telecom – Plataforma ISP Multi-Cidade",
+    featured: true,
     cardImage: {
       src: "/cases/digital-net-telecom/home.png",
       alt: {
@@ -250,31 +249,28 @@ I standardized metadata, sitemap, and structured data to improve indexing consis
       },
     },
     shortDescription: {
-      pt: "Plataforma fullstack para operação de ISP com arquitetura multi-cidade, painel admin e APIs testadas.",
-      en: "Fullstack ISP operations platform with multi-city architecture, admin panel and tested APIs.",
+      pt: "Plataforma fullstack para ISP com arquitetura multi-cidade, painel admin e APIs validadas para uma operação mais previsível.",
+      en: "Fullstack ISP platform with multi-city architecture, admin dashboard, and validated APIs for a more predictable operation.",
     },
     description: {
-      pt: `Plataforma fullstack para operação de provedor de internet,
-com arquitetura multi-cidade, landing pages otimizadas,
-painel administrativo completo e APIs validadas.
-Inclui suíte de testes automatizados e integração com IA.`,
-      en: `Fullstack ISP operations platform designed with multi-city architecture,
-optimized landing pages, complete admin panel and validated APIs.
-Includes automated testing suite and AI integration.`,
+      pt: `Produto fullstack para a operação digital de um provedor com múltiplas cidades, reunindo landing pages, gestão de conteúdo e painel administrativo em uma base única.
+O foco foi padronizar fluxos, reduzir inconsistência entre unidades e trazer mais previsibilidade para a operação.`,
+      en: `Fullstack product for the digital operation of an ISP across multiple cities, combining landing pages, content management, and an admin dashboard in one platform.
+The main goal was to standardize flows, reduce inconsistency between units, and bring more predictability to operations.`,
     },
     challenge: {
-      pt: `A operação digital do provedor estava distribuída em múltiplos fluxos e páginas desconectadas.
-Havia inconsistência entre cidades, retrabalho em conteúdo e baixa padronização nas APIs.`,
-      en: `The ISP digital operation was spread across disconnected flows and pages.
-There was cross-city inconsistency, repeated content work, and low API standardization.`,
+      pt: `A operação digital estava espalhada em páginas e fluxos desconectados.
+Isso gerava inconsistência entre cidades, retrabalho em conteúdo e pouca padronização nas APIs.`,
+      en: `The digital operation was spread across disconnected pages and workflows.
+That created inconsistency between cities, repeated content work, and weak API standardization.`,
     },
     solution: {
-      pt: `Estruturei uma plataforma fullstack com arquitetura multi-cidade e painel administrativo modular.
-Padronizei a camada de APIs com validações formais e cobertura de testes unitários/e2e.
-Otimizei landing pages para conversão e consistência operacional entre unidades.`,
-      en: `I built a fullstack platform with multi-city architecture and a modular admin panel.
+      pt: `Estruturei uma plataforma fullstack com arquitetura multi-cidade e um painel administrativo modular.
+Padronizei a camada de APIs com validações formais e cobertura de testes unitários e e2e.
+Também reorganizei as landing pages para manter consistência operacional e comercial entre as unidades.`,
+      en: `I structured a fullstack platform with multi-city architecture and a modular admin dashboard.
 I standardized the API layer with formal validation and unit/e2e test coverage.
-I optimized landing pages for conversion and operational consistency across city units.`,
+I also reorganized the landing pages to keep both operational and commercial consistency across city units.`,
     },
     stack: [
       "Next.js 15",
@@ -405,14 +401,14 @@ I optimized landing pages for conversion and operational consistency across city
     ],
     results: {
       pt: [
-        "Antes: operação distribuída em fluxos desconectados -> Depois: gestão centralizada em uma única plataforma.",
-        "Antes: variação de conteúdo por cidade -> Depois: padrão multi-cidade com consistência entre unidades.",
-        "Antes: regressões frequentes em integrações -> Depois: APIs validadas e testadas com maior previsibilidade.",
+        "Antes: a operação ficava distribuída em fluxos desconectados -> Depois: a gestão passou a ser centralizada em uma única plataforma.",
+        "Antes: cada cidade seguia padrões diferentes -> Depois: a estrutura multi-cidade trouxe mais consistência entre unidades.",
+        "Antes: integrações sofriam mais com regressão -> Depois: APIs validadas e testadas deram mais previsibilidade à evolução do produto.",
       ],
       en: [
-        "Before: operations were split across disconnected flows -> After: centralized management in one platform.",
-        "Before: city-level content diverged frequently -> After: multi-city standardization reduced inconsistency.",
-        "Before: integrations were regression-prone -> After: validated, tested APIs improved predictability.",
+        "Before: operations were split across disconnected flows -> After: management became centralized in a single platform.",
+        "Before: each city followed a different pattern -> After: the multi-city structure created more consistency across units.",
+        "Before: integrations were more regression-prone -> After: validated, tested APIs made product evolution more predictable.",
       ],
     },
     links: [
@@ -430,6 +426,7 @@ I optimized landing pages for conversion and operational consistency across city
   {
     slug: "provedor-connect",
     title: "Provedor Connect – Plataforma ISP com Integração SGP",
+    featured: true,
     cardImage: {
       src: "/cases/provedor-connect/home.png",
       alt: {
@@ -438,30 +435,28 @@ I optimized landing pages for conversion and operational consistency across city
       },
     },
     shortDescription: {
-      pt: "Plataforma fullstack para ISP com portal de autoatendimento, dashboard admin e drivers SGP desacoplados.",
-      en: "Fullstack ISP platform with self-service portal, admin dashboard and decoupled SGP drivers.",
+      pt: "Produto fullstack para ISP com autoatendimento, painel admin e integração SGP desacoplada.",
+      en: "Fullstack ISP product with self-service, admin dashboard, and decoupled SGP integrations.",
     },
     description: {
-      pt: `Plataforma fullstack para provedor de internet regional,
-incluindo landing pages comerciais, área do cliente com autoatendimento,
-painel administrativo e integração desacoplada com múltiplos sistemas SGP.`,
-      en: `Fullstack ISP platform for regional internet providers,
-including commercial landing pages, customer self-service portal,
-admin dashboard and decoupled SGP integrations.`,
+      pt: `Produto fullstack criado para um provedor regional, reunindo landing pages comerciais, área do cliente e painel administrativo na mesma experiência.
+O ponto central do projeto foi desacoplar a integração com SGPs para reduzir custo de manutenção e facilitar evolução do produto.`,
+      en: `Fullstack product built for a regional ISP, combining commercial landing pages, a customer portal, and an admin dashboard in the same experience.
+The core challenge was to decouple SGP integrations to reduce maintenance cost and make product evolution easier.`,
     },
     challenge: {
-      pt: `O provedor dependia de fluxos separados para área comercial, autoatendimento e gestão interna.
-Integrações com SGP variavam por cliente, aumentando acoplamento e custo de manutenção.`,
-      en: `The ISP relied on separate flows for commercial pages, self-service, and internal operations.
-SGP integrations varied by client, increasing coupling and maintenance cost.`,
+      pt: `A operação dependia de fluxos separados para área comercial, autoatendimento e gestão interna.
+Além disso, cada integração com SGP aumentava acoplamento e custo de manutenção.`,
+      en: `The operation relied on separate flows for the commercial area, self-service, and internal management.
+On top of that, each SGP integration increased coupling and maintenance cost.`,
     },
     solution: {
-      pt: `Desenvolvi uma plataforma fullstack com portal do cliente, painel administrativo e camada de drivers SGP desacoplada.
-Implementei autenticação JWT HttpOnly, validações de entrada e fallback com mock driver para desenvolvimento.
-Com isso, o produto passou a integrar múltiplos provedores SGP sem reescrever o núcleo da aplicação.`,
-      en: `I delivered a fullstack platform with customer self-service, admin dashboard, and a decoupled SGP driver layer.
-I implemented HttpOnly JWT authentication, input validation, and mock-driver fallback for development.
-This allowed integration with multiple SGP providers without rewriting the application core.`,
+      pt: `Desenvolvi uma plataforma fullstack com portal do cliente, painel administrativo e uma camada de drivers SGP desacoplada.
+Implementei autenticação JWT HttpOnly, validações de entrada e fallback com mock driver para desenvolvimento local.
+Assim, o produto passou a integrar múltiplos SGPs sem reescrever o núcleo da aplicação.`,
+      en: `I built a fullstack platform with a customer portal, admin dashboard, and a decoupled SGP driver layer.
+I implemented HttpOnly JWT authentication, input validation, and a mock-driver fallback for local development.
+That allowed the product to support multiple SGP providers without rewriting the application core.`,
     },
     stack: [
       "Next.js 16",
@@ -590,14 +585,14 @@ This allowed integration with multiple SGP providers without rewriting the appli
     ],
     results: {
       pt: [
-        "Antes: aquisição, autoatendimento e backoffice em sistemas separados -> Depois: operação unificada em uma única aplicação.",
-        "Antes: alta carga de suporte manual -> Depois: portal de autoatendimento reduziu fricção operacional.",
-        "Antes: cada integração SGP exigia acoplamento direto -> Depois: camada de drivers desacoplada e mais sustentável.",
+        "Antes: comercial, autoatendimento e backoffice rodavam separados -> Depois: a operação foi unificada em uma única aplicação.",
+        "Antes: o suporte manual carregava mais fricção -> Depois: o portal de autoatendimento reduziu parte desse trabalho operacional.",
+        "Antes: cada novo SGP exigia acoplamento direto -> Depois: a camada de drivers deixou a integração mais sustentável.",
       ],
       en: [
-        "Before: acquisition, self-service, and backoffice ran separately -> After: unified operation in one application.",
-        "Before: manual support load was high -> After: self-service portal reduced operational friction.",
-        "Before: each SGP integration required direct coupling -> After: decoupled driver layer improved sustainability.",
+        "Before: commercial, self-service, and backoffice flows ran separately -> After: operations were unified in one application.",
+        "Before: manual support carried more friction -> After: the self-service portal reduced part of that operational workload.",
+        "Before: each new SGP required direct coupling -> After: the driver layer made integrations more sustainable.",
       ],
     },
     links: [
@@ -623,30 +618,28 @@ This allowed integration with multiple SGP providers without rewriting the appli
       },
     },
     shortDescription: {
-      pt: "SaaS fullstack multi-tenant para CRM, gestão financeira, billing e OCR com IA.",
-      en: "Fullstack multi-tenant SaaS for CRM, financial management, billing and AI-powered OCR.",
+      pt: "SaaS multi-tenant para óticas com CRM, financeiro, billing e OCR com IA em um fluxo unificado.",
+      en: "Multi-tenant SaaS for optical stores with CRM, finance, billing, and AI-powered OCR in one unified flow.",
     },
     description: {
-      pt: `Sistema SaaS multi-tenant para gestão completa de óticas.
-Inclui CRM, controle de pedidos, módulo financeiro com crediário,
-billing por plano, portal de laboratório e OCR com IA.`,
-      en: `Multi-tenant SaaS platform for optical store management.
-Includes CRM, order workflow, financial module with installments,
-subscription billing, lab portal and AI-powered OCR.`,
+      pt: `Sistema SaaS multi-tenant para a operação completa de óticas, conectando atendimento, pedidos, financeiro e laboratório no mesmo produto.
+O projeto foi pensado para reduzir retrabalho, organizar cobrança recorrente e dar mais controle ao fluxo operacional.`,
+      en: `Multi-tenant SaaS for the full operation of optical stores, connecting sales, orders, finance, and lab workflows in one product.
+The project was designed to reduce rework, structure recurring billing, and bring more control to daily operations.`,
     },
     challenge: {
-      pt: `Óticas operavam com processos fragmentados entre atendimento, financeiro e laboratório.
-Havia retrabalho em cadastro, baixa rastreabilidade e pouca previsibilidade no faturamento por plano.`,
-      en: `Optical stores were running fragmented workflows across sales, finance, and lab operations.
-This caused repeated data entry, limited traceability, and low predictability in subscription billing.`,
+      pt: `Atendimento, financeiro e laboratório operavam de forma fragmentada.
+Isso gerava retrabalho em cadastro, pouca rastreabilidade e baixa previsibilidade no faturamento por plano.`,
+      en: `Sales, finance, and lab operations were fragmented.
+That created repeated data entry, limited traceability, and low predictability in subscription billing.`,
     },
     solution: {
       pt: `Desenvolvi uma arquitetura SaaS multi-tenant com módulos integrados para CRM, pedidos, financeiro e portal de laboratório.
 Implementei RBAC por contexto, billing recorrente por plano e OCR com IA para reduzir entrada manual de dados.
-Também padronizei contratos de API e fluxo operacional ponta a ponta para reduzir inconsistência entre áreas.`,
-      en: `I designed a multi-tenant SaaS architecture with integrated modules for CRM, order flow, finance, and lab portal.
-I implemented context-based RBAC, recurring subscription billing, and AI-powered OCR to reduce manual data entry.
-I also standardized API contracts and end-to-end operational flows to reduce cross-team inconsistency.`,
+Também padronizei contratos de API e o fluxo ponta a ponta para diminuir inconsistência entre áreas.`,
+      en: `I built a multi-tenant SaaS architecture with integrated modules for CRM, orders, finance, and the lab portal.
+I implemented context-based RBAC, plan-based recurring billing, and AI-powered OCR to reduce manual data entry.
+I also standardized API contracts and the end-to-end flow to reduce inconsistency across teams.`,
     },
     stack: [
       "Next.js 16",
@@ -774,15 +767,15 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
     ],
     results: {
       pt: [
-        "Antes: comercial, financeiro e laboratório trabalhavam em fluxos paralelos -> Depois: operação unificada ponta a ponta.",
-        "Antes: cadastro manual gerava retrabalho -> Depois: OCR integrado reduziu entrada manual em documentos críticos.",
-        "Antes: cobrança com pouca previsibilidade -> Depois: billing recorrente por plano com controle estruturado.",
-        "Antes: permissões administrativas pouco granulares -> Depois: RBAC multi-contexto com governança mais segura.",
+        "Antes: comercial, financeiro e laboratório trabalhavam em paralelo -> Depois: a operação passou a seguir um fluxo integrado ponta a ponta.",
+        "Antes: cadastro manual gerava muito retrabalho -> Depois: o OCR reduziu entrada manual em documentos críticos.",
+        "Antes: a cobrança era menos previsível -> Depois: o billing recorrente por plano trouxe mais controle operacional.",
+        "Antes: permissões administrativas eram pouco granulares -> Depois: o RBAC multi-contexto reforçou a governança de acesso.",
       ],
       en: [
-        "Before: sales, finance, and lab ran in parallel flows -> After: unified end-to-end operation.",
-        "Before: manual registration caused repeated work -> After: integrated OCR reduced manual input on critical documents.",
-        "Before: billing had low predictability -> After: plan-based recurring billing added operational control.",
+        "Before: sales, finance, and lab worked in parallel -> After: operations moved to an integrated end-to-end flow.",
+        "Before: manual registration caused significant rework -> After: OCR reduced manual input on critical documents.",
+        "Before: billing was less predictable -> After: plan-based recurring billing brought more operational control.",
         "Before: admin permissions lacked granularity -> After: multi-context RBAC strengthened access governance.",
       ],
     },
@@ -802,6 +795,7 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
   {
     slug: "gordo-construcoes",
     title: "Gordo Construções – Plataforma Imobiliária Fullstack",
+    featured: true,
     cardImage: {
       src: "/cases/gordo-construcoes/home.png",
       alt: {
@@ -810,30 +804,28 @@ I also standardized API contracts and end-to-end operational flows to reduce cro
       },
     },
     shortDescription: {
-      pt: "Plataforma imobiliária fullstack com catálogo público, captação de leads e painel admin autenticado.",
-      en: "Fullstack real estate platform with public catalog, lead capture and authenticated admin panel.",
+      pt: "Plataforma imobiliária fullstack com catálogo público, leads e painel admin na mesma operação.",
+      en: "Fullstack real estate platform with public catalog, lead capture, and admin management in the same operation.",
     },
     description: {
-      pt: `Plataforma imobiliária fullstack desenvolvida com Next.js 16.
-Inclui site institucional, catálogo público com filtros,
-SEO dinâmico por imóvel, captação de leads e painel administrativo autenticado.`,
-      en: `Fullstack real estate platform built with Next.js 16.
-Includes an institutional website, a public catalog with filters,
-dynamic SEO per property, lead capture, and an authenticated admin panel.`,
+      pt: `Plataforma fullstack criada para organizar a operação digital de uma imobiliária, do catálogo público à gestão interna dos imóveis.
+O projeto reúne site institucional, filtros, SEO por imóvel, captação de leads e painel autenticado em um só fluxo.`,
+      en: `Fullstack platform built to organize a real estate business from the public catalog to internal property management.
+It brings together the institutional website, filters, SEO per property, lead capture, and an authenticated dashboard in a single flow.`,
     },
     challenge: {
-      pt: `A operação imobiliária tinha baixa organização de catálogo, geração manual de leads e pouca rastreabilidade.
-Havia risco de inconsistência entre site público e administração interna dos imóveis.`,
-      en: `The real estate operation had limited catalog organization, manual lead processing, and low traceability.
-There was a risk of inconsistency between public listings and internal property management.`,
+      pt: `A operação tinha pouca organização de catálogo, geração manual de leads e baixa rastreabilidade.
+Além disso, havia risco de inconsistência entre o site público e a administração interna dos imóveis.`,
+      en: `The operation had weak catalog organization, manual lead handling, and low traceability.
+There was also a risk of inconsistency between the public website and internal property management.`,
     },
     solution: {
       pt: `Construí uma plataforma fullstack com catálogo público filtrável e painel autenticado para gestão de imóveis.
-Implementei RBAC via middleware, validações condicionais de lead e metadata dinâmica por propriedade.
-Também estruturei armazenamento de mídia em nuvem e rotinas com foco em performance via ISR.`,
-      en: `I built a fullstack platform with a filterable public catalog and authenticated admin panel for property management.
-I implemented middleware-based RBAC, conditional lead validation, and dynamic metadata per property.
-I also integrated cloud media storage and performance-oriented ISR workflows.`,
+Implementei RBAC via middleware, validações condicionais na API de leads e metadata dinâmica por propriedade.
+Também estruturei mídia em nuvem e rotinas com ISR para equilibrar SEO, velocidade e atualização.`,
+      en: `I built a fullstack platform with a filterable public catalog and an authenticated dashboard for property management.
+I implemented middleware-based RBAC, conditional validation in the lead API, and dynamic metadata per property.
+I also added cloud media storage and ISR workflows to balance SEO, speed, and freshness.`,
     },
     stack: [
       "Next.js 16",
@@ -960,14 +952,14 @@ I also integrated cloud media storage and performance-oriented ISR workflows.`,
     ],
     results: {
       pt: [
-        "Antes: catálogo público e gestão interna sem sincronização confiável -> Depois: operação imobiliária centralizada.",
-        "Antes: leads entravam sem validação consistente -> Depois: fluxo estruturado com validações e trilha de atividade.",
-        "Antes: pouca indexação de imóveis estratégicos -> Depois: metadata dinâmica aumentou discoverability.",
+        "Antes: catálogo público e gestão interna não tinham sincronização confiável -> Depois: a operação ficou centralizada em uma única plataforma.",
+        "Antes: leads entravam sem validação consistente -> Depois: o fluxo ganhou validações e trilha de atividade.",
+        "Antes: imóveis estratégicos tinham pouca visibilidade orgânica -> Depois: metadata dinâmica ajudou a melhorar discoverability.",
       ],
       en: [
-        "Before: public catalog and internal management were weakly synchronized -> After: centralized real estate operation.",
-        "Before: leads arrived without consistent validation -> After: structured flow with validation and activity trace.",
-        "Before: key properties had low search visibility -> After: dynamic metadata improved discoverability.",
+        "Before: the public catalog and internal management were weakly synchronized -> After: operations became centralized in one platform.",
+        "Before: leads arrived without consistent validation -> After: the flow gained proper validation and activity traceability.",
+        "Before: key properties had low organic visibility -> After: dynamic metadata helped improve discoverability.",
       ],
     },
     links: [
@@ -993,30 +985,28 @@ I also integrated cloud media storage and performance-oriented ISR workflows.`,
       },
     },
     shortDescription: {
-      pt: "Plataforma fullstack de produtos digitais com checkout PIX, processamento de webhook e conteúdo assistido por IA.",
-      en: "Fullstack digital product platform with PIX checkout, webhook processing and AI-assisted content.",
+      pt: "E-commerce fullstack de produtos digitais com PIX, webhook assíncrono e entrega automatizada.",
+      en: "Fullstack digital products storefront with PIX, asynchronous webhooks, and automated delivery.",
     },
     description: {
-      pt: `Plataforma fullstack para venda de produtos digitais educativos,
-com checkout via PIX (Mercado Pago), webhook assíncrono,
-entrega automatizada por e-mail e CMS de blog com apoio de IA.`,
-      en: `Fullstack digital product platform featuring PIX checkout (Mercado Pago),
-asynchronous webhook processing, automated email delivery
-and AI-assisted blog content management.`,
+      pt: `Plataforma fullstack para venda de produtos digitais educativos, com checkout via PIX, processamento assíncrono de webhook e entrega automatizada por e-mail.
+O projeto também inclui gestão de conteúdo com apoio de IA para manter o ritmo editorial sem depender de operação manual.`,
+      en: `Fullstack platform for selling educational digital products, with PIX checkout, asynchronous webhook processing, and automated email delivery.
+It also includes AI-assisted content workflows to keep the editorial side moving without manual-heavy operations.`,
     },
     challenge: {
-      pt: `A venda de produtos digitais dependia de confirmação manual de pagamento e envio operacional repetitivo.
-Isso gerava atraso na entrega, risco de inconsistência e pouca rastreabilidade do ciclo de compra.`,
-      en: `Digital product sales relied on manual payment confirmation and repetitive fulfillment steps.
-This created delivery delays, inconsistency risk, and limited purchase-flow traceability.`,
+      pt: `A venda dependia de confirmação manual de pagamento e envio repetitivo.
+Isso gerava atraso na entrega, risco de inconsistência e pouca rastreabilidade no ciclo de compra.`,
+      en: `Sales depended on manual payment confirmation and repetitive fulfillment steps.
+That created delivery delays, inconsistency risk, and limited traceability across the purchase flow.`,
     },
     solution: {
       pt: `Implementei checkout PIX com Mercado Pago, processamento assíncrono de webhook e reconciliação idempotente.
-Automatizei entrega por e-mail e conectei gestão de conteúdo com apoio de IA para manter ritmo editorial.
-Organizei o fluxo transacional para reduzir intervenção manual e aumentar confiabilidade operacional.`,
+Automatizei a entrega por e-mail e conectei a gestão de conteúdo com apoio de IA para manter ritmo editorial.
+Com isso, o fluxo transacional ficou mais confiável e exigiu menos intervenção manual.`,
       en: `I implemented PIX checkout with Mercado Pago, asynchronous webhook processing, and idempotent reconciliation.
 I automated email delivery and connected content workflows with AI assistance to keep editorial cadence.
-I organized transactional flows to reduce manual intervention and increase operational reliability.`,
+That made the transactional flow more reliable and reduced manual intervention.`,
     },
     stack: [
       "Next.js 16",
@@ -1145,14 +1135,14 @@ I organized transactional flows to reduce manual intervention and increase opera
     ],
     results: {
       pt: [
-        "Antes: confirmação de pagamento e entrega eram manuais -> Depois: fluxo automatizado com webhook e envio transacional.",
-        "Antes: risco de duplicidade em eventos financeiros -> Depois: reconciliação idempotente com retries controlados.",
-        "Antes: baixa rastreabilidade operacional -> Depois: trilha de eventos para auditoria e suporte.",
+        "Antes: pagamento e entrega eram tratados manualmente -> Depois: o fluxo passou a ser automatizado com webhook e envio transacional.",
+        "Antes: havia mais risco de duplicidade em eventos financeiros -> Depois: a reconciliação idempotente trouxe mais segurança operacional.",
+        "Antes: a rastreabilidade era limitada -> Depois: a trilha de eventos facilitou auditoria e suporte.",
       ],
       en: [
-        "Before: payment confirmation and fulfillment were manual -> After: automated flow with webhook and transactional delivery.",
-        "Before: financial events could duplicate effects -> After: idempotent reconciliation with controlled retries.",
-        "Before: operational traceability was limited -> After: event trail improved audit and support workflows.",
+        "Before: payment confirmation and fulfillment were manual -> After: the flow became automated with webhooks and transactional delivery.",
+        "Before: financial events carried more duplication risk -> After: idempotent reconciliation added operational safety.",
+        "Before: traceability was limited -> After: the event trail improved audit and support workflows.",
       ],
     },
     links: [
