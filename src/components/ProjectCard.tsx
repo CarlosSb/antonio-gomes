@@ -22,6 +22,13 @@ export default function ProjectCard({ project, content, locale, showDetails = tr
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/45 p-6 transition duration-300 hover:-translate-y-1 hover:border-slate-700 hover:shadow-[0_20px_45px_-30px_rgba(56,189,248,0.6)]">
       <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.12),transparent_48%)]" />
+      {showDetails ? (
+        <Link
+          href={caseLink}
+          aria-label={`${content.actions.caseStudy}: ${project.title}`}
+          className="absolute inset-0 z-10 rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+        />
+      ) : null}
       <div className="relative mb-5 overflow-hidden rounded-xl border border-slate-800 bg-slate-950/80">
         <div className="relative h-48 w-full p-4">
           {projectHeroMedia ? (
@@ -72,7 +79,7 @@ export default function ProjectCard({ project, content, locale, showDetails = tr
         ))}
       </ul>
 
-      <div className="relative mt-auto flex flex-wrap gap-3">
+      <div className="pointer-events-none relative z-20 mt-auto flex flex-wrap gap-3">
         {liveLink ? (
           <AnalyticsLink
             href={liveLink}
@@ -86,7 +93,7 @@ export default function ProjectCard({ project, content, locale, showDetails = tr
               project_slug: project.slug,
               project_title: project.title,
             }}
-            className="rounded-md bg-sky-500 px-3.5 py-2 text-sm font-semibold text-slate-950 transition duration-300 hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+            className="pointer-events-auto rounded-md bg-sky-500 px-3.5 py-2 text-sm font-semibold text-slate-950 transition duration-300 hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
           >
             {content.actions.liveDemo}
           </AnalyticsLink>
@@ -102,7 +109,7 @@ export default function ProjectCard({ project, content, locale, showDetails = tr
           <Link
             href={caseLink}
             aria-label={`${content.actions.caseStudy}: ${project.title}`}
-            className="rounded-md border border-slate-700 px-3.5 py-2 text-sm font-semibold text-slate-100 transition duration-300 hover:border-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+            className="pointer-events-auto rounded-md border border-slate-700 px-3.5 py-2 text-sm font-semibold text-slate-100 transition duration-300 hover:border-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
           >
             {content.actions.caseStudy}
           </Link>

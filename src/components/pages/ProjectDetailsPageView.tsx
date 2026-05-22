@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import AnalyticsLink from "@/components/analytics/AnalyticsLink";
+import ProjectGallery from "@/components/ProjectGallery";
 import Section from "@/components/Section";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
 import type { ProjectLink, Project } from "@/content/projects";
@@ -38,6 +38,11 @@ export default function ProjectDetailsPageView({
   const impact = localizeList(project.impact, locale);
   const results = localizeList(project.results, locale);
   const gallery = project.gallery ?? [];
+  const localizedGallery = gallery.map((item) => ({
+    src: item.src,
+    alt: localizeText(item.alt, locale),
+    caption: localizeText(item.caption, locale),
+  }));
   const metrics = (project.metrics ?? []).filter((metric) => {
     const value = localizeText(metric.value, locale);
     return !value.includes("[preencher]") && !value.includes("[fill]");
@@ -94,34 +99,7 @@ export default function ProjectDetailsPageView({
 
       {gallery.length > 0 ? (
         <Section id="project-gallery" title={content.projectsPage.galleryLabel}>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {gallery.map((item) => {
-              const alt = localizeText(item.alt, locale);
-              const caption = localizeText(item.caption, locale);
-
-              return (
-                <figure
-                  key={`${item.src}-${alt}`}
-                  className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900/40"
-                >
-                  <div className="relative aspect-[16/9]">
-                    <Image
-                      src={item.src}
-                      alt={alt}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  {caption ? (
-                    <figcaption className="border-t border-slate-800 px-3 py-2 text-xs text-slate-400">
-                      {caption}
-                    </figcaption>
-                  ) : null}
-                </figure>
-              );
-            })}
-          </div>
+          <ProjectGallery items={localizedGallery} />
         </Section>
       ) : null}
 

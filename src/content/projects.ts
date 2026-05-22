@@ -716,36 +716,14 @@ I also refined API contracts, validation, caching, observability, upload hardeni
     },
     gallery: [
       {
-        src: "/cases/otica-plus/overview.png",
+        src: "/cases/otica-plus/dashboard.png",
         alt: {
-          pt: "Visão geral do SaaS ÓticaPlus",
-          en: "ÓticaPlus SaaS overview",
+          pt: "Dashboard do SaaS ÓticaPlus",
+          en: "ÓticaPlus SaaS dashboard",
         },
         caption: {
-          pt: "Visão do produto com módulos de CRM, financeiro, propostas, vitrine e gestão operacional.",
-          en: "Product overview with CRM, finance, quotes, storefront, and operational modules.",
-        },
-      },
-      {
-        src: "/cases/otica-plus/flow.png",
-        alt: {
-          pt: "Fluxo de pedidos e OCR no ÓticaPlus",
-          en: "ÓticaPlus order and OCR flow",
-        },
-        caption: {
-          pt: "Fluxo de proposta, pedido/OS, financeiro e QR/OCR rastreável.",
-          en: "Traceable quote, order, finance, and QR/OCR flow.",
-        },
-      },
-      {
-        src: "/cases/otica-plus/admin.png",
-        alt: {
-          pt: "Painel administrativo do ÓticaPlus",
-          en: "ÓticaPlus admin dashboard",
-        },
-        caption: {
-          pt: "Gestão SaaS com planos, tenants, usuários, lojas e controles operacionais.",
-          en: "SaaS management with plans, tenants, users, stores, and operational controls.",
+          pt: "Dashboard principal com visão operacional do SaaS para óticas.",
+          en: "Main dashboard with the operational SaaS overview for optical stores.",
         },
       },
     ],
@@ -791,11 +769,7 @@ I also refined API contracts, validation, caching, observability, upload hardeni
     links: [
       {
         label: "Live",
-        href: "https://otica-plus-app.vercel.app/",
-      },
-      {
-        label: "Repo",
-        href: "https://github.com/carlossb",
+        href: "https://otica-plus-app.vercel.app/api/auth/auto-login?token=cmp8refq0t23mklmm",
       },
     ],
     featured: true,
