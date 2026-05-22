@@ -611,7 +611,7 @@ That allowed the product to support multiple SGP providers without rewriting the
     slug: "otica-plus",
     title: "ÓticaPlus – SaaS Multi-Tenant para Óticas",
     cardImage: {
-      src: "/cases/otica-plus/dashboad.png",
+      src: "/cases/otica-plus/dashboard.png",
       alt: {
         pt: "Tela inicial do projeto ÓticaPlus",
         en: "ÓticaPlus home screen",
