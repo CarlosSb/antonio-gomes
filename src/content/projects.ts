@@ -618,93 +618,100 @@ That allowed the product to support multiple SGP providers without rewriting the
       },
     },
     shortDescription: {
-      pt: "SaaS multi-tenant para óticas com CRM, financeiro, billing e OCR com IA em um fluxo unificado.",
-      en: "Multi-tenant SaaS for optical stores with CRM, finance, billing, and AI-powered OCR in one unified flow.",
+      pt: "SaaS multi-tenant para óticas com vitrine pública, propostas, pedidos/OS, financeiro, WhatsApp Agent e QR/OCR em um fluxo unificado.",
+      en: "Multi-tenant SaaS for optical stores with public storefronts, quotes, orders, finance, WhatsApp Agent, and QR/OCR in one unified flow.",
     },
     description: {
-      pt: `Sistema SaaS multi-tenant para a operação completa de óticas, conectando atendimento, pedidos, financeiro e laboratório no mesmo produto.
-O projeto foi pensado para reduzir retrabalho, organizar cobrança recorrente e dar mais controle ao fluxo operacional.`,
-      en: `Multi-tenant SaaS for the full operation of optical stores, connecting sales, orders, finance, and lab workflows in one product.
-The project was designed to reduce rework, structure recurring billing, and bring more control to daily operations.`,
+      pt: `Sistema SaaS multi-tenant para a operação completa de óticas, conectando vitrine pública, leads, atendimento, propostas compartilháveis, pedidos/OS, financeiro, laboratórios e relatórios no mesmo produto.
+O projeto foi evoluído para reduzir retrabalho, melhorar rastreabilidade comercial, organizar cobrança recorrente e dar mais controle ao fluxo operacional.`,
+      en: `Multi-tenant SaaS for the full operation of optical stores, connecting public storefronts, leads, sales, shareable quotes, orders, finance, lab workflows, and reports in one product.
+The project evolved to reduce rework, improve sales traceability, structure recurring billing, and bring more control to daily operations.`,
     },
     challenge: {
-      pt: `Atendimento, financeiro e laboratório operavam de forma fragmentada.
-Isso gerava retrabalho em cadastro, pouca rastreabilidade e baixa previsibilidade no faturamento por plano.`,
-      en: `Sales, finance, and lab operations were fragmented.
-That created repeated data entry, limited traceability, and low predictability in subscription billing.`,
+      pt: `Atendimento, financeiro, laboratório, prospecção e presença digital operavam de forma fragmentada.
+Isso gerava retrabalho em cadastro, baixa rastreabilidade entre orçamento e pedido, pouca previsibilidade financeira e dificuldade para transformar leads em vendas acompanháveis.`,
+      en: `Sales, finance, lab operations, prospection, and digital presence were fragmented.
+That created repeated data entry, weak traceability between quote and order, low financial predictability, and friction turning leads into trackable sales.`,
     },
     solution: {
-      pt: `Desenvolvi uma arquitetura SaaS multi-tenant com módulos integrados para CRM, pedidos, financeiro e portal de laboratório.
-Implementei RBAC por contexto, billing recorrente por plano e OCR com IA para reduzir entrada manual de dados.
-Também padronizei contratos de API e o fluxo ponta a ponta para diminuir inconsistência entre áreas.`,
-      en: `I built a multi-tenant SaaS architecture with integrated modules for CRM, orders, finance, and the lab portal.
-I implemented context-based RBAC, plan-based recurring billing, and AI-powered OCR to reduce manual data entry.
-I also standardized API contracts and the end-to-end flow to reduce inconsistency across teams.`,
+      pt: `Desenvolvi uma arquitetura SaaS multi-tenant em Next.js App Router, TypeScript, Drizzle ORM e Supabase, com módulos integrados para CRM, propostas, pedidos, financeiro, laboratórios, vitrine pública e prospecção.
+Implementei governança por tenant, billing por plano, WhatsApp Agent, QR/OCR rastreável, propostas públicas com ciclo de aprovação e conversão segura para pedido/OS.
+Também refinei contratos de API, validação, cache, observabilidade, hardening de uploads e componentes recolhíveis para reduzir poluição visual em fluxos densos.`,
+      en: `I built a multi-tenant SaaS architecture with Next.js App Router, TypeScript, Drizzle ORM, and Supabase, integrating CRM, quotes, orders, finance, labs, public storefronts, and prospection.
+I implemented tenant governance, plan-based billing, WhatsApp Agent, traceable QR/OCR, public quotes with approval cycles, and safe conversion into orders.
+I also refined API contracts, validation, caching, observability, upload hardening, and collapsible components to reduce visual noise in dense workflows.`,
     },
     stack: [
       "Next.js 16",
       "React 19",
       "TypeScript",
-      "Prisma",
+      "Drizzle ORM",
       "PostgreSQL",
       "NextAuth",
       "Zustand",
       "Supabase",
+      "WhatsApp Agent",
     ],
     architecture: {
       pt: [
         "Monólito modular",
-        "Sistema RBAC multi-tenant",
-        "Autenticação baseada em JWT",
-        "Processamento assíncrono de jobs",
-        "Integração de OCR com IA",
+        "Governança multi-tenant por loja e laboratório",
+        "Autenticação e autorização por contexto",
+        "Domínio de propostas separado do pedido operacional",
+        "Integração de QR/OCR, WhatsApp Agent e vitrine pública",
+        "Observabilidade e hardening incremental de APIs",
       ],
       en: [
         "Modular monolith",
-        "Multi-tenant RBAC system",
-        "JWT-based authentication",
-        "Async job processing",
-        "OCR AI integration",
+        "Multi-tenant governance for stores and labs",
+        "Context-aware authentication and authorization",
+        "Quote domain separated from operational orders",
+        "QR/OCR, WhatsApp Agent, and public storefront integration",
+        "Incremental API observability and hardening",
       ],
     },
     technicalDecisions: {
       pt: [
-        "Escolhi monólito modular em vez de microservices para reduzir complexidade operacional no estágio inicial.",
-        "Escolhi RBAC por tenant/contexto em vez de perfil único global para manter isolamento e granularidade de acesso.",
-        "Escolhi jobs assíncronos para OCR em vez de processamento síncrono no request para preservar fluidez no fluxo principal.",
+        "Separei proposta comercial de pedido operacional para evitar financeiro duplicado durante negociação.",
+        "Usei Drizzle ORM e repositories/services incrementais para reduzir acoplamento entre App Router, banco e regras de negócio.",
+        "Mantive WhatsApp como adaptador de canal, preservando fallback manual quando o Agent ou provedor automático não está disponível.",
+        "Apliquei hardening multi-tenant, validação de IDs, rate limit em uploads e observabilidade nas rotas críticas sem reescrever o sistema.",
       ],
       en: [
-        "I chose a modular monolith instead of microservices to reduce early-stage operational complexity.",
-        "I chose tenant/context-aware RBAC instead of a global role model to preserve isolation and fine-grained access.",
-        "I chose asynchronous OCR jobs instead of synchronous request-time processing to protect main-flow responsiveness.",
+        "I separated commercial quotes from operational orders to avoid duplicated finance during negotiation.",
+        "I used Drizzle ORM and incremental repositories/services to reduce coupling between App Router, database access, and business rules.",
+        "I kept WhatsApp as a channel adapter, preserving manual fallback when the Agent or automatic provider is unavailable.",
+        "I applied multi-tenant hardening, ID validation, upload rate limits, and observability on critical routes without rewriting the system.",
       ],
     },
     highlights: {
       pt: [
-        "472 arquivos TypeScript",
-        "118 rotas de API",
-        "36 modelos Prisma",
-        "Papéis de usuário multi-contexto",
-        "Fluxo comercial + financeiro integrado",
+        "810 arquivos TypeScript",
+        "197 route handlers de API",
+        "53 tabelas/modelos Drizzle",
+        "Vitrine pública com leads e eventos",
+        "Proposta -> Pedido/OS -> Financeiro integrado",
       ],
       en: [
-        "472 TypeScript files",
-        "118 API routes",
-        "36 Prisma models",
-        "Multi-context user roles",
-        "Integrated commercial + financial workflow",
+        "810 TypeScript files",
+        "197 API route handlers",
+        "53 Drizzle tables/models",
+        "Public storefront with leads and events",
+        "Integrated quote -> order -> finance workflow",
       ],
     },
     impact: {
       pt: [
-        "Fluxo operacional de óticas centralizado",
-        "Redução de entrada manual de dados com OCR",
-        "Billing e gestão de assinaturas estruturados",
+        "Fluxo comercial, operacional e financeiro centralizado",
+        "Rastreabilidade entre lead, proposta, OS, pagamento e laboratório",
+        "Redução de entrada manual com QR/OCR e mensagens prontas",
+        "Billing, planos, cupons e limites de filiais estruturados",
       ],
       en: [
-        "Centralized operational workflow for optical stores",
-        "Reduced manual data entry with OCR",
-        "Structured billing and subscription management",
+        "Centralized sales, operations, and finance workflow",
+        "Traceability across lead, quote, order, payment, and lab",
+        "Reduced manual entry with QR/OCR and prepared messages",
+        "Structured billing, plans, coupons, and branch limits",
       ],
     },
     gallery: [
@@ -715,8 +722,8 @@ I also standardized API contracts and the end-to-end flow to reduce inconsistenc
           en: "ÓticaPlus SaaS overview",
         },
         caption: {
-          pt: "Visão do produto com módulos de CRM, financeiro e gestão operacional.",
-          en: "Product overview with CRM, financial, and operational modules.",
+          pt: "Visão do produto com módulos de CRM, financeiro, propostas, vitrine e gestão operacional.",
+          en: "Product overview with CRM, finance, quotes, storefront, and operational modules.",
         },
       },
       {
@@ -726,8 +733,8 @@ I also standardized API contracts and the end-to-end flow to reduce inconsistenc
           en: "ÓticaPlus order and OCR flow",
         },
         caption: {
-          pt: "Fluxo comercial e financeiro integrado com suporte a OCR.",
-          en: "Integrated commercial and financial flow with OCR support.",
+          pt: "Fluxo de proposta, pedido/OS, financeiro e QR/OCR rastreável.",
+          en: "Traceable quote, order, finance, and QR/OCR flow.",
         },
       },
       {
@@ -737,8 +744,8 @@ I also standardized API contracts and the end-to-end flow to reduce inconsistenc
           en: "ÓticaPlus admin dashboard",
         },
         caption: {
-          pt: "Gestão de contexto multi-tenant com papéis e permissões granulares.",
-          en: "Multi-tenant management with granular roles and permissions.",
+          pt: "Gestão SaaS com planos, tenants, usuários, lojas e controles operacionais.",
+          en: "SaaS management with plans, tenants, users, stores, and operational controls.",
         },
       },
     ],
@@ -767,16 +774,18 @@ I also standardized API contracts and the end-to-end flow to reduce inconsistenc
     ],
     results: {
       pt: [
-        "Antes: comercial, financeiro e laboratório trabalhavam em paralelo -> Depois: a operação passou a seguir um fluxo integrado ponta a ponta.",
-        "Antes: cadastro manual gerava muito retrabalho -> Depois: o OCR reduziu entrada manual em documentos críticos.",
-        "Antes: a cobrança era menos previsível -> Depois: o billing recorrente por plano trouxe mais controle operacional.",
-        "Antes: permissões administrativas eram pouco granulares -> Depois: o RBAC multi-contexto reforçou a governança de acesso.",
+        "Antes: comercial, financeiro e laboratório trabalhavam em paralelo -> Depois: a operação passou a seguir proposta -> pedido/OS -> financeiro -> laboratório.",
+        "Antes: leads e presença digital ficavam fora do sistema -> Depois: a vitrine pública passou a registrar leads, eventos e contato por WhatsApp.",
+        "Antes: cadastro manual gerava muito retrabalho -> Depois: QR/OCR e contexto de captura reduziram entrada manual em documentos críticos.",
+        "Antes: a cobrança era menos previsível -> Depois: billing por plano, carnês, recebíveis e despesas de laboratório deram mais controle operacional.",
+        "Antes: permissões e IDs eram pontos sensíveis -> Depois: validações por tenant e hardening de APIs reforçaram a governança de acesso.",
       ],
       en: [
-        "Before: sales, finance, and lab worked in parallel -> After: operations moved to an integrated end-to-end flow.",
-        "Before: manual registration caused significant rework -> After: OCR reduced manual input on critical documents.",
-        "Before: billing was less predictable -> After: plan-based recurring billing brought more operational control.",
-        "Before: admin permissions lacked granularity -> After: multi-context RBAC strengthened access governance.",
+        "Before: sales, finance, and lab worked in parallel -> After: operations moved through quote -> order -> finance -> lab.",
+        "Before: leads and digital presence lived outside the system -> After: the public storefront started tracking leads, events, and WhatsApp contact.",
+        "Before: manual registration caused significant rework -> After: QR/OCR and capture context reduced manual input on critical documents.",
+        "Before: billing was less predictable -> After: plan billing, installments, receivables, and lab expenses brought more operational control.",
+        "Before: permissions and IDs were sensitive points -> After: tenant validation and API hardening strengthened access governance.",
       ],
     },
     links: [

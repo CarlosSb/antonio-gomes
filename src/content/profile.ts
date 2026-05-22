@@ -449,7 +449,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         deliveredTitle: "O que eu já entreguei",
         deliveredBullets: [
           "ONG Tudo por Amor: site institucional com CMS headless, SEO técnico e autonomia editorial para a equipe.",
-          "ÓticaPlus: SaaS multi-tenant com CRM, billing, OCR com IA e governança de acesso por contexto.",
+          "ÓticaPlus: SaaS multi-tenant para óticas com propostas compartilháveis, pedidos/OS, financeiro, vitrine pública, WhatsApp Agent, QR/OCR e governança por tenant.",
           "Provedor Connect e Digital.Net: produtos para ISP com autoatendimento, painel admin, APIs e padronização operacional.",
           "Gordo Construções e Tia Emília: fluxos de catálogo, leads, pagamento e automação com foco em operação real.",
         ],
@@ -526,7 +526,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
           slug: "otica-plus",
           title: "ÓticaPlus",
           description:
-            "SaaS multi-tenant com CRM, billing e operação integrada ponta a ponta.",
+            "SaaS multi-tenant com vitrine pública, propostas, pedidos/OS, financeiro, WhatsApp Agent e operação ponta a ponta.",
         },
         {
           slug: "digital-net-telecom",
@@ -785,7 +785,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
         deliveredTitle: "What I have delivered",
         deliveredBullets: [
           "ONG Tudo por Amor: institutional website with headless CMS, technical SEO, and editorial autonomy for the team.",
-          "ÓticaPlus: multi-tenant SaaS with CRM, billing, AI-powered OCR, and context-based access control.",
+          "ÓticaPlus: multi-tenant SaaS for optical stores with shareable quotes, orders, finance, public storefronts, WhatsApp Agent, QR/OCR, and tenant governance.",
           "Provedor Connect and Digital.Net: ISP products with self-service, admin dashboards, APIs, and operational standardization.",
           "Gordo Construções and Tia Emília: catalog, lead, payment, and automation flows focused on real-world operations.",
         ],
@@ -862,7 +862,7 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
           slug: "otica-plus",
           title: "ÓticaPlus",
           description:
-            "Multi-tenant SaaS with CRM, billing, and integrated end-to-end operations.",
+            "Multi-tenant SaaS with public storefronts, quotes, orders, finance, WhatsApp Agent, and end-to-end operations.",
         },
         {
           slug: "digital-net-telecom",
