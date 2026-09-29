@@ -94,6 +94,13 @@ export const projects: Project[] = [
   {
     slug: "mercantils",
     title: "Mercantils – Operação de vendas para mercados locais",
+    cardImage: {
+      src: "/cases/mercantils/home.png",
+      alt: {
+        pt: "Preview da landing page do Mercantils com a jornada de atendimento e operação da loja",
+        en: "Mercantils landing page preview showing the store support and operations journey",
+      },
+    },
     shortDescription: {
       pt: "Ecossistema de atendimento e vendas que transforma conversas no WhatsApp em pedidos organizados para o comerciante.",
       en: "Sales and support ecosystem that turns WhatsApp conversations into organized orders for local merchants.",
@@ -127,6 +134,19 @@ export const projects: Project[] = [
       pt: ["Conecta atendimento conversacional e operação de loja em um fluxo único.", "Permite que a equipe assuma a conversa sem perder o pedido logístico."],
       en: ["Connects conversational support and store operations in one flow.", "Allows staff to take over conversations without losing the logistics order."],
     },
+    gallery: [
+      {
+        src: "/cases/mercantils/home.png",
+        alt: {
+          pt: "Landing page do Mercantils com cliente, conversa e operação conectados",
+          en: "Mercantils landing page connecting customer, conversation, and operations",
+        },
+        caption: {
+          pt: "Experiência comercial que apresenta a jornada do pedido do WhatsApp ao painel do comerciante.",
+          en: "Commercial experience presenting the order journey from WhatsApp to the merchant dashboard.",
+        },
+      },
+    ],
     results: {
       pt: ["Antes: conversa, carrinho e operação ficavam separados -> Depois: o pedido atravessa os canais com contexto compartilhado.", "Antes: falhas no transporte podiam perder mensagens -> Depois: filas, leases e retry tornam o fluxo recuperável."],
       en: ["Before: conversation, cart, and operations were separate -> After: orders move across channels with shared context.", "Before: transport failures could lose messages -> After: queues, leases, and retries make the flow recoverable."],
@@ -414,10 +434,10 @@ The result was a simpler, faster, and more sustainable editorial workflow.`,
     title: "Digital.Net Telecom – Plataforma web para provedor",
     featured: true,
     cardImage: {
-      src: "/cases/digital-net-telecom/home.png",
+      src: "/cases/digital-net-telecom/home-v2.png",
       alt: {
-        pt: "Tela inicial do projeto Digital.Net Telecom",
-        en: "Digital.Net Telecom home screen",
+        pt: "Nova tela inicial da Digital.Net Telecom com oferta de fibra e TV por assinatura",
+        en: "New Digital.Net Telecom home screen with fiber and subscription TV offers",
       },
     },
     shortDescription: {
@@ -515,14 +535,14 @@ I also reorganized the landing pages to keep both operational and commercial con
     },
     gallery: [
       {
-        src: "/cases/digital-net-telecom/overview.png",
+        src: "/cases/digital-net-telecom/home-v2.png",
         alt: {
-          pt: "Visão geral da plataforma Digital.Net Telecom",
-          en: "Digital.Net Telecom platform overview",
+          pt: "Nova landing page da Digital.Net Telecom",
+          en: "New Digital.Net Telecom landing page",
         },
         caption: {
-          pt: "Landing institucional com arquitetura multi-cidade e conteúdo operacional.",
-          en: "Institutional landing with multi-city architecture and operational content.",
+          pt: "Nova experiência comercial com foco em planos, benefícios e cobertura.",
+          en: "New commercial experience focused on plans, benefits, and coverage.",
         },
       },
       {
