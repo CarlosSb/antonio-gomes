@@ -576,7 +576,7 @@ Content can come from Notion with caching and a local fallback, while interactiv
     links: [
       {
         label: "Live",
-        href: "https://digital-net-telecom.vercel.app/",
+        href: "https://digital-net-landing-v2.vercel.app/",
       },
       {
         label: "Repo",
