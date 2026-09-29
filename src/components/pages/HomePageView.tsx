@@ -18,8 +18,8 @@ type HomePageViewProps = {
 export default function HomePageView({ projects, content, locale }: HomePageViewProps) {
   return (
     <>
-      <Hero content={content} locale={locale} />
-      <main className="mx-auto flex w-full max-w-[1200px] flex-col gap-20 px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-14 lg:px-8">
+      <Hero content={content} locale={locale} projects={projects} />
+      <main className="mx-auto flex w-full max-w-7xl flex-col gap-24 px-4 pb-20 pt-14 sm:px-6 sm:pb-24 sm:pt-20 lg:gap-32 lg:px-8">
         <ProjectsGrid locale={locale} content={content} projects={projects} />
         <EngineeringMindset content={content} id="mentalidade" />
         <ExperienceTimeline content={content} />

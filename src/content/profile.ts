@@ -18,8 +18,10 @@ type ActionsContent = {
   downloadResume: string;
   viewDetails: string;
   caseStudy: string;
+  readStory: string;
   repository: string;
   liveDemo: string;
+  viewAllProjects: string;
   backToProjects: string;
   githubProfile: string;
   linkedinProfile: string;
@@ -318,8 +320,10 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       downloadResume: "Baixar Currículo",
       viewDetails: "Ver detalhes",
       caseStudy: "Case",
+      readStory: "Ler a história",
       repository: "Repositório",
       liveDemo: "Projeto ao vivo",
+      viewAllProjects: "Ver todos os projetos",
       backToProjects: "Voltar para projetos",
       githubProfile: "GitHub",
       linkedinProfile: "LinkedIn",
@@ -344,17 +348,17 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     hero: {
       availability: "Disponível para vagas remotas",
       badge: "",
-      headlineLead: "Engenheiro de software para",
-      headlineAccent: "produtos, operações e integrações que precisam funcionar.",
+      headlineLead: "Oi, eu sou o Antonio.",
+      headlineAccent: "Eu gosto de pôr ideias para funcionar.",
       description:
-        "Sou Antonio. Construo produtos digitais e sistemas de bastidor com React, Next.js, Node.js e Go — do editor visual ao gateway de mensagens, com foco em clareza, resiliência e operação real.",
-      aboutLinkLabel: "Minha trajetória e forma de trabalhar →",
+        "Construo sistemas, interfaces e automações para problemas que parecem maiores do que deveriam. Às vezes começo pelo código; quase sempre começo tentando entender por que aquilo ficou complicado.",
+      aboutLinkLabel: "Um pouco sobre mim →",
       tags: ["Produtos SaaS", "Infraestrutura e integrações", "Performance e resiliência"],
     },
     homePage: {
-      selectedWorkTitle: "Cases em Destaque",
+      selectedWorkTitle: "Coisas que já coloquei para funcionar",
       selectedWorkDescription:
-        "Seleção de cases reais que representam meu trabalho com produto, arquitetura e operação em produção.",
+        "Algumas coisas que construí, tirei do papel e acompanhei de perto.",
       heroMainCaseCtaLabel: "Ver case: Pitomba Bio",
       heroMainCaseCtaAriaLabel:
         "Ver case principal Pitomba Bio com arquitetura, decisões técnicas e impacto em produção",
@@ -654,8 +658,10 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
       downloadResume: "Download Resume",
       viewDetails: "View details",
       caseStudy: "Case",
+      readStory: "Read the story",
       repository: "Repo",
       liveDemo: "Live demo",
+      viewAllProjects: "View all projects",
       backToProjects: "Back to projects",
       githubProfile: "GitHub",
       linkedinProfile: "LinkedIn",
@@ -680,17 +686,17 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     hero: {
       availability: "Open to remote roles",
       badge: "",
-      headlineLead: "Software engineer for",
-      headlineAccent: "products, operations, and integrations that need to work.",
+      headlineLead: "Hi, I'm Antonio.",
+      headlineAccent: "I like turning ideas into working things.",
       description:
-        "I'm Antonio. I build digital products and backend systems with React, Next.js, Node.js, and Go — from visual editors to messaging gateways, with a focus on clarity, resilience, and real operations.",
-      aboutLinkLabel: "My background and how I work →",
+        "I build systems, interfaces, and automations for problems that seem bigger than they should be. Sometimes I start with code; most of the time, I start by asking why things got complicated.",
+      aboutLinkLabel: "A little about me →",
       tags: ["SaaS products", "Infrastructure and integrations", "Performance and resilience"],
     },
     homePage: {
-      selectedWorkTitle: "Featured Case Studies",
+      selectedWorkTitle: "Things I have put into the world",
       selectedWorkDescription:
-        "A curated selection of real projects that represent my work across product, architecture, and production delivery.",
+        "A few things I built, shipped, and stayed close to.",
       heroMainCaseCtaLabel: "View case: Pitomba Bio",
       heroMainCaseCtaAriaLabel:
         "View main case study Pitomba Bio with architecture, technical decisions and product impact",

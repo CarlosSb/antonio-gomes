@@ -175,7 +175,7 @@ export const projects: Project[] = [
       pt: ["Antes: o agente dependia de callbacks e transporte acoplado -> Depois: consumidores assumem mensagens por API autenticada.", "Antes: falhas podiam interromper o fluxo -> Depois: leases, retries e DLQ preservam entrega e rastreabilidade."],
       en: ["Before: the agent depended on callbacks and coupled transport -> After: consumers claim messages through an authenticated API.", "Before: failures could interrupt the flow -> After: leases, retries, and a DLQ preserve delivery and traceability."],
     },
-    featured: true,
+    featured: false,
     seoTitle: "Pitomba Gateway | Antonio Gomes",
   },
   {
@@ -215,7 +215,7 @@ export const projects: Project[] = [
       en: ["Turned a collection of projects into one coherent product and technology narrative."],
     },
     links: [{ label: "Live", href: "https://pitomba-landing.vercel.app" }],
-    featured: true,
+    featured: false,
     seoTitle: "Pitomba Tech Landing | Antonio Gomes",
   },
   {
@@ -411,7 +411,7 @@ The result was a simpler, faster, and more sustainable editorial workflow.`,
   },
   {
     slug: "digital-net-telecom",
-    title: "Digital.Net Telecom – Plataforma ISP Multi-Cidade",
+    title: "Digital.Net Telecom – Plataforma web para provedor",
     featured: true,
     cardImage: {
       src: "/cases/digital-net-telecom/home.png",
@@ -421,8 +421,8 @@ The result was a simpler, faster, and more sustainable editorial workflow.`,
       },
     },
     shortDescription: {
-      pt: "Plataforma fullstack para ISP com arquitetura multi-cidade, painel admin e APIs validadas para uma operação mais previsível.",
-      en: "Fullstack ISP platform with multi-city architecture, admin dashboard, and validated APIs for a more predictable operation.",
+      pt: "Plataforma web mais simples para provedor regional, com páginas comerciais, conteúdo por cidade e painel administrativo.",
+      en: "A simpler web platform for a regional ISP, with commercial pages, city-based content, and an admin dashboard.",
     },
     description: {
       pt: `Produto fullstack para a operação digital de um provedor com múltiplas cidades, reunindo landing pages, gestão de conteúdo e painel administrativo em uma base única.
@@ -944,7 +944,7 @@ I also refined API contracts, validation, caching, observability, upload hardeni
         href: "https://otica-plus-app.vercel.app/api/auth/auto-login?token=cmp8refq0t23mklmm",
       },
     ],
-    featured: true,
+    featured: false,
     seoTitle: "ÓticaPlus | Antonio Gomes",
   },
   {

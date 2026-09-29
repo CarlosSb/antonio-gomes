@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import AnalyticsLink from "@/components/analytics/AnalyticsLink";
 import type { LocalizedProfileContent, Locale } from "@/content/profile";
 import type { Project } from "@/content/projects";
-import { getProjectLiveLink, getProjectSummary, localizeText } from "@/lib/content";
+import { getProjectSummary, localizeText } from "@/lib/content";
 import { withLocalePath } from "@/lib/i18n";
 
 type ProjectCardProps = {
@@ -11,26 +10,18 @@ type ProjectCardProps = {
   content: LocalizedProfileContent;
   locale: Locale;
   showDetails?: boolean;
+  featured?: boolean;
 };
 
-export default function ProjectCard({ project, content, locale, showDetails = true }: ProjectCardProps) {
-  const liveLink = getProjectLiveLink(project);
+export default function ProjectCard({ project, content, locale, showDetails = true, featured = false }: ProjectCardProps) {
   const caseLink = withLocalePath(locale, `/projects/${project.slug}`);
   const projectHeroMedia = project.cardImage ?? project.gallery?.[0];
   const summary = getProjectSummary(project, locale);
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/45 p-6 transition duration-300 hover:-translate-y-1 hover:border-slate-700 hover:shadow-[0_20px_45px_-30px_rgba(56,189,248,0.6)]">
-      <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.12),transparent_48%)]" />
-      {showDetails ? (
-        <Link
-          href={caseLink}
-          aria-label={`${content.actions.caseStudy}: ${project.title}`}
-          className="absolute inset-0 z-10 rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
-        />
-      ) : null}
-      <div className="relative mb-5 overflow-hidden rounded-xl border border-slate-800 bg-slate-950/80">
-        <div className="relative h-48 w-full p-4">
+    <article className={`group flex h-full flex-col overflow-hidden rounded-2xl border bg-slate-900/55 p-4 transition duration-300 hover:-translate-y-1 hover:border-lime-300/35 hover:shadow-[0_24px_55px_-30px_rgba(163,230,53,0.35)] sm:p-5 ${featured ? "border-lime-300/35 lg:grid lg:grid-cols-[1.25fr_1fr] lg:gap-8" : "border-slate-800/80"}`}>
+      <div className={`relative mb-5 overflow-hidden rounded-xl border border-slate-800 bg-slate-950/80 ${featured ? "lg:mb-0" : ""}`}>
+        <div className={`relative w-full p-4 ${featured ? "h-56" : "h-48"}`}>
           {projectHeroMedia ? (
             <>
               {projectHeroMedia.type === "video" ? (
@@ -63,57 +54,48 @@ export default function ProjectCard({ project, content, locale, showDetails = tr
         </div>
       </div>
 
-      <div className="relative mb-5 space-y-2.5">
-        <h3 className="text-xl font-semibold tracking-tight text-white">{project.title}</h3>
-        <p className="min-h-[4.5rem] line-clamp-3 text-sm leading-relaxed text-slate-300">{summary}</p>
-      </div>
+      <div className="flex flex-col">
+        <div className="relative mb-5 space-y-2.5">
+          {featured ? (
+            <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-lime-300">
+              {content.homePage.projectsMainCaseHighlight.badge}
+            </p>
+          ) : null}
+          <h3 className="text-xl font-semibold tracking-tight text-white transition-colors group-hover:text-lime-200">
+            {showDetails ? (
+              <Link
+                href={caseLink}
+                className="rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-300"
+              >
+                {project.title}
+              </Link>
+            ) : project.title}
+          </h3>
+          <p className="line-clamp-3 text-sm leading-relaxed text-slate-300">{summary}</p>
+        </div>
 
-      <ul className="relative mb-5 flex flex-wrap gap-2">
-        {project.stack.map((tech) => (
-          <li
-            key={tech}
-            className="rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300"
-          >
-            {tech}
-          </li>
-        ))}
-      </ul>
+        <ul className="relative mb-5 flex flex-wrap gap-x-2 gap-y-1 text-xs text-slate-400">
+          {project.stack.slice(0, 4).map((tech) => (
+            <li
+              key={tech}
+              className="after:pl-2 after:text-slate-600 after:content-['·'] last:after:hidden"
+            >
+              {tech}
+            </li>
+          ))}
+        </ul>
 
-      <div className="pointer-events-none relative z-20 mt-auto flex flex-wrap gap-3">
-        {liveLink ? (
-          <AnalyticsLink
-            href={liveLink}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={`${content.actions.liveDemo}: ${project.title}`}
-            eventName="project_link_clicked"
-            eventProperties={{
-              destination: "live_demo",
-              location: "project_card",
-              project_slug: project.slug,
-              project_title: project.title,
-            }}
-            className="pointer-events-auto rounded-md bg-sky-500 px-3.5 py-2 text-sm font-semibold text-slate-950 transition duration-300 hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
-          >
-            {content.actions.liveDemo}
-          </AnalyticsLink>
-        ) : (
-          <span
-            aria-hidden="true"
-            className="rounded-md border border-slate-800 px-3.5 py-2 text-sm font-semibold text-slate-500"
-          >
-            {content.actions.liveDemo}
-          </span>
-        )}
+        <div className="relative z-20 mt-auto flex flex-wrap gap-2.5">
         {showDetails ? (
           <Link
             href={caseLink}
             aria-label={`${content.actions.caseStudy}: ${project.title}`}
-            className="pointer-events-auto rounded-md border border-slate-700 px-3.5 py-2 text-sm font-semibold text-slate-100 transition duration-300 hover:border-slate-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+            className="text-sm font-medium text-slate-300 underline decoration-slate-600 underline-offset-4 transition-colors hover:text-lime-200 hover:decoration-lime-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-300"
           >
-            {content.actions.caseStudy}
+            {content.actions.readStory} <span aria-hidden="true">→</span>
           </Link>
         ) : null}
+        </div>
       </div>
     </article>
   );

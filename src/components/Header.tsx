@@ -33,17 +33,24 @@ export default function Header({ content, locale }: HeaderProps) {
   const navigation = [
     { href: `${homePath}#hero`, label: content.navigation.home },
     { href: `${homePath}#projetos`, label: content.navigation.projects },
-    { href: `${homePath}#experiencia`, label: content.sections.experience },
-    { href: `${homePath}#skills`, label: content.sections.skills },
     { href: `${homePath}#sobre`, label: content.navigation.about },
     { href: `${homePath}#contato`, label: content.navigation.contact },
   ];
 
   return (
-    <header id="top" className="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <Link href={withLocalePath(locale)} className="text-sm font-semibold tracking-wide text-slate-100">
-          {content.profile.name}
+    <header id="top" className="sticky top-0 z-50 border-b border-slate-800/60 bg-slate-950/70 backdrop-blur-xl">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <Link
+          href={withLocalePath(locale)}
+          aria-label={content.profile.name}
+          className="group flex items-center gap-3"
+        >
+          <span className="relative flex h-8 w-8 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 text-[11px] font-semibold text-slate-200 transition group-hover:border-lime-300/60">
+            AG
+          </span>
+          <span className="hidden leading-tight sm:block">
+            <span className="block text-sm font-semibold tracking-tight text-slate-100">antonio<span className="text-lime-300">.gomes</span></span>
+          </span>
         </Link>
 
         <nav
@@ -54,14 +61,14 @@ export default function Header({ content, locale }: HeaderProps) {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-slate-300 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+              className="px-0.5 py-2 text-xs font-medium text-slate-400 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <AnalyticsLink
             href={content.profile.githubUrl}
             target="_blank"
@@ -69,7 +76,7 @@ export default function Header({ content, locale }: HeaderProps) {
             aria-label={content.accessibility.github}
             eventName="social_link_clicked"
             eventProperties={{ location: "header", platform: "github" }}
-            className="text-slate-300 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+            className="rounded-lg p-2 text-slate-400 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
           >
             <GitHubIcon />
           </AnalyticsLink>
@@ -80,7 +87,7 @@ export default function Header({ content, locale }: HeaderProps) {
             aria-label={content.accessibility.linkedin}
             eventName="social_link_clicked"
             eventProperties={{ location: "header", platform: "linkedin" }}
-            className="text-slate-300 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+            className="rounded-lg p-2 text-slate-400 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
           >
             <LinkedInIcon />
           </AnalyticsLink>
@@ -102,13 +109,13 @@ export default function Header({ content, locale }: HeaderProps) {
 
       <nav
         aria-label={content.accessibility.mobileNavigation}
-        className="mx-auto flex w-full max-w-6xl gap-4 overflow-x-auto px-4 pb-4 md:hidden sm:px-6"
+        className="mx-auto flex w-full max-w-7xl gap-2 overflow-x-auto px-4 pb-3 md:hidden sm:px-6"
       >
         {navigation.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className="whitespace-nowrap text-sm text-slate-300 transition hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+            className="whitespace-nowrap border-b border-transparent px-1 py-2 text-xs text-slate-400 transition hover:border-lime-300 hover:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
           >
             {item.label}
           </Link>

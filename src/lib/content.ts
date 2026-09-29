@@ -13,13 +13,9 @@ export function getFeaturedProjects(limit = 3): Project[] {
   const featuredOrder = [
     "pitomba-bio",
     "mercantils",
-    "pitomba-gateway",
-    "pitomba-tech-landing",
-    "ong-tudo-por-amor",
-    "gordo-construcoes",
-    "otica-plus",
-    "provedor-connect",
     "digital-net-telecom",
+    "gordo-construcoes",
+    "ong-tudo-por-amor",
   ];
 
   const featuredProjects = projects

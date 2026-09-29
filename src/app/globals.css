@@ -1,34 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f8fafc;
-  --fg: #0f172a;
-  --muted: #475569;
-  --border: #cbd5e1;
-  --card: #ffffff;
-  --accent: #0369a1;
-  --accent-hover: #075985;
-  --accent-soft: #0ea5e9;
-  --app-bg: radial-gradient(circle at top, #f8fafc 0%, #e2e8f0 55%, #f8fafc 100%);
-  --hero-base: #e2e8f0;
-  --hero-glow: rgba(3, 105, 161, 0.18);
-  --hero-grid: #94a3b8;
+  --bg: #f4f1e8;
+  --fg: #182019;
+  --muted: #687267;
+  --border: #ebe8df;
+  --card: #fffdf7;
+  --accent: #5d7e48;
+  --accent-hover: #476636;
+  --accent-soft: #dce8d2;
+  --app-bg: linear-gradient(180deg, #fffdf7 0%, #f7f4ec 42%, #f4f1e8 100%);
+  --hero-base: #e5ebdf;
   color-scheme: light;
 }
 
 .dark {
-  --bg: #020617;
-  --fg: #e2e8f0;
-  --muted: #94a3b8;
-  --border: #1e293b;
-  --card: #0f172a;
-  --accent: #38bdf8;
-  --accent-hover: #7dd3fc;
-  --accent-soft: #bae6fd;
-  --app-bg: radial-gradient(circle at top, #0f172a 0%, #020617 55%, #020617 100%);
-  --hero-base: #0b0f19;
-  --hero-glow: rgba(34, 211, 238, 0.16);
-  --hero-grid: #94a3b8;
+  --bg: #0d1016;
+  --fg: #edf2e9;
+  --muted: #9aa6a7;
+  --border: #20252a;
+  --card: #151a22;
+  --accent: #b7f34b;
+  --accent-hover: #d0ff75;
+  --accent-soft: #e5ffc0;
+  --app-bg: linear-gradient(180deg, #171d24 0%, #0d1016 58%, #080a0e 100%);
+  --hero-base: #10151b;
   color-scheme: dark;
 }
 
@@ -57,6 +53,9 @@
   --color-sky-500: var(--accent);
   --color-sky-400: var(--accent-hover);
   --color-sky-300: var(--accent-soft);
+  --color-lime-300: var(--accent);
+  --color-lime-200: var(--accent-hover);
+  --color-lime-400: var(--accent);
 }
 
 * {
@@ -76,6 +75,11 @@ body {
   margin: 0;
   background-color: transparent;
   color: var(--fg);
+}
+
+::selection {
+  background: var(--accent);
+  color: #10151b;
 }
 
 a {

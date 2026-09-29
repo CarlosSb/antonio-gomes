@@ -19,18 +19,16 @@ export default function Footer({ content, locale }: FooterProps) {
   const navigationLinks = [
     { href: `${homePath}#hero`, label: content.navigation.home },
     { href: `${homePath}#projetos`, label: content.navigation.projects },
-    { href: `${homePath}#experiencia`, label: content.sections.experience },
-    { href: `${homePath}#skills`, label: content.sections.skills },
     { href: `${homePath}#sobre`, label: content.navigation.about },
     { href: `${homePath}#contato`, label: content.navigation.contact },
   ];
 
   return (
-    <footer className="border-t border-slate-800/90 bg-slate-950/80">
-      <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
+    <footer className="relative border-t border-slate-800/35 bg-slate-950/50">
+      <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-3">
           <section className="space-y-3" aria-label={content.profile.name}>
-            <h2 className="text-base font-semibold text-slate-100">{content.profile.name}</h2>
+            <h2 className="text-sm font-semibold tracking-tight text-slate-100">antonio<span className="text-lime-300">.gomes</span></h2>
             <p className="max-w-xs text-sm leading-relaxed text-slate-300">{content.footer.tagline}</p>
             <p className="text-sm text-slate-400">
               {content.footer.locationLabel}: {content.footer.locationValue}
@@ -95,7 +93,7 @@ export default function Footer({ content, locale }: FooterProps) {
           </section>
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 border-t border-slate-800/80 pt-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-3 border-t border-slate-800/40 pt-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
           <p>{rights}</p>
           <p>{content.footer.buildLine}</p>
           <AnalyticsLink
