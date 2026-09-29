@@ -300,9 +300,9 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     localeLabel: "PT",
     profile: {
       ...sharedProfile,
-      role: "Desenvolvedor Fullstack",
+      role: "Engenheiro de Software Fullstack",
       summary:
-        "Desenvolvedor de Software Fullstack com 4+ anos de experiência no ecossistema JavaScript (React.js, Next.js e Node.js), atuando na evolução de plataformas de automação e chatbots em cenários de crescimento e maior complexidade. Tenho experiência com modernização de legados, arquiteturas escaláveis, performance, testes automatizados, virtualização, caching, cloud AWS e arquiteturas desacopladas. Atualmente também exploro integração de aplicações com IA e LLMs.",
+        "Engenheiro de Software Fullstack com experiência na construção de produtos SaaS, plataformas operacionais e infraestrutura de mensagens. Trabalho com React, Next.js, Node.js e Go, conectando produto, arquitetura e operação em produção.",
     },
     navigation: {
       home: "Início",
@@ -344,41 +344,41 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     hero: {
       availability: "Disponível para vagas remotas",
       badge: "",
-      headlineLead: "Desenvolvedor fullstack para",
-      headlineAccent: "SaaS, painéis admin e integrações críticas.",
+      headlineLead: "Engenheiro de software para",
+      headlineAccent: "produtos, operações e integrações que precisam funcionar.",
       description:
-        "Sou Antonio. Tenho 4+ anos evoluindo plataformas de automação e chatbots com React, Next.js e Node.js, com foco em performance, escalabilidade, testes automatizados e operação em produção.",
+        "Sou Antonio. Construo produtos digitais e sistemas de bastidor com React, Next.js, Node.js e Go — do editor visual ao gateway de mensagens, com foco em clareza, resiliência e operação real.",
       aboutLinkLabel: "Minha trajetória e forma de trabalhar →",
-      tags: ["Automação e chatbots", "AWS serverless e integrações", "Performance e escalabilidade"],
+      tags: ["Produtos SaaS", "Infraestrutura e integrações", "Performance e resiliência"],
     },
     homePage: {
       selectedWorkTitle: "Cases em Destaque",
       selectedWorkDescription:
         "Seleção de cases reais que representam meu trabalho com produto, arquitetura e operação em produção.",
-      heroMainCaseCtaLabel: "Ver case: ONG Tudo por Amor",
+      heroMainCaseCtaLabel: "Ver case: Pitomba Bio",
       heroMainCaseCtaAriaLabel:
-        "Ver case principal ONG Tudo por Amor com arquitetura, decisões técnicas e impacto em produção",
+        "Ver case principal Pitomba Bio com arquitetura, decisões técnicas e impacto em produção",
       projectsMainCaseHighlight: {
         badge: "Case principal",
         lineOne:
-          "ONG Tudo por Amor: plataforma institucional com CMS headless, SEO técnico e ISR.",
+          "Pitomba Bio: micro-SaaS de presença digital com editor visual, temas cadastráveis e publicação integrada.",
         lineTwo:
-          "Case com foco em autonomia editorial, transparência financeira e entrega estável em produção.",
+          "Case com foco em experiência de edição, persistência otimista e evolução de produto sem quebrar o banco.",
         ctaLabel: "Ler case completo",
       },
       caseTitle: "Case em Profundidade",
       caseDescription:
-        "ONG Tudo por Amor: contexto real, decisões técnicas e impacto operacional.",
+        "Pitomba Bio: contexto real, decisões técnicas e impacto de produto.",
       caseContextLabel: "Contexto",
-      caseCta: "Ver case ONG",
+      caseCta: "Ver case Pitomba Bio",
       caseQuickSummaryTitle: "Resumo rápido do case",
       caseQuickSummaryBullets: [
-        "Problema: publicação de conteúdo dependia de suporte técnico e gerava gargalo operacional.",
-        "Problema: informações institucionais e de transparência estavam dispersas, com baixa consistência de SEO.",
-        "Solução: arquitetura com Next.js + Sanity CMS para autonomia editorial sem depender de deploy.",
-        "Solução: rotas dinâmicas com ISR e revalidação por webhook para conteúdo atualizado com performance.",
-        "Resultado: equipe da ONG passou a publicar com autonomia e fluxo editorial mais ágil.",
-        "Resultado: estrutura de transparência e SEO ficou mais consistente, melhorando clareza institucional.",
+        "Problema: criar uma página digital exigia configurar várias partes separadas.",
+        "Problema: editores tradicionais criavam fricção para profissionais e negócios locais.",
+        "Solução: editor contextual em que a própria bio funciona como preview e área de edição.",
+        "Solução: temas como registros de catálogo e persistência otimista com controle de revisão.",
+        "Resultado: o usuário consegue editar diretamente o resultado que será publicado.",
+        "Resultado: novos temas e blocos podem evoluir sem reestruturar o banco.",
       ],
       engineeringMindsetTitle: "Mentalidade de Engenharia",
       engineeringMindsetDescription:
@@ -636,9 +636,9 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     localeLabel: "EN",
     profile: {
       ...sharedProfile,
-      role: "Full-Stack Software Developer",
+      role: "Full-Stack Software Engineer",
       summary:
-        "Full-stack software developer with 4+ years of experience in the JavaScript ecosystem (React.js, Next.js, and Node.js), working on the evolution of automation and chatbot platforms in growth and higher-complexity scenarios. I have experience with legacy modernization, scalable architectures, performance, automated testing, virtualization, caching, AWS cloud, and decoupled architectures. I am also currently exploring application integrations with AI and LLMs.",
+        "Full-stack software engineer experienced in building SaaS products, operational platforms, and messaging infrastructure. I work with React, Next.js, Node.js, and Go, connecting product, architecture, and production operations.",
     },
     navigation: {
       home: "Home",
@@ -680,41 +680,41 @@ export const profileContent: Record<Locale, LocalizedProfileContent> = {
     hero: {
       availability: "Open to remote roles",
       badge: "",
-      headlineLead: "Full-stack developer for",
-      headlineAccent: "SaaS, admin dashboards, and critical integrations.",
+      headlineLead: "Software engineer for",
+      headlineAccent: "products, operations, and integrations that need to work.",
       description:
-        "I'm Antonio. I have 4+ years evolving automation and chatbot platforms with React, Next.js, and Node.js, with a strong focus on performance, scalability, automated testing, and production operations.",
+        "I'm Antonio. I build digital products and backend systems with React, Next.js, Node.js, and Go — from visual editors to messaging gateways, with a focus on clarity, resilience, and real operations.",
       aboutLinkLabel: "My background and how I work →",
-      tags: ["Automation and chatbots", "AWS serverless and integrations", "Performance and scalability"],
+      tags: ["SaaS products", "Infrastructure and integrations", "Performance and resilience"],
     },
     homePage: {
       selectedWorkTitle: "Featured Case Studies",
       selectedWorkDescription:
         "A curated selection of real projects that represent my work across product, architecture, and production delivery.",
-      heroMainCaseCtaLabel: "View case: ONG Tudo por Amor",
+      heroMainCaseCtaLabel: "View case: Pitomba Bio",
       heroMainCaseCtaAriaLabel:
-        "View main case study ONG Tudo por Amor with architecture, technical decisions and production impact",
+        "View main case study Pitomba Bio with architecture, technical decisions and product impact",
       projectsMainCaseHighlight: {
         badge: "Main case",
         lineOne:
-          "ONG Tudo por Amor: institutional platform with headless CMS, technical SEO and ISR.",
+          "Pitomba Bio: digital presence micro-SaaS with a visual editor, database-driven themes, and integrated publishing.",
         lineTwo:
-          "Case focused on editorial autonomy, financial transparency, and stable production delivery.",
+          "Case focused on editing experience, optimistic persistence, and product evolution without breaking the database.",
         ctaLabel: "Read full case study",
       },
       caseTitle: "Deep Case Study",
       caseDescription:
-        "ONG Tudo por Amor: real context, technical decisions, and operational impact.",
+        "Pitomba Bio: real context, technical decisions, and product impact.",
       caseContextLabel: "Context",
-      caseCta: "View full case study",
+      caseCta: "View Pitomba Bio case",
       caseQuickSummaryTitle: "Quick case summary",
       caseQuickSummaryBullets: [
-        "Problem: content publishing depended on technical support, creating operational bottlenecks.",
-        "Problem: institutional and transparency content was fragmented, with inconsistent SEO.",
-        "Solution: Next.js + Sanity CMS architecture to provide editorial autonomy without deployments.",
-        "Solution: dynamic routes with ISR and webhook revalidation for fresh and fast content delivery.",
-        "Result: NGO staff gained autonomy and a faster editorial workflow.",
-        "Result: transparency structure and SEO became more consistent, improving institutional clarity.",
+        "Problem: creating a digital page required configuring separate parts.",
+        "Problem: traditional editors created friction for professionals and local businesses.",
+        "Solution: a contextual editor where the bio itself works as preview and editing surface.",
+        "Solution: database-driven themes and optimistic persistence with revision control.",
+        "Result: users edit the result they are going to publish directly.",
+        "Result: new themes and blocks can evolve without restructuring the database.",
       ],
       engineeringMindsetTitle: "Engineering Mindset",
       engineeringMindsetDescription:

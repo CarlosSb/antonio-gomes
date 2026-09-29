@@ -47,6 +47,178 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "pitomba-bio",
+    title: "Pitomba Bio – Micro-SaaS de presença digital",
+    mainCase: true,
+    shortDescription: {
+      pt: "Micro-SaaS para profissionais e negócios locais criarem, personalizarem e publicarem uma página de bio com editor visual.",
+      en: "Micro-SaaS for professionals and local businesses to create, customize, and publish a visual bio page.",
+    },
+    description: {
+      pt: "Produto próprio desenvolvido com Next.js, React, MongoDB e Vercel Blob para transformar a página pública no próprio editor. Combina rascunho local, publicação, temas cadastráveis, blocos modulares, QR Code, analytics anônimo e onboarding guiado.",
+      en: "Own product built with Next.js, React, MongoDB, and Vercel Blob, turning the public page into the editor itself. It combines local drafts, database-driven themes, modular blocks, QR codes, anonymous analytics, and guided onboarding.",
+    },
+    challenge: {
+      pt: "Pequenos negócios precisavam de uma presença digital simples, mas editores tradicionais adicionavam complexidade. O desafio era criar uma experiência de publicação acessível sem abrir mão de flexibilidade visual e consistência de dados.",
+      en: "Small businesses needed a simple digital presence, but traditional editors added complexity. The challenge was creating an accessible publishing experience without giving up visual flexibility or data consistency.",
+    },
+    solution: {
+      pt: "Estruturei um editor contextual em que a própria bio funciona como preview e área de edição. Implementei persistência otimista com controle de revisão, catálogo de temas como registros no banco, auto-detecção de links, blocos por nicho e cálculo de horário de atendimento.",
+      en: "I structured a contextual editor where the bio itself works as both preview and editing surface. I implemented optimistic persistence with revision control, database-driven themes, link auto-detection, niche-specific blocks, and business-hours status calculation.",
+    },
+    stack: ["Next.js 16", "React 19", "TypeScript", "MongoDB", "Vercel Blob", "Framer Motion", "Tailwind CSS"],
+    highlights: {
+      pt: ["Editor visual contextual com blocos modulares", "Rascunho local e publicação integrada ao cadastro", "Temas cadastráveis sem nova alteração de schema", "Persistência otimista com controle de concorrência", "Onboarding guiado e analytics anônimo"],
+      en: ["Contextual visual editor with modular blocks", "Local drafts and publishing integrated with signup", "Database-driven themes without schema changes", "Optimistic persistence with concurrency control", "Guided onboarding and anonymous analytics"],
+    },
+    architecture: {
+      pt: ["Next.js App Router com rotas públicas e editor autenticado", "MongoDB para páginas, temas e contas", "Vercel Blob para imagens e mídia", "Persistência local para rascunhos sem cadastro"],
+      en: ["Next.js App Router with public routes and authenticated editor", "MongoDB for pages, themes, and accounts", "Vercel Blob for images and media", "Local persistence for drafts before signup"],
+    },
+    technicalDecisions: {
+      pt: ["Editor contextual para reduzir a distância entre editar e publicar.", "Temas como registros de catálogo para permitir evolução visual sem migrações frequentes.", "Persistência otimista com revisão para evitar sobrescrita silenciosa."],
+      en: ["A contextual editor to reduce the distance between editing and publishing.", "Database-driven theme records to allow visual evolution without frequent migrations.", "Optimistic persistence with revision control to prevent silent overwrites."],
+    },
+    impact: {
+      pt: ["Reduzi a barreira inicial para criar uma presença digital publicável.", "A arquitetura permite adicionar temas e blocos sem reestruturar o banco a cada evolução."],
+      en: ["Lowered the initial barrier to creating a publishable digital presence.", "The architecture allows new themes and blocks without restructuring the database for every evolution."],
+    },
+    results: {
+      pt: ["Antes: criar uma página exigia configurar várias partes separadas -> Depois: o usuário edita diretamente o resultado final.", "Antes: temas dependiam de alterações estruturais -> Depois: temas passaram a ser registros de catálogo."],
+      en: ["Before: creating a page required configuring separate parts -> After: users edit the final result directly.", "Before: themes depended on structural changes -> After: themes became catalog records."],
+    },
+    links: [{ label: "Live", href: "https://pitomba-bio.vercel.app/" }],
+    featured: true,
+    seoTitle: "Pitomba Bio | Antonio Gomes",
+  },
+  {
+    slug: "mercantils",
+    title: "Mercantils – Operação de vendas para mercados locais",
+    shortDescription: {
+      pt: "Ecossistema de atendimento e vendas que transforma conversas no WhatsApp em pedidos organizados para o comerciante.",
+      en: "Sales and support ecosystem that turns WhatsApp conversations into organized orders for local merchants.",
+    },
+    description: {
+      pt: "Produto fullstack com Vitrine pública, painel do comerciante, carrinho compartilhado, checkout server-side, Kanban operacional e Agent conversacional integrado ao Gateway.",
+      en: "Fullstack product with a public storefront, merchant dashboard, shared cart, server-side checkout, operational Kanban, and a conversational Agent integrated with the Gateway.",
+    },
+    challenge: {
+      pt: "Mercados locais precisavam atender pelo canal que o cliente já usa sem perder contexto, controle do pedido ou visibilidade da operação interna.",
+      en: "Local markets needed to serve customers through the channel they already use without losing context, order control, or operational visibility.",
+    },
+    solution: {
+      pt: "Estruturei a separação entre Hub, Agent e Gateway: o cliente conversa por WhatsApp ou Vitrine, o Agent interpreta a intenção e o Hub organiza catálogo, pedido, atendimento e entrega.",
+      en: "I structured the separation between Hub, Agent, and Gateway: customers start through WhatsApp or the storefront, the Agent interprets intent, and the Hub organizes catalog, orders, support, and delivery.",
+    },
+    stack: ["Next.js 16", "React 19", "TypeScript", "PostgreSQL", "Drizzle ORM", "Redis", "Python", "FastAPI", "Go"],
+    highlights: {
+      pt: ["Vitrine pública com carrinho compartilhado", "Painel com Kanban de pedidos e atendimento", "Agent com Gemini ou Claude via Bedrock", "Outbox, retry, idempotência e DLQ", "Integração desacoplada com WhatsApp/Evolution"],
+      en: ["Public storefront with shared cart", "Dashboard with order and support Kanban", "Agent with Gemini or Claude through Bedrock", "Outbox, retries, idempotency, and DLQ", "Decoupled WhatsApp/Evolution integration"],
+    },
+    architecture: {
+      pt: ["Hub Next.js como fonte de verdade operacional", "Agent Python/FastAPI para conversa e ferramentas", "Gateway Go para transporte resiliente", "PostgreSQL, Redis e filas duráveis"],
+      en: ["Next.js Hub as the operational source of truth", "Python/FastAPI Agent for conversations and tools", "Go Gateway for resilient transport", "PostgreSQL, Redis, and durable queues"],
+    },
+    technicalDecisions: {
+      pt: ["Separação de responsabilidades entre Hub, Agent e Gateway.", "Outbox persistida antes do envio para garantir retry e rastreabilidade.", "Carrinho compartilhado entre WhatsApp e Vitrine sem duplicar a operação."],
+      en: ["Clear separation of responsibilities between Hub, Agent, and Gateway.", "Persisted outbox before delivery to guarantee retries and traceability.", "Shared cart across WhatsApp and storefront without duplicating operations."],
+    },
+    impact: {
+      pt: ["Conecta atendimento conversacional e operação de loja em um fluxo único.", "Permite que a equipe assuma a conversa sem perder o pedido logístico."],
+      en: ["Connects conversational support and store operations in one flow.", "Allows staff to take over conversations without losing the logistics order."],
+    },
+    results: {
+      pt: ["Antes: conversa, carrinho e operação ficavam separados -> Depois: o pedido atravessa os canais com contexto compartilhado.", "Antes: falhas no transporte podiam perder mensagens -> Depois: filas, leases e retry tornam o fluxo recuperável."],
+      en: ["Before: conversation, cart, and operations were separate -> After: orders move across channels with shared context.", "Before: transport failures could lose messages -> After: queues, leases, and retries make the flow recoverable."],
+    },
+    links: [{ label: "Live", href: "https://mercantils-landing.vercel.app/" }],
+    featured: true,
+    seoTitle: "Mercantils | Antonio Gomes",
+  },
+  {
+    slug: "pitomba-gateway",
+    title: "Pitomba Gateway – Gateway resiliente de mensagens",
+    shortDescription: {
+      pt: "Gateway Go para ingestão e despacho assíncrono de mensagens com filas duráveis, idempotência e integração com Evolution API.",
+      en: "Go gateway for asynchronous message ingestion and dispatch with durable queues, idempotency, and Evolution API integration.",
+    },
+    description: {
+      pt: "Microserviço independente responsável por receber eventos, persistir mensagens e despachar saídas com segurança. O Gateway separa consumidores externos do transporte para que agentes e produtos evoluam sem acoplamento direto à Evolution API.",
+      en: "Independent microservice responsible for receiving events, persisting messages, and dispatching outbound messages safely. The Gateway separates external consumers from transport concerns so agents and products can evolve without direct coupling to Evolution API.",
+    },
+    challenge: {
+      pt: "O processamento de mensagens precisava sobreviver a falhas, evitar duplicidade e permitir que consumidores externos assumissem o trabalho sem callbacks síncronos.",
+      en: "Message processing needed to survive failures, prevent duplicates, and allow external consumers to take work without synchronous callbacks.",
+    },
+    solution: {
+      pt: "Desenvolvi um serviço Go com SQLite em WAL, filas inbound e outbound, leases para consumo, deduplicação por event_id, retry com backoff, DLQ e autenticação por escopos.",
+      en: "I built a Go service with SQLite in WAL mode, inbound and outbound queues, lease-based consumption, event_id deduplication, exponential retries, a DLQ, and scoped authentication.",
+    },
+    stack: ["Go", "SQLite", "Redis", "Evolution API", "REST", "gRPC", "Docker"],
+    highlights: {
+      pt: ["Filas inbound e outbound persistidas", "Idempotência e deduplicação duráveis", "Leases para consumidores externos", "Retry com backoff e DLQ após falhas", "Autenticação por tenant, escopo e revogação"],
+      en: ["Persisted inbound and outbound queues", "Durable idempotency and deduplication", "Leases for external consumers", "Exponential retry and DLQ after failures", "Tenant-, scope-, and revocation-aware authentication"],
+    },
+    architecture: {
+      pt: ["HTTP nativo em Go sem framework", "SQLite como fonte durável e Redis como memória opcional", "Worker assíncrono para despacho Evolution", "DTO normalizado preservando o payload original"],
+      en: ["Native Go HTTP without a framework", "SQLite as durable source and Redis as optional working memory", "Asynchronous worker for Evolution dispatch", "Normalized DTO while preserving the original payload"],
+    },
+    technicalDecisions: {
+      pt: ["SQLite em WAL para manter a fila local simples e resiliente.", "Leases em vez de callbacks síncronos para permitir retry seguro.", "Redis opcional para manter o sistema funcional mesmo sem a camada de memória."],
+      en: ["SQLite in WAL mode to keep local queue persistence simple and resilient.", "Leases instead of synchronous callbacks to enable safe retries.", "Optional Redis so the system continues operating without the working-memory layer."],
+    },
+    impact: {
+      pt: ["Separou o transporte de mensagens dos agentes consumidores.", "Criou uma base resiliente para integrações WhatsApp e automações multi-tenant."],
+      en: ["Separated message transport from consuming agents.", "Created a resilient foundation for multi-tenant WhatsApp integrations and automations."],
+    },
+    results: {
+      pt: ["Antes: o agente dependia de callbacks e transporte acoplado -> Depois: consumidores assumem mensagens por API autenticada.", "Antes: falhas podiam interromper o fluxo -> Depois: leases, retries e DLQ preservam entrega e rastreabilidade."],
+      en: ["Before: the agent depended on callbacks and coupled transport -> After: consumers claim messages through an authenticated API.", "Before: failures could interrupt the flow -> After: leases, retries, and a DLQ preserve delivery and traceability."],
+    },
+    featured: true,
+    seoTitle: "Pitomba Gateway | Antonio Gomes",
+  },
+  {
+    slug: "pitomba-tech-landing",
+    title: "Pitomba Tech – Landing institucional",
+    shortDescription: {
+      pt: "Landing institucional com narrativa de produtos, origem regional e arquitetura visual inspirada na Serra da Ibiapaba.",
+      en: "Institutional landing page combining product narrative, regional identity, and a visual system inspired by the Ibiapaba mountains.",
+    },
+    description: {
+      pt: "Projeto de posicionamento e interface para apresentar a Pitomba Tech como uma empresa de produtos digitais, conectando Pitomba Bio, Mercantils, Ótica Plus e o Gateway.",
+      en: "Positioning and interface project presenting Pitomba Tech as a digital product company connecting Pitomba Bio, Mercantils, Ótica Plus, and the Gateway.",
+    },
+    challenge: {
+      pt: "A marca precisava comunicar produtos diferentes sem parecer uma agência genérica ou uma empresa de promessas abstratas.",
+      en: "The brand needed to communicate different products without looking like a generic agency or a company built on abstract promises.",
+    },
+    solution: {
+      pt: "Estruturei uma experiência curta com hero, produtos, Gateway, origem da marca e método de construção. A identidade combina verde floresta, âmbar, tipografia editorial, curvas topográficas e diagramas de conexão.",
+      en: "I structured a focused experience with a hero, products, Gateway, brand origin, and working method. The identity combines forest green, amber, editorial typography, topographic curves, and connection diagrams.",
+    },
+    stack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "SVG"],
+    highlights: {
+      pt: ["Narrativa de empresa de produtos digitais", "Sistema visual inspirado na serra", "Composição responsiva com movimento reduzido", "Componentes de marca e diagramas em SVG"],
+      en: ["Digital product company narrative", "Mountain-inspired visual system", "Responsive composition with reduced-motion support", "Brand components and SVG diagrams"],
+    },
+    architecture: {
+      pt: ["Next.js App Router com composição server-side", "Copy multilíngue centralizado", "Componentes visuais reutilizáveis", "CSS e SVG para atmosfera e diagramas leves"],
+      en: ["Next.js App Router with server-side composition", "Centralized multilingual copy", "Reusable visual components", "CSS and SVG for lightweight atmosphere and diagrams"],
+    },
+    technicalDecisions: {
+      pt: ["SVG e CSS em vez de imagens decorativas pesadas para manter o relevo escalável e leve.", "Narrativa organizada em produtos e infraestrutura para tornar o papel do Gateway compreensível."],
+      en: ["SVG and CSS instead of heavy decorative images to keep the terrain scalable and lightweight.", "Narrative organized around products and infrastructure to make the Gateway's role understandable."],
+    },
+    impact: {
+      pt: ["Transformou uma coleção de projetos em uma narrativa única de produto e tecnologia."],
+      en: ["Turned a collection of projects into one coherent product and technology narrative."],
+    },
+    links: [{ label: "Live", href: "https://pitomba-landing.vercel.app" }],
+    featured: true,
+    seoTitle: "Pitomba Tech Landing | Antonio Gomes",
+  },
+  {
     slug: "ong-tudo-por-amor",
     title: "ONG Tudo por Amor",
     mainCase: true,
