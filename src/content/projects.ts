@@ -50,6 +50,13 @@ export const projects: Project[] = [
     slug: "pitomba-bio",
     title: "Pitomba Bio – Micro-SaaS de presença digital",
     mainCase: true,
+    cardImage: {
+      src: "/cases/pitomba-bio/home.png",
+      alt: {
+        pt: "Landing page do Pitomba Bio com preview de uma bio publicada",
+        en: "Pitomba Bio landing page with a published bio preview",
+      },
+    },
     shortDescription: {
       pt: "Micro-SaaS para profissionais e negócios locais criarem, personalizarem e publicarem uma página de bio com editor visual.",
       en: "Micro-SaaS for professionals and local businesses to create, customize, and publish a visual bio page.",
@@ -83,6 +90,19 @@ export const projects: Project[] = [
       pt: ["Reduzi a barreira inicial para criar uma presença digital publicável.", "A arquitetura permite adicionar temas e blocos sem reestruturar o banco a cada evolução."],
       en: ["Lowered the initial barrier to creating a publishable digital presence.", "The architecture allows new themes and blocks without restructuring the database for every evolution."],
     },
+    gallery: [
+      {
+        src: "/cases/pitomba-bio/home.png",
+        alt: {
+          pt: "Landing page do Pitomba Bio com preview interativo da bio",
+          en: "Pitomba Bio landing page with an interactive bio preview",
+        },
+        caption: {
+          pt: "A página apresenta a criação de uma presença digital simples, personalizável e publicável.",
+          en: "The page presents a simple, customizable, and publishable digital presence experience.",
+        },
+      },
+    ],
     results: {
       pt: ["Antes: criar uma página exigia configurar várias partes separadas -> Depois: o usuário edita diretamente o resultado final.", "Antes: temas dependiam de alterações estruturais -> Depois: temas passaram a ser registros de catálogo."],
       en: ["Before: creating a page required configuring separate parts -> After: users edit the final result directly.", "Before: themes depended on structural changes -> After: themes became catalog records."],
@@ -431,7 +451,7 @@ The result was a simpler, faster, and more sustainable editorial workflow.`,
   },
   {
     slug: "digital-net-telecom",
-    title: "Digital.Net Telecom – Plataforma web para provedor",
+    title: "Digital.Net Telecom – Landing comercial para provedor",
     featured: true,
     cardImage: {
       src: "/cases/digital-net-telecom/home-v2.png",
@@ -441,96 +461,91 @@ The result was a simpler, faster, and more sustainable editorial workflow.`,
       },
     },
     shortDescription: {
-      pt: "Plataforma web mais simples para provedor regional, com páginas comerciais, conteúdo por cidade e painel administrativo.",
-      en: "A simpler web platform for a regional ISP, with commercial pages, city-based content, and an admin dashboard.",
+      pt: "Landing pública para provedor regional, centrada em planos, cobertura e atendimento local.",
+      en: "A public landing page for a regional ISP, focused on plans, coverage, and local support.",
     },
     description: {
-      pt: `Produto fullstack para a operação digital de um provedor com múltiplas cidades, reunindo landing pages, gestão de conteúdo e painel administrativo em uma base única.
-O foco foi padronizar fluxos, reduzir inconsistência entre unidades e trazer mais previsibilidade para a operação.`,
-      en: `Fullstack product for the digital operation of an ISP across multiple cities, combining landing pages, content management, and an admin dashboard in one platform.
-The main goal was to standardize flows, reduce inconsistency between units, and bring more predictability to operations.`,
+      pt: `Nova experiência pública da Digital.Net Telecom, independente da landing anterior e desenhada para conduzir o visitante por planos, benefícios, cobertura e atendimento.
+A entrega combina uma direção visual mais editorial com conteúdo estruturado e chamadas diretas para WhatsApp, mantendo a base preparada para futuras integrações comerciais.`,
+      en: `A new public experience for Digital.Net Telecom, independent from the previous landing and designed to guide visitors through plans, benefits, coverage, and support.
+The delivery combines a more editorial visual direction with structured content and direct WhatsApp calls to action, while keeping the foundation ready for future commercial integrations.`,
     },
     challenge: {
-      pt: `A operação digital estava espalhada em páginas e fluxos desconectados.
-Isso gerava inconsistência entre cidades, retrabalho em conteúdo e pouca padronização nas APIs.`,
-      en: `The digital operation was spread across disconnected pages and workflows.
-That created inconsistency between cities, repeated content work, and weak API standardization.`,
+      pt: `A experiência anterior precisava de uma jornada comercial mais direta e coerente com um provedor regional.
+O desafio era comunicar oferta, cobertura e suporte sem transformar a primeira visita em um painel operacional cheio de ruído.`,
+      en: `The previous experience needed a more direct commercial journey aligned with a regional ISP.
+The challenge was to communicate offers, coverage, and support without turning the first visit into a noisy operational dashboard.`,
     },
     solution: {
-      pt: `Estruturei uma plataforma fullstack com arquitetura multi-cidade e um painel administrativo modular.
-Padronizei a camada de APIs com validações formais e cobertura de testes unitários e e2e.
-Também reorganizei as landing pages para manter consistência operacional e comercial entre as unidades.`,
-      en: `I structured a fullstack platform with multi-city architecture and a modular admin dashboard.
-I standardized the API layer with formal validation and unit/e2e test coverage.
-I also reorganized the landing pages to keep both operational and commercial consistency across city units.`,
+      pt: `Construí uma landing independente em Next.js, composta por seções reutilizáveis para hero, planos, benefícios, depoimentos, cobertura, FAQ e contato.
+O conteúdo pode vir do Notion com cache e fallback local, enquanto os fluxos interativos — slider, menu, FAQ e consulta de CEP — permanecem leves e orientados à conversão.`,
+      en: `I built an independent Next.js landing page composed of reusable sections for the hero, plans, benefits, testimonials, coverage, FAQ, and contact.
+Content can come from Notion with caching and a local fallback, while interactive flows — slider, menu, FAQ, and CEP lookup — remain lightweight and conversion-oriented.`,
     },
     stack: [
-      "Next.js 15",
-      "React",
+      "Next.js 16",
+      "React 19",
       "TypeScript",
-      "Prisma",
-      "PostgreSQL",
-      "NextAuth",
-      "Zod",
-      "React Query",
-      "Jest",
-      "Playwright",
-      "OpenAI SDK",
+      "Tailwind CSS 4",
+      "Notion API",
+      "Lucide React",
     ],
     architecture: {
       pt: [
-        "Estrutura modular com App Router",
-        "Camada de API no padrão BFF",
-        "Organização de componentes orientada a domínio",
-        "Isolamento lógico multi-cidade",
-        "Endpoints REST validados",
+        "Landing independente com App Router",
+        "Composição por componentes e seções reutilizáveis",
+        "Conteúdo opcional via Notion com fallback local",
+        "Cache server-side com revalidação periódica",
+        "Interações client-side isoladas por jornada",
       ],
       en: [
-        "App Router modular structure",
-        "BFF API layer",
-        "Domain-oriented component organization",
-        "Multi-city logical isolation",
-        "Validated REST endpoints",
+        "Independent landing built with the App Router",
+        "Composition through reusable components and sections",
+        "Optional Notion content with a local fallback",
+        "Server-side cache with periodic revalidation",
+        "Client-side interactions isolated by journey",
       ],
     },
     technicalDecisions: {
       pt: [
-        "Escolhi estrutura orientada a domínio em vez de organização por tipo de arquivo para reduzir acoplamento entre módulos.",
-        "Escolhi validação com Zod na fronteira das APIs em vez de validações dispersas para manter contratos previsíveis.",
-        "Escolhi suíte automatizada (unit + e2e) em vez de validação manual recorrente para reduzir regressão em fluxos críticos.",
+        "Separei a v2 da landing anterior para evoluir a direção comercial e visual sem carregar dependências da experiência antiga.",
+        "Usei Notion como fonte opcional de conteúdo, com fallback local para a página continuar disponível mesmo sem CMS configurado.",
+        "Mantive a consulta de cobertura simples e progressiva: validação de CEP no cliente e encaminhamento contextual para WhatsApp.",
+        "Priorizei semântica, foco nativo e redução de movimento para equilibrar conversão, acessibilidade e leveza.",
       ],
       en: [
-        "I chose domain-oriented structure instead of file-type organization to reduce coupling across modules.",
-        "I chose Zod validation at API boundaries instead of scattered checks to keep contracts predictable.",
-        "I chose automated unit + e2e suites instead of repeated manual validation to reduce regression in critical flows.",
+        "I separated v2 from the previous landing to evolve the commercial and visual direction without carrying the old experience's dependencies.",
+        "I used Notion as an optional content source with a local fallback so the page remains available without a configured CMS.",
+        "I kept the coverage journey progressive: CEP validation in the client followed by contextual handoff to WhatsApp.",
+        "I prioritized semantics, native focus, and reduced motion to balance conversion, accessibility, and speed.",
       ],
     },
     highlights: {
       pt: [
-        "Testes automatizados unitários e e2e",
-        "Dashboard administrativo multi-módulo",
-        "Otimização de landing pages para conversão",
-        "Validação de API com Zod",
-        "Integração com IA para recursos avançados",
+        "Hero com narrativa por contexto de uso",
+        "Planos, benefícios e cobertura em uma jornada única",
+        "CTAs diretos para WhatsApp e consulta de cobertura",
+        "Conteúdo editável via Notion sem acoplar a apresentação ao CMS",
+        "Experiência responsiva com acessibilidade e reduced motion",
       ],
       en: [
-        "Automated unit and e2e testing",
-        "Multi-module admin dashboard",
-        "Landing page optimization for conversion",
-        "API validation with Zod",
-        "AI integration for enhanced functionality",
+        "Hero narrative organized by use case",
+        "Plans, benefits, and coverage in one journey",
+        "Direct CTAs for WhatsApp and coverage lookup",
+        "Editable Notion content without coupling presentation to the CMS",
+        "Responsive experience with accessibility and reduced motion",
       ],
     },
     impact: {
       pt: [
-        "Gestão operacional de ISP centralizada",
-        "Maior consistência entre conteúdos por cidade",
-        "Fluxo estruturado de gestão de leads",
+        "Proposta comercial mais clara na primeira visita",
+        "Menos ruído entre oferta, cobertura e atendimento",
+        "Base leve para conectar CMS, leads e páginas de suporte depois",
       ],
       en: [
-        "Centralized ISP operational management",
-        "Improved consistency across city-level content",
-        "Structured lead management workflow",
+        "Clearer commercial proposition on the first visit",
+        "Less noise between offer, coverage, and support",
+        "A lightweight foundation for future CMS, lead, and support-page integrations",
       ],
     },
     gallery: [
@@ -545,62 +560,17 @@ I also reorganized the landing pages to keep both operational and commercial con
           en: "New commercial experience focused on plans, benefits, and coverage.",
         },
       },
-      {
-        src: "/cases/digital-net-telecom/flow.png",
-        alt: {
-          pt: "Fluxo operacional e APIs da Digital.Net Telecom",
-          en: "Digital.Net Telecom operational flow and APIs",
-        },
-        caption: {
-          pt: "Fluxo de operação com validações formais e consistência entre módulos.",
-          en: "Operational flow with formal validation and consistent modules.",
-        },
-      },
-      {
-        src: "/cases/digital-net-telecom/admin.png",
-        alt: {
-          pt: "Painel administrativo da Digital.Net Telecom",
-          en: "Digital.Net Telecom admin dashboard",
-        },
-        caption: {
-          pt: "Dashboard para gestão centralizada de operação e conteúdo.",
-          en: "Dashboard for centralized operations and content management.",
-        },
-      },
-    ],
-    metrics: [
-      {
-        label: { pt: "Lighthouse", en: "Lighthouse" },
-        value: {
-          pt: "Mobile: [preencher] | Desktop: [preencher]",
-          en: "Mobile: [fill] | Desktop: [fill]",
-        },
-      },
-      {
-        label: { pt: "Tempo de publicação", en: "Publishing time" },
-        value: {
-          pt: "Antes: [preencher] -> Depois: [preencher]",
-          en: "Before: [fill] -> After: [fill]",
-        },
-      },
-      {
-        label: { pt: "SEO / Google Search Console", en: "SEO / Google Search Console" },
-        value: {
-          pt: "Impressões: [preencher] | Cliques: [preencher] | CTR: [preencher]",
-          en: "Impressions: [fill] | Clicks: [fill] | CTR: [fill]",
-        },
-      },
     ],
     results: {
       pt: [
-        "Antes: a operação ficava distribuída em fluxos desconectados -> Depois: a gestão passou a ser centralizada em uma única plataforma.",
-        "Antes: cada cidade seguia padrões diferentes -> Depois: a estrutura multi-cidade trouxe mais consistência entre unidades.",
-        "Antes: integrações sofriam mais com regressão -> Depois: APIs validadas e testadas deram mais previsibilidade à evolução do produto.",
+        "Antes: a proposta comercial estava apoiada na experiência anterior -> Depois: uma landing independente passou a organizar a jornada por planos, cobertura e atendimento.",
+        "Antes: o conteúdo dependia de uma estrutura rígida -> Depois: a combinação entre Notion e fallback local permite evoluir as informações sem comprometer a disponibilidade.",
+        "Antes: a primeira visita tinha mais caminhos dispersos -> Depois: CTAs e seções conduzem o visitante até a consulta de cobertura ou o WhatsApp.",
       ],
       en: [
-        "Before: operations were split across disconnected flows -> After: management became centralized in a single platform.",
-        "Before: each city followed a different pattern -> After: the multi-city structure created more consistency across units.",
-        "Before: integrations were more regression-prone -> After: validated, tested APIs made product evolution more predictable.",
+        "Before: the commercial proposition relied on the previous experience -> After: an independent landing page organized the journey around plans, coverage, and support.",
+        "Before: content depended on a rigid structure -> After: Notion plus a local fallback allows information to evolve without compromising availability.",
+        "Before: the first visit had more scattered paths -> After: CTAs and sections guide visitors toward coverage lookup or WhatsApp.",
       ],
     },
     links: [
